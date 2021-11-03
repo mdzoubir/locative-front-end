@@ -1,0 +1,118 @@
+<app-index-navbar></app-index-navbar>
+
+
+
+
+
+
+<div class="container px-4 mx-auto  border-2 border-solid bg-blueGray-700 text-white" style="border-radius: 100px; margin-top: -200px">
+  <div class="flex flex-wrap">
+    <div class="w-full px-4 flex-1">
+<!--      <span class="text-sm block my-4 p-3 text-blueGray-700 rounded border border-solid border-blueGray-100">-->
+<!--        <i class="fas fa-file-medical-alt" style="font-size: 30px"></i>-->
+<!--      </span>-->
+    </div>
+    <div class="w-8/12 px-4">
+      <span class="text-sm block  p-3" style="margin-top: 350px">
+        <i class="fas fa-file-medical-alt" style="font-size: 60px; text-align: center; width: 100%"></i>
+        <p class="font-bold text-center pt-6 " style="font-size: 20px">Nous sommes spécialistes du</p>
+        <h1 class="font-bold uppercase text-center pt-6 " style="font-size: 40px; line-height: 40px">Design d’intérieur</h1>
+        <p class="font-normal text-center pt-6 text-white" style="font-size: 20px;">Laissez-nous optimiser votre logement et le rendre visuellement attractif pour vos futurs clients.</p>
+        <button [routerLink]="['/contact']" class="px-4 text-white bg-red-700 rounded shadow-2xl  font-bold uppercase px-8 py-3 mt-8" style="margin: 10px 42%">
+          Contact us
+        </button>
+      </span>
+    </div>
+    <div class="w-full px-4 flex-1">
+<!--      <span class="text-sm block my-4 p-3 text-blueGray-700 rounded border border-solid border-blueGray-100">3 of 3</span>-->
+    </div>
+  </div>
+</div>
+
+<div class="container px-4 mx-auto mt-48 mb-24">
+  <div class="flex flex-wrap">
+    <div class="w-full px-4 flex-1">
+      <img src="assets/img/logo.jpeg" class="text-sm block  text-blueGray-700 rounded"/>
+    </div>
+    <div class="w-full px-4 flex-1">
+      <div class="flex flex-wrap">
+        <div class="w-full">
+          <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(1)" [ngClass]="{'text-red-600 bg-white': openTab !== 1, 'text-white bg-red-600': openTab === 1}">
+                <i class="fas fa-comment-dollar text-base mr-1"></i> Estimation gratuite
+              </a>
+            </li>
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(2)" [ngClass]="{'text-red-600 bg-white': openTab !== 2, 'text-white bg-red-600': openTab === 2}">
+                <i class="fas fa-hands-helping text-base mr-1"></i> Conseils en design
+              </a>
+            </li>
+            <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(3)" [ngClass]="{'text-red-600 bg-white': openTab !== 3, 'text-white bg-red-600': openTab === 3}">
+                <i class="fas fa-briefcase text-base mr-1"></i> Gestion des travaux
+              </a>
+            </li>
+          </ul>
+          <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+            <div class="px-4 py-5 flex-auto">
+              <div class="tab-content tab-space">
+                <div [ngClass]="{'hidden': openTab !== 1, 'block': openTab === 1}">
+                  <p>
+                    Nous nous déplaçons directement chez vous pour vous rencontrer
+                    et réaliser un devis gratuit pour des petits ou grands travaux.
+                    Nous optimisons nos coûts grâce à un réseau de partenaire fiable à Marrakech.
+                  </p>
+                </div>
+                <div [ngClass]="{'hidden': openTab !== 2, 'block': openTab === 2}">
+                  <p>
+                    Avec une expérience de plus de 5 ans en aménagement de maisons
+                    et appartements, Jihane est la personne à Marrakech qui pourra
+                    optimiser votre logement pour le mettre en valeur pour votre clientèle.
+                  </p>
+                </div>
+                <div [ngClass]="{'hidden': openTab !== 3, 'block': openTab === 3}">
+                  <p>
+                    Nous pouvons également gérer pour vous tous les travaux et aménagements
+                    dans votre appartement. Laissez-nous vous guider vers la réussite.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container px-4 mx-auto mb-24 mt-48">
+  <div class="flex flex-wrap">
+    <div class="w-1/2 px-4 md:w-4/12">
+      <span class="text-sm text-center block my-4 p-3 text-blueGray-700 rounded ">
+        <i class="fas fa-signal text-center mb-8" style="color: #dc2625;font-size: 30px"></i>
+        <h1 style="font-weight: bold; font-size: 80px">65%</h1>
+        <h2 class="font-bold uppercase  mt-8 mb-2 " style="font-size: 20px">de réservation en plus</h2>
+        <h3 class="font-normal" style="font-size: 17px">Une fois le travail de notre experte en design réalisé.</h3>
+      </span>
+    </div>
+    <div class="w-1/2 px-4 md:w-4/12">
+      <span class="text-sm text-center block my-4 p-3 text-blueGray-700 rounded ">
+        <i class="fas fa-signal text-center mb-8" style="color: #dc2625;font-size: 30px"></i>
+        <h1 style="font-weight: bold; font-size: 80px">12+</h1>
+        <h2 class="font-bold uppercase  mt-8 mb-2 " style="font-size: 20px">réalisations pour nos Airbnb’s.</h2>
+        <h3 class="font-normal" style="font-size: 17px">Plus d’une dizaine de clients ont déjà fait confiance à notre experte.</h3>
+      </span>
+    </div>
+    <div class="w-1/2 px-4 md:w-4/12">
+      <span class="text-sm text-center block my-4 p-3 text-blueGray-700 rounded ">
+        <i class="fas fa-signal text-center mb-8" style="color: #dc2625;font-size: 30px"></i>
+        <h1 style="font-weight: bold; font-size: 80px">#1</h1>
+        <h2 class="font-bold uppercase  mt-8 mb-2 " style="font-size: 20px">Sur Marrakech en conseils</h2>
+        <h3 class="font-normal" style="font-size: 17px">Disponible tout au long de la semaine pour vous.</h3>
+      </span>
+    </div>
+  </div>
+</div>
+
+<app-footer ></app-footer>
