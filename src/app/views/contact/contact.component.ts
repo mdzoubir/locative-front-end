@@ -20,7 +20,12 @@ export class ContactComponent implements OnInit {
   }
 
   sendMsg(){
-    this.contactService.contact(this.contactForm.value).subscribe(res => console.log(res));
+    this.contactService.contact(this.contactForm.value).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+
   }
 
 }

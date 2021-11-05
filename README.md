@@ -206,7 +206,7 @@ notus-angular
 │   │   │   │       └── index-navbar.component.ts
 │   │   │   └── sidebar
 │   │   │       ├── sidebar.component.html
-│   │   │       └── sidebar.component.ts
+│   │   │       └── admin-sidebar.component.ts
 │   │   ├── layouts
 │   │   │   ├── admin
 │   │   │   │   ├── admin.component.html

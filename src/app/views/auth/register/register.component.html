@@ -11,7 +11,7 @@
           <hr class="mt-6 border-b-1 border-blueGray-300" />
         </div>
         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-          <form>
+          <form [formGroup]="signupForm" (ngSubmit)="signup()" >
             <div class="relative w-full mb-3">
               <label
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -20,10 +20,15 @@
                 First Name
               </label>
               <input
-                type="email"
+                formControlName="firstName"
+                type="text"
                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 placeholder="First Name"
               />
+              <div *ngIf="signupForm.get('firstName').invalid && (signupForm.get('firstName').touched || signupForm.get('firstName').dirty)">
+                <div class="text-red-500" *ngIf="signupForm.get('firstName').getError('required')">This field is required</div>
+                <div class="text-red-500" *ngIf="signupForm.get('firstName').getError('minlength')">This field required more then 3 character</div>
+              </div>
             </div>
 
             <div class="relative w-full mb-3">
@@ -34,10 +39,15 @@
                 Last Name
               </label>
               <input
-                type="email"
+                formControlName="lastName"
+                type="text"
                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 placeholder="Last Name"
               />
+              <div *ngIf="signupForm.get('lastName').invalid && (signupForm.get('lastName').touched || signupForm.get('lastName').dirty)">
+                <div class="text-red-500" *ngIf="signupForm.get('lastName').getError('required')">This field is required</div>
+                <div class="text-red-500" *ngIf="signupForm.get('lastName').getError('minlength')">This field required more then 3 character</div>
+              </div>
             </div>
 
             <div class="relative w-full mb-3">
@@ -48,10 +58,15 @@
                 Email
               </label>
               <input
+                formControlName="email"
                 type="email"
                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 placeholder="Email"
               />
+              <div *ngIf="signupForm.get('email').invalid && (signupForm.get('email').touched || signupForm.get('email').dirty)">
+                <div class="text-red-500" *ngIf="signupForm.get('email').getError('required')">This field is required</div>
+                <div class="text-red-500" *ngIf="signupForm.get('email').getError('email')">This field should be email address</div>
+              </div>
             </div>
 
             <div class="relative w-full mb-3">
@@ -62,10 +77,34 @@
                 Password
               </label>
               <input
+                formControlName="password"
                 type="password"
+                autocomplete="on"
                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 placeholder="Password"
               />
+              <div *ngIf="signupForm.get('password').invalid && (signupForm.get('password').touched || signupForm.get('password').dirty)">
+                <div class="text-red-500" *ngIf="signupForm.get('password').getError('required')">This field is required</div>
+                <div class="text-red-500" *ngIf="signupForm.get('password').getError('minlength')">This field required more then 8 character</div>
+              </div>
+            </div>
+
+            <div class="relative w-full mb-3">
+              <label
+                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="grid-password"
+              >
+                Address
+              </label>
+              <input
+                formControlName="address"
+                type="text"
+                placeholder="Address"
+                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              />
+              <div *ngIf="signupForm.get('address').invalid && (signupForm.get('address').touched || signupForm.get('address').dirty)">
+                <div class="text-red-500" *ngIf="signupForm.get('address').getError('required')">This field is required</div>
+              </div>
             </div>
 
             <div class="relative w-full mb-3">
@@ -76,10 +115,14 @@
                 Phone Number
               </label>
               <input
+                formControlName="phoneNumber"
                 type="number"
                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                placeholder="Phone Number"
+                ng2TelInput
               />
+              <div *ngIf="signupForm.get('phoneNumber').invalid && (signupForm.get('phoneNumber').touched || signupForm.get('phoneNumber').dirty)">
+                <div class="text-red-500" *ngIf="signupForm.get('phoneNumber').getError('required')">This field is required</div>
+              </div>
             </div>
 
             <div>
@@ -96,7 +139,6 @@
             <div class="text-center mt-6">
               <button
                 class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                type="button"
               >
                 Create Account
               </button>

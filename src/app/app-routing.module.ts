@@ -25,6 +25,10 @@ import {NosalquirelaComponent} from "./views/services/nosalquirela/nosalquirela.
 import {DesignDinterieurComponent} from "./views/services/design-dinterieur/design-dinterieur.component";
 import {WhyUsComponent} from "./views/why-us/why-us.component";
 import {AboutUsComponent} from "./views/about-us/about-us.component";
+import {AuthGuard} from "./guards/auth.guard";
+import {AfterAuthGuard} from "./guards/after-auth.guard";
+import {AdminGuard} from "./guards/admin.guard";
+import {ClientDashboardComponent} from "./views/client/client-dashboard/client-dashboard.component";
 
 const routes: Routes = [
   // admin views
@@ -57,6 +61,7 @@ const routes: Routes = [
   {
     path: "auth",
     component: AuthComponent,
+    canActivate: [AfterAuthGuard],
     children: [
       { path: "login", component: LoginComponent },
       { path: "register", component: RegisterComponent },
@@ -64,12 +69,22 @@ const routes: Routes = [
     ],
   },
 
+  {
+    path: "profile",
+    component: ProfileComponent,
+    canActivate: [AuthGuard, AdminGuard],
+    children: [
+      { path: "", redirectTo: "dashboard", pathMatch: "full"},
+      { path: "dashboard", component: ClientDashboardComponent}
+    ]
+  } ,
+
   // no layout views
-  { path: "profile", component: ProfileComponent },
   { path: "landing", component: LandingComponent },
   { path: "contact", component: ContactComponent },
   { path: "", component: IndexComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },
+
 ];
 
 @NgModule({

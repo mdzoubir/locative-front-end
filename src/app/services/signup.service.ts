@@ -5,13 +5,13 @@ import {environment} from "../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
-export class ContactService {
+export class SignupService {
 
   private url: string = `${environment.apiUrl}`;
 
-  constructor(private http :HttpClient) { }
+  constructor(private http : HttpClient) { }
 
-  contact(data:{fullName: string, email: string, message: string}){
-    return this.http.post(`${this.url}/api/v1/contact`, data);
+  signUp(data:{firstName: string, lastName: string, email: string, password: string, phoneNumber}){
+    return this.http.post(`${this.url}/api/v1/client`, data)
   }
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Clipboard } from '@angular/cdk/clipboard';
+import {AccountService} from "../../../services/account.service";
+import {TokenService} from "../../../services/token.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -9,10 +12,21 @@ import { Clipboard } from '@angular/cdk/clipboard';
 export class AuthNavbarComponent implements OnInit {
   navbarOpen = false;
   content = 'Hello, i am tiny text and copied from somewhere else :)';
+  currentUser: null;
 
-  constructor(private clipboard: Clipboard) {}
 
-  ngOnInit(): void {}
+  constructor(
+    private clipboard: Clipboard,
+    private accountService: AccountService,
+    private tokenService : TokenService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.accountService.authStatus.subscribe(res => {
+      this.currentUser = this.tokenService.getInfo();
+    })
+  }
 
   setNavbarOpen() {
     this.navbarOpen = !this.navbarOpen;
@@ -21,5 +35,10 @@ export class AuthNavbarComponent implements OnInit {
   copyText(){
     this.clipboard.copy("+212662030438");
     console.log("copie text")
+  }
+
+  logout(){
+    this.tokenService.remove();
+    this.router.navigateByUrl("/auth/login");
   }
 }

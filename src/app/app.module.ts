@@ -27,13 +27,10 @@ import { ProfileComponent } from "./views/profile/profile.component";
 
 import { AdminNavbarComponent } from "./components/navbars/admin-navbar/admin-navbar.component";
 import { AuthNavbarComponent } from "./components/navbars/auth-navbar/auth-navbar.component";
-import { CardBarChartComponent } from "./components/cards/card-bar-chart/card-bar-chart.component";
-import { CardLineChartComponent } from "./components/cards/card-line-chart/card-line-chart.component";
 import { CardPageVisitsComponent } from "./components/cards/card-page-visits/card-page-visits.component";
 import { CardProfileComponent } from "./components/cards/card-profile/card-profile.component";
 import { CardSettingsComponent } from "./components/cards/card-settings/card-settings.component";
 import { CardSocialTrafficComponent } from "./components/cards/card-social-traffic/card-social-traffic.component";
-import { CardStatsComponent } from "./components/cards/card-stats/card-stats.component";
 import { CardTableComponent } from "./components/cards/card-table/card-table.component";
 import { FooterAdminComponent } from "./components/footers/footer-admin/footer-admin.component";
 import { FooterComponent } from "./components/footers/footer/footer.component";
@@ -44,9 +41,6 @@ import { MapExampleComponent } from "./components/maps/map-example/map-example.c
 import { IndexDropdownComponent } from "./components/dropdowns/index-dropdown/index-dropdown.component";
 import { TableDropdownComponent } from "./components/dropdowns/table-dropdown/table-dropdown.component";
 import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pages-dropdown.component";
-import { NotificationDropdownComponent } from "./components/dropdowns/notification-dropdown/notification-dropdown.component";
-import { SidebarComponent } from "./components/sidebar/sidebar.component";
-import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
 import { ContactComponent } from './views/contact/contact.component';
 import { YourResidenceComponent } from './views/services/your-residence/your-residence.component';
 import { NosalquirelaComponent } from './views/services/nosalquirela/nosalquirela.component';
@@ -55,20 +49,22 @@ import { DesignDinterieurComponent } from './views/services/design-dinterieur/de
 import { WhyUsComponent } from './views/why-us/why-us.component';
 import { AboutUsComponent } from './views/about-us/about-us.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {Ng2TelInputModule} from "ng2-tel-input";
+import {JwtInterceptor} from "./interceptor/jwt.interceptor";
+import { ClientSidebarComponent } from './components/sidebars/client-sidebar/client-sidebar.component';
+import {AdminSidebarComponent} from "./components/sidebars/admin-sidebar/admin-sidebar.component";
+import { ClientDashboardComponent } from './views/client/client-dashboard/client-dashboard.component';
+import { ClientNavbarComponent } from './components/navbars/client-navbar/client-navbar.component';
+import {HeaderClientStatsComponent} from "./components/headers/header-client-stats/header-client-stats.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    CardBarChartComponent,
-    CardLineChartComponent,
     IndexDropdownComponent,
     PagesDropdownComponent,
     TableDropdownComponent,
-    NotificationDropdownComponent,
-    UserDropdownComponent,
-    SidebarComponent,
     FooterComponent,
     FooterSmallComponent,
     FooterAdminComponent,
@@ -76,9 +72,9 @@ import {HttpClientModule} from "@angular/common/http";
     CardProfileComponent,
     CardSettingsComponent,
     CardSocialTrafficComponent,
-    CardStatsComponent,
     CardTableComponent,
     HeaderStatsComponent,
+    AdminSidebarComponent,
     MapExampleComponent,
     AuthNavbarComponent,
     AdminNavbarComponent,
@@ -99,14 +95,26 @@ import {HttpClientModule} from "@angular/common/http";
     DesignDinterieurComponent,
     WhyUsComponent,
     AboutUsComponent,
+    ClientSidebarComponent,
+    ClientDashboardComponent,
+    ClientNavbarComponent,
+    HeaderClientStatsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2TelInputModule
   ],
-  providers: [Clipboard],
+  providers: [
+    Clipboard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

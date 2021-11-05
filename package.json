@@ -29,6 +29,8 @@
     "@popperjs/core": "2.9.1",
     "@tailwindcss/forms": "0.2.1",
     "chart.js": "2.9.4",
+    "intl-tel-input": "^17.0.13",
+    "ng2-tel-input": "^2.3.0",
     "ngx-clipboard": "^14.0.1",
     "rxjs": "6.6.6",
     "tailwindcss": "2.0.4",
