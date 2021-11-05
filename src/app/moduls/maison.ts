@@ -1,6 +1,7 @@
 export interface Maison {
   location: string,
   city: string,
+  maisonId: string,
   zipCode: string,
   area: number,
   chamberNumber: number,

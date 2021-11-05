@@ -75,7 +75,8 @@ const routes: Routes = [
     canActivate: [AuthGuard, AdminGuard],
     children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full"},
-      { path: "dashboard", component: ClientDashboardComponent}
+      { path: "dashboard", component: ClientDashboardComponent},
+      { path: "dashboard/:id", component: ClientDashboardComponent}
     ]
   } ,
 
