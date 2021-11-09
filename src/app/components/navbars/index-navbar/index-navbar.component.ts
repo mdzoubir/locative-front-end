@@ -12,6 +12,7 @@ export class IndexNavbarComponent implements OnInit {
   navbarOpen = false;
   content = 'Hello, i am tiny text and copied from somewhere else :)';
   currentUser: null;
+  role:string;
 
 
   constructor(
@@ -22,6 +23,7 @@ export class IndexNavbarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getRole();
     this.accountService.authStatus.subscribe(res => {
       this.currentUser = this.tokenService.getInfo();
     })
@@ -40,5 +42,9 @@ export class IndexNavbarComponent implements OnInit {
     this.tokenService.remove();
     this.accountService.changeStatus(false);
     this.router.navigateByUrl("/auth/login");
+  }
+
+  getRole(){
+    this.role = this.tokenService.getRole();
   }
 }

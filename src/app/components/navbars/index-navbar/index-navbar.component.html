@@ -50,9 +50,14 @@
             <i class="fas fa-phone-alt text-white w-5"></i><abbr title="click to copier"><span class="cursor-pointer" (click)="copyText()">+212.6.62.03.04.38</span></abbr>
           </a>
         </li>
-        <li class="flex items-center" *ngIf="currentUser">
+        <li class="flex items-center" *ngIf="currentUser && (role === 'ADMIN')">
           <a class="hover:text-blueGray-500 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
-             href="profile">Profile
+             href="admin/dashboard">Dashboard
+          </a>
+        </li>
+        <li class="flex items-center" *ngIf="currentUser && (role === 'CLIENT')">
+          <a class="hover:text-blueGray-500 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
+             href="profile/dashboard">Dashboard
           </a>
         </li>
         <li class="flex items-center">

@@ -1,20 +1,34 @@
-import { Component, OnInit, Input } from "@angular/core";
+import {Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit} from "@angular/core";
+import {ClientService} from "../../../services/client.service";
+import {Client} from "../../../moduls/client";
+import {createPopper} from "@popperjs/core";
 
 @Component({
   selector: "app-card-table",
   templateUrl: "./card-table.component.html",
 })
 export class CardTableComponent implements OnInit {
-  @Input()
-  get color(): string {
-    return this._color;
-  }
-  set color(color: string) {
-    this._color = color !== "light" && color !== "dark" ? "light" : color;
-  }
-  private _color = "light";
+  clients: Client[]=[];
 
-  constructor() {}
+  constructor(
+    private clientService: ClientService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllClient();
+  }
+
+
+  getAllClient(){
+    this.clientService.getAllByAdminId().subscribe( (res : Client[]) => {
+      this.clients = res;
+    })
+  }
+
+  drop: boolean = false;
+  dropDown(){
+    this.drop =! this.drop;
+    console.log(this.drop)
+  }
+
 }

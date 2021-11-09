@@ -21,6 +21,29 @@ export class MaisonService {
 
   getMaisonByClientId():Observable<Maison[]>{
     return this.http.get<Maison[]>(`${environment.apiUrl}/api/v1/maison/client/${this.profileService.getUserId()}`);
+  }
 
+  getByMaisonId(id: string): Observable<Maison>{
+    return this.http.get<Maison>(`${environment.apiUrl}/api/v1/maison/${id}`);
+  }
+
+  addHouse(date:{
+            location: string,
+             city: string,
+             zipCode: string,
+             area: number,
+             chamberNumber: number,
+             toiletNumber: number,
+             bathroomNumber: number,
+             floorsNumber: number,
+             elevator: boolean,
+             rentPrice: number,
+             latitude: number,
+             longitude: number
+           },
+           clientId: string,
+           adminId: string,
+           assetId: string){
+    return this.http.post(`${environment.apiUrl}/api/v1/maison/${clientId}/${adminId}/${assetId}`, date);
   }
 }

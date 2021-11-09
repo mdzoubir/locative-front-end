@@ -22,8 +22,9 @@ export class ClientService {
     return this.http.post<Client>(`${environment.apiUrl}/api/v1/client/${this.profileSerice.getUserId()}`, data);
   }
 
-  updateMoreInfo(data:{email: string, address: string, phoneNumber: string}): Observable<Client>{
-    return this.http.post<Client>(`${environment.apiUrl}/api/v1/client/more/${this.profileSerice.getUserId()}`, data);
+  updateMoreInfo(data:{cin: string, compteNumber: string, paymentMethode: string}, id:string): Observable<Client>{
+    console.log(data.paymentMethode)
+    return this.http.post<Client>(`${environment.apiUrl}/api/v1/client/more/${id}`, data);
   }
 
   getAllByAdminId(): Observable<Client[]>{
@@ -34,8 +35,8 @@ export class ClientService {
     return this.http.get<Client[]>(`${environment.apiUrl}/api/v1/client`);
   }
 
-  getById(clientId: string){
-    return this.http.get(`${environment.apiUrl}/api/v1/client/${clientId}`);
+  getById(clientId: string): Observable<Client>{
+    return this.http.get<Client>(`${environment.apiUrl}/api/v1/client/${clientId}`);
   }
 
 

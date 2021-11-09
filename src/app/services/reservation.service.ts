@@ -2,20 +2,18 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
-import {Admin} from "../moduls/admin";
+import {Reservation} from "../moduls/reservation";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdminService {
+export class ReservationService {
 
   constructor(
     private http : HttpClient
   ) { }
 
-  getAdmin(): Observable<Admin>{
-    return this.http.get<Admin>(`${environment.apiUrl}/api/v1/admin/${localStorage.getItem('userId')}`);
+  getAllByMaisonId(maisonId: string): Observable<Reservation[]>{
+    return this.http.get<Reservation[]>(`${environment.apiUrl}/api/v1/reservation/${maisonId}`);
   }
-
-
 }

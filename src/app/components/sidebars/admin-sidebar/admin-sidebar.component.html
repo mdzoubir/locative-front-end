@@ -17,7 +17,7 @@
       [routerLink]="['/']"
       class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
     >
-      <span class="hidden sm:block text-center"> Alquirela </span>
+      <span class="hidden sm:block text-center"> {{admin?.firstName + " " + admin?.lastName}} </span>
     </a>
     <!-- Collapse -->
     <div
@@ -72,7 +72,7 @@
       <ul class="md:flex-col md:min-w-full flex flex-col list-none">
         <li class="items-center">
           <a
-            [routerLink]="['/profile/dashboard']"
+            [routerLink]="['/admin/dashboard']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminDashboard="routerLinkActive"
@@ -94,7 +94,7 @@
 
         <li class="items-center">
           <a
-            [routerLink]="['/profile']"
+            [routerLink]="['/admin/settings']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminSettings="routerLinkActive"
@@ -110,13 +110,13 @@
                 adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Settings
+            Profile
           </a>
         </li>
 
         <li class="items-center">
           <a
-            [routerLink]="['/admin/tables']"
+            [routerLink]="['/admin/users']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminTables="routerLinkActive"
@@ -132,7 +132,7 @@
                 adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
-            Tables
+            Users
           </a>
         </li>
 

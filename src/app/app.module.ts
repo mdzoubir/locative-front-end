@@ -57,6 +57,12 @@ import {AdminSidebarComponent} from "./components/sidebars/admin-sidebar/admin-s
 import { ClientDashboardComponent } from './views/client/client-dashboard/client-dashboard.component';
 import { ClientNavbarComponent } from './components/navbars/client-navbar/client-navbar.component';
 import {HeaderClientStatsComponent} from "./components/headers/header-client-stats/header-client-stats.component";
+import {AgmCoreModule} from "@agm/core";
+import { ClientHomesComponent } from './views/client/client-houmes/client-homes.component';
+import { CardProfileAdminComponent } from './components/cards/card-profile-admin/card-profile-admin.component';
+import { UpdateUserProfileComponent } from './views/admin/update-user-profile/update-user-profile.component';
+import { UpdateClientFormComponent } from './components/cards/update-client-form/update-client-form.component';
+import { AddClientHomeComponent } from './views/admin/add-client-home/add-client-home.component';
 
 @NgModule({
   declarations: [
@@ -99,13 +105,21 @@ import {HeaderClientStatsComponent} from "./components/headers/header-client-sta
     ClientDashboardComponent,
     ClientNavbarComponent,
     HeaderClientStatsComponent,
+    ClientHomesComponent,
+    CardProfileAdminComponent,
+    UpdateUserProfileComponent,
+    UpdateClientFormComponent,
+    AddClientHomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    Ng2TelInputModule
+    Ng2TelInputModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCNo05fM85cJ6bdfkXAhTZG0A_NA7Q-rbA',
+    })
   ],
   providers: [
     Clipboard,

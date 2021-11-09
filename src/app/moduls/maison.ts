@@ -12,5 +12,7 @@ export interface Maison {
   elevator: boolean,
   clientPhone: string,
   clientEmail: string,
-  assetName, string
+  assetName: string,
+  latitude: string,
+  longitude: string;
 }

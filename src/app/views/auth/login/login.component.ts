@@ -39,13 +39,21 @@ export class LoginComponent implements OnInit {
   handelResponse(res : any){
     this.tokenService.handle(res);
     this.accountService.changeStatus(true);
+    this.checkRole();
+  }
+
+  checkRole(){
     this.profileService.getProfile().subscribe(res => {
       this.profileService.set(res);
+      this.redirectByRole();
     });
+  }
+
+  redirectByRole(){
     if (this.tokenService.getRole() == "ADMIN"){
       this.router.navigateByUrl("/admin");
     }else if (this.tokenService.getRole() == "CLIENT"){
-      this.router.navigateByUrl("/");
+      this.router.navigateByUrl("/profile");
     }
   }
 }

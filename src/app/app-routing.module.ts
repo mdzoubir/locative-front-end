@@ -29,6 +29,9 @@ import {AuthGuard} from "./guards/auth.guard";
 import {AfterAuthGuard} from "./guards/after-auth.guard";
 import {AdminGuard} from "./guards/admin.guard";
 import {ClientDashboardComponent} from "./views/client/client-dashboard/client-dashboard.component";
+import {ClientHomesComponent} from "./views/client/client-houmes/client-homes.component";
+import {UpdateUserProfileComponent} from "./views/admin/update-user-profile/update-user-profile.component";
+import {AddClientHomeComponent} from "./views/admin/add-client-home/add-client-home.component";
 
 const routes: Routes = [
   // admin views
@@ -38,7 +41,9 @@ const routes: Routes = [
     children: [
       { path: "dashboard", component: DashboardComponent },
       { path: "settings", component: SettingsComponent },
-      { path: "tables", component: TablesComponent },
+      { path: "users", component: TablesComponent},
+      {path: "users/view/:id", component: UpdateUserProfileComponent},
+      {path: "users/home/:id", component: AddClientHomeComponent},
       { path: "maps", component: MapsComponent },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
@@ -76,7 +81,7 @@ const routes: Routes = [
     children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full"},
       { path: "dashboard", component: ClientDashboardComponent},
-      { path: "dashboard/:id", component: ClientDashboardComponent}
+      { path: "dashboard/:id", component: ClientHomesComponent}
     ]
   } ,
 

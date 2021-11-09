@@ -66,7 +66,8 @@ export class MapExampleComponent implements OnInit {
 
     map = new google.maps.Map(map, mapOptions);
 
-    const marker = new google.maps.Marker({
+    const marker = new google.maps.Marker(
+      {
       position: myLatlng,
       map: map,
       animation: google.maps.Animation.DROP,
@@ -74,7 +75,7 @@ export class MapExampleComponent implements OnInit {
     });
 
     const contentString =
-      '<div class="info-window-content"><h2>Notus Angular</h2>' +
+      '<div class="info-window-content"><h2>Home lacation</h2>' +
       "<p>A beautiful UI Kit and Admin for Tailwind CSS. It is Free and Open Source.</p></div>";
 
     const infowindow = new google.maps.InfoWindow({
