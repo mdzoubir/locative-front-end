@@ -11,7 +11,7 @@
       </div>
       <div class="flex-auto px-4 lg:px-10 py-4">
         <div class="flex-auto px-4 lg:px-10">
-          <form>
+          <form [formGroup]="addHouseForm" (ngSubmit)="addHome()">
             <div class="flex flex-wrap">
               <div class="w-full px-2 flex-1">
                 <div class="relative w-full mb-3">
@@ -22,10 +22,14 @@
                     House Address
                   </label>
                   <input
+                    formControlName="location"
                     type="text"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="house addresse"
                   />
+                  <div *ngIf="addHouseForm.get('location').invalid && (addHouseForm.get('location').touched || addHouseForm.get('location').dirty)">
+                    <div class="text-red-500" *ngIf="addHouseForm.get('location').getError('required')">This field is required</div>
+                  </div>
                 </div>
               </div>
               <div class="w-full flex-1">
@@ -37,10 +41,14 @@
                     city
                   </label>
                   <input
+                    formControlName="city"
                     type="text"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="house city"
                   />
+                  <div *ngIf="addHouseForm.get('city').invalid && (addHouseForm.get('city').touched || addHouseForm.get('city').dirty)">
+                    <div class="text-red-500" *ngIf="addHouseForm.get('city').getError('required')">This field is required</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -54,10 +62,14 @@
                     zipCode
                   </label>
                   <input
+                    formControlName="zipCode"
                     type="text"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="zip code"
                   />
+                  <div *ngIf="addHouseForm.get('zipCode').invalid && (addHouseForm.get('zipCode').touched || addHouseForm.get('zipCode').dirty)">
+                    <div class="text-red-500" *ngIf="addHouseForm.get('zipCode').getError('required')">This field is required</div>
+                  </div>
                 </div>
               </div>
               <div class="w-full flex-1">
@@ -70,10 +82,13 @@
                   </label>
                   <input
                     type="number"
-                    autocomplete="on"
+                    formControlName="area"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="area"
                   />
+                  <div *ngIf="addHouseForm.get('area').invalid && (addHouseForm.get('area').touched || addHouseForm.get('area').dirty)">
+                    <div class="text-red-500" *ngIf="addHouseForm.get('area').getError('required')">This field is required</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -88,10 +103,14 @@
                     number of rooms
                   </label>
                   <input
+                    formControlName="chamberNumber"
                     type="number"
                     placeholder="rooms number"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   />
+                  <div *ngIf="addHouseForm.get('chamberNumber').invalid && (addHouseForm.get('chamberNumber').touched || addHouseForm.get('chamberNumber').dirty)">
+                    <div class="text-red-500" *ngIf="addHouseForm.get('chamberNumber').getError('required')">This field is required</div>
+                  </div>
                 </div>
               </div>
               <div class="w-full flex-1">
@@ -103,10 +122,14 @@
                     Toilets number
                   </label>
                   <input
+                    formControlName="toiletNumber"
                     type="number"
                     placeholder="toilets number"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   />
+                  <div *ngIf="addHouseForm.get('toiletNumber').invalid && (addHouseForm.get('toiletNumber').touched || addHouseForm.get('toiletNumber').dirty)">
+                    <div class="text-red-500" *ngIf="addHouseForm.get('toiletNumber').getError('required')">This field is required</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -121,10 +144,14 @@
                     bathrooms number
                   </label>
                   <input
+                    formControlName="bathroomNumber"
                     type="number"
                     placeholder="bathrooms number"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   />
+                  <div *ngIf="addHouseForm.get('bathroomNumber').invalid && (addHouseForm.get('bathroomNumber').touched || addHouseForm.get('bathroomNumber').dirty)">
+                    <div class="text-red-500" *ngIf="addHouseForm.get('bathroomNumber').getError('required')">This field is required</div>
+                  </div>
                 </div>
               </div>
               <div class="w-full flex-1">
@@ -136,28 +163,57 @@
                     floors number
                   </label>
                   <input
+                    formControlName="floorsNumber"
                     type="number"
                     placeholder="floors number"
                     class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   />
+                  <div *ngIf="addHouseForm.get('floorsNumber').invalid && (addHouseForm.get('floorsNumber').touched || addHouseForm.get('floorsNumber').dirty)">
+                    <div class="text-red-500" *ngIf="addHouseForm.get('floorsNumber').getError('required')">This field is required</div>
+                  </div>
                 </div>
               </div>
             </div>
 
-
-            <div class="relative w-full px-2 mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
-                rent price
-              </label>
-              <input
-                type="number"
-                placeholder="rent price (DH)"
-                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
+            <div class="flex flex-wrap">
+              <div class="w-full px-2 flex-1">
+                <div class="relative w-full px-2 mb-3">
+                  <label
+                    class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                    htmlFor="grid-password"
+                  >
+                    rent price
+                  </label>
+                  <input
+                    formControlName="rentPrice"
+                    type="number"
+                    placeholder="rent price (DH)"
+                    class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  />
+                  <div *ngIf="addHouseForm.get('rentPrice').invalid && (addHouseForm.get('rentPrice').touched || addHouseForm.get('rentPrice').dirty)">
+                    <div class="text-red-500" *ngIf="addHouseForm.get('rentPrice').getError('required')">This field is required</div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full flex-1">
+                <div class="relative w-full mb-3">
+                  <label
+                    class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                    htmlFor="grid-password"
+                  >
+                    home type
+                  </label>
+                  <select formControlName="assetType" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
+                    <option></option>
+                    <option *ngFor="let asset of assets" >{{asset?.type}}</option>
+                  </select>
+                  <div *ngIf="addHouseForm.get('assetType').invalid && (addHouseForm.get('assetType').touched || addHouseForm.get('assetType').dirty)">
+                    <div class="text-red-500" *ngIf="addHouseForm.get('assetType').getError('required')">This field is required</div>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div class="relative w-full px-2 mb-3">
               <label
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -166,14 +222,44 @@
                 elevator
               </label>
               <input
+                formControlName="elevator"
                 type="checkbox"
                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring  ease-linear transition-all duration-150"
               />
+              <div *ngIf="addHouseForm.get('elevator').invalid && (addHouseForm.get('elevator').touched || addHouseForm.get('elevator').dirty)">
+                <div class="text-red-500" *ngIf="addHouseForm.get('elevator').getError('required')">This field is required</div>
+              </div>
+            </div>
+            <agm-map style="width: 400px; height: 400px" [latitude]="latitude" [longitude]="longitude" (mapClick)="onMapClicked($event)">
+            </agm-map>
+            <div class="flex flex-wrap my-2">
+            <div class="w-full px-2 flex-1">
+              <div class="relative w-full mb-3">
+                <input
+                  formControlName="latitude"
+                  value="{{latitude}}"
+                  type="number"
+                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                />
+              </div>
+            </div>
+            <div class="w-full flex-1">
+              <div class="relative w-full mb-3">
+                <input
+                  type="number"
+                  formControlName="longitude"
+                  value="{{longitude}}"
+                  class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                />
+              </div>
+              </div>
             </div>
 
-            <div class="text-center mt-6">
-              <button
-                class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+            {{addHouseForm.value | json}}
+
+            <div class="mt-6 mx-2">
+              <button [ngStyle]="{'display': addHouseForm.valid ? 'block' : 'none'}"
+                class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1  ease-linear transition-all duration-150"
               >
                 Add home
               </button>

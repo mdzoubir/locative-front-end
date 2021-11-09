@@ -43,7 +43,7 @@ export class MaisonService {
            },
            clientId: string,
            adminId: string,
-           assetId: string){
+           assetId: number){
     return this.http.post(`${environment.apiUrl}/api/v1/maison/${clientId}/${adminId}/${assetId}`, date);
   }
 }
