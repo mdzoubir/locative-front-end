@@ -11,7 +11,7 @@ import {Asset} from "../../../moduls/asset";
 
 @Component({
   selector: 'app-add-client-home',
-  templateUrl: './add-client-home.component.html'
+  templateUrl: './add-client-home.component.html',
 })
 export class AddClientHomeComponent implements OnInit {
 

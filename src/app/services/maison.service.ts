@@ -23,6 +23,10 @@ export class MaisonService {
     return this.http.get<Maison[]>(`${environment.apiUrl}/api/v1/maison/client/${this.profileService.getUserId()}`);
   }
 
+  getAllByClintId(clientId: string):Observable<Maison[]>{
+    return this.http.get<Maison[]>(`${environment.apiUrl}/api/v1/maison/client/${clientId}`)
+  }
+
   getByMaisonId(id: string): Observable<Maison>{
     return this.http.get<Maison>(`${environment.apiUrl}/api/v1/maison/${id}`);
   }

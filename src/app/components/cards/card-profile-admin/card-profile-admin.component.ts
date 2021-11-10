@@ -4,7 +4,7 @@ import {Admin} from "../../../moduls/admin";
 
 @Component({
   selector: 'app-card-profile-admin',
-  templateUrl: './card-profile-admin.component.html',
+  templateUrl: './card-profile-admin.component.html'
 })
 export class CardProfileAdminComponent implements OnInit {
 

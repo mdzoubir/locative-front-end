@@ -40,4 +40,8 @@ export class ClientService {
   }
 
 
+  getClientPage(): Observable<Client[]>{
+     return this.http.get<Client[]>(`${environment.apiUrl}/api/v1/client/all/${this.profileSerice.getUserId()}`, )
+  }
+
 }

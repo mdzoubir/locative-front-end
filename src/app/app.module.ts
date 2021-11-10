@@ -63,6 +63,13 @@ import { CardProfileAdminComponent } from './components/cards/card-profile-admin
 import { UpdateUserProfileComponent } from './views/admin/update-user-profile/update-user-profile.component';
 import { UpdateClientFormComponent } from './components/cards/update-client-form/update-client-form.component';
 import { AddClientHomeComponent } from './views/admin/add-client-home/add-client-home.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {ClientService} from './services/client.service';
+import { UserProfileComponent } from './views/admin/user-profile/user-profile.component';
+import { AllHousesComponent } from './components/cards/all-houses/all-houses.component';
+import { HousesComponent } from './views/admin/houses/houses.component';
+import { HousesListComponent } from './components/cards/houses-list/houses-list.component';
+import { AddReservationComponent } from './views/admin/add-reservation/add-reservation.component';
 
 @NgModule({
   declarations: [
@@ -110,6 +117,11 @@ import { AddClientHomeComponent } from './views/admin/add-client-home/add-client
     UpdateUserProfileComponent,
     UpdateClientFormComponent,
     AddClientHomeComponent,
+    UserProfileComponent,
+    AllHousesComponent,
+    HousesComponent,
+    HousesListComponent,
+    AddReservationComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,10 +131,12 @@ import { AddClientHomeComponent } from './views/admin/add-client-home/add-client
     Ng2TelInputModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCNo05fM85cJ6bdfkXAhTZG0A_NA7Q-rbA',
-    })
+    }),
+    NgxPaginationModule
   ],
   providers: [
     Clipboard,
+    ClientService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,

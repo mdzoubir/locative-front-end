@@ -6,7 +6,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-update-user-profile',
-  templateUrl: './update-user-profile.component.html'
+  templateUrl: './update-user-profile.component.html',
 })
 export class UpdateUserProfileComponent implements OnInit {
 

@@ -32,6 +32,8 @@ import {ClientDashboardComponent} from "./views/client/client-dashboard/client-d
 import {ClientHomesComponent} from "./views/client/client-houmes/client-homes.component";
 import {UpdateUserProfileComponent} from "./views/admin/update-user-profile/update-user-profile.component";
 import {AddClientHomeComponent} from "./views/admin/add-client-home/add-client-home.component";
+import {UserProfileComponent} from './views/admin/user-profile/user-profile.component';
+import {HousesComponent} from './views/admin/houses/houses.component';
 
 const routes: Routes = [
   // admin views
@@ -40,10 +42,12 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: "dashboard", component: DashboardComponent },
-      { path: "settings", component: SettingsComponent },
+      { path: "profile", component: SettingsComponent },
+      { path: "houses", component: HousesComponent },
       { path: "users", component: TablesComponent},
-      {path: "users/view/:id", component: UpdateUserProfileComponent},
-      {path: "users/home/:id", component: AddClientHomeComponent},
+      {path: "users/edit/:id", component: UpdateUserProfileComponent},
+      {path: "users/add/:id", component: AddClientHomeComponent},
+      {path: "users/see/:id", component: UserProfileComponent},
       { path: "maps", component: MapsComponent },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],

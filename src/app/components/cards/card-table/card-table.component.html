@@ -45,12 +45,22 @@
           <th
             class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
           >
-            Action
+            See profile
+          </th>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+          >
+            Add home
+          </th>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+          >
+            Edit profile
           </th>
         </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let c of clients">
+      <tr *ngFor="let c of clients | paginate: {itemsPerPage: 5, currentPage: p}">
         <td
           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
         >
@@ -79,29 +89,25 @@
         <td
           class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
         >
-<!--          <app-table-dropdown></app-table-dropdown>-->
-          <a
-            class="text-blueGray-500 block py-1 px-3 cursor-pointer"
-            (click)="dropDown()"
-          >
-            <i class="fas fa-ellipsis-v" ></i>
-          </a>
-          <div style="position: absolute"
-            [ngStyle]="{'display': drop == false ? 'none' : 'block'}"
-            class="bg-red-500 text-base float-left py-2 list-none text-left rounded shadow-lg mt-1">
-            <a href="admin/users/edit/{{c?.userId}}" class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white">
-              See profile
-            </a>
-            <a href="admin/users/view/{{c?.userId}}" class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white">
-              Edit profile
-            </a>
-            <a href="admin/users/home/{{c?.userId}}" class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-white">
-              Add home
-            </a>
-          </div>
+          <a href="admin/users/see/{{c?.userId}}"><i class="far fa-eye"></i></a>
+        </td>
+        <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+          <a href="admin/users/add/{{c?.userId}}"><i class="fas fa-plus-square"></i></a>
+        </td>
+        <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+          <a href="admin/users/edit/{{c?.userId}}"><i class="fas fa-user-edit"></i></a>
         </td>
       </tr>
+      <div class="col-md-12">
+      </div>
       </tbody>
     </table>
+    <pagination-controls
+      (pageChange)="p = $event">
+    </pagination-controls>
   </div>
 </div>

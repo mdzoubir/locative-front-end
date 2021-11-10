@@ -7,7 +7,7 @@ import {Client} from "../../../moduls/client";
   templateUrl: "./card-table.component.html",
 })
 export class CardTableComponent implements OnInit {
-  clients: Client[]=[];
+  clients: Client[];
 
   constructor(
     private clientService: ClientService
@@ -23,6 +23,14 @@ export class CardTableComponent implements OnInit {
       this.clients = res;
     })
   }
+
+  // getAllClient(){
+  //   this.clientService.getClientPage().subscribe(res=>{
+  //     console.log(res)
+  //     this.clients = res;
+  //   })
+  // }
+
 
   drop: boolean = false;
   dropDown(){
