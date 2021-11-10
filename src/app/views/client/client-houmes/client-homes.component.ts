@@ -9,8 +9,7 @@ declare const google: any;
 
 @Component({
   selector: 'app-client-maps',
-  templateUrl: './client-homes.component.html',
-  styleUrls: ['./client-maps.component.css']
+  templateUrl: './client-homes.component.html'
 })
 export class ClientHomesComponent implements OnInit {
 

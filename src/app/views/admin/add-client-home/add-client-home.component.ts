@@ -1,19 +1,17 @@
-import {Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ClientService} from "../../../services/client.service";
 import {ActivatedRoute} from "@angular/router";
 import {Client} from "../../../moduls/client";
 import {MapsAPILoader} from "@agm/core";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {MaisonService} from "../../../services/maison.service";
-import {TokenService} from "../../../services/token.service";
 import {ProfileService} from "../../../services/profile.service";
 import {AssetService} from "../../../services/asset.service";
 import {Asset} from "../../../moduls/asset";
 
 @Component({
   selector: 'app-add-client-home',
-  templateUrl: './add-client-home.component.html',
-  styleUrls: ['./add-client-home.component.css']
+  templateUrl: './add-client-home.component.html'
 })
 export class AddClientHomeComponent implements OnInit {
 
@@ -78,9 +76,8 @@ export class AddClientHomeComponent implements OnInit {
     this.addHouseForm.get('latitude').setValue(this.latitude);
     this.addHouseForm.get('longitude').setValue(this.longitude);
     this.assetService.getByType(this.addHouseForm.get('assetType').value).subscribe(res=>{
-      this.assetId = res.id
-
-      this.homeService.addHouse(this.addHouseForm.value, this.id, this.profileService.getUserId(), this.assetId).subscribe(res=>{
+      this.assetId = res.id;
+      this.homeService.addHouse(this.addHouseForm.value, this.id, this.profileService.getUserId(), this.assetId).subscribe(res =>{
         window.location.reload();
       })
     });

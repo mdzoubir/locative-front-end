@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Maison} from "../../../moduls/maison";
-import {MaisonService} from "../../../services/maison.service";
 import {ClientService} from "../../../services/client.service";
 import {Client} from "../../../moduls/client";
 import {ActivatedRoute} from "@angular/router";
@@ -8,8 +6,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-update-user-profile',
-  templateUrl: './update-user-profile.component.html',
-  styleUrls: ['./update-user-profile.component.css']
+  templateUrl: './update-user-profile.component.html'
 })
 export class UpdateUserProfileComponent implements OnInit {
 

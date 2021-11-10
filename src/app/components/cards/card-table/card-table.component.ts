@@ -1,7 +1,6 @@
-import {Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {ClientService} from "../../../services/client.service";
 import {Client} from "../../../moduls/client";
-import {createPopper} from "@popperjs/core";
 
 @Component({
   selector: "app-card-table",

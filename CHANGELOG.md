@@ -18,17 +18,6 @@
   - For the colors, the only change that we made, is the fact that we've added all Tailwind CSS colors to our `tailwind.config.js` files, and inside our product, all `{type}-blue-{number}` classes were renamed to `{type}-lightBlue-{number}`
   - For the colors, the only change that we made, is the fact that we've added all Tailwind CSS colors to our `tailwind.config.js` files, and inside our product, all `{type}-green-{number}` classes were renamed to `{type}-emerald-{number}`
 - `lg:bg-transparent` is not working anymore, so we've changed it with `lg:bg-opacity-0`
-- https://github.com/creativetimofficial/notus-angular/issues/4
-- https://github.com/creativetimofficial/notus-js/issues/4
-- https://github.com/creativetimofficial/notus-js/pull/5
-- https://github.com/creativetimofficial/notus-js/pull/6
-- https://github.com/creativetimofficial/notus-nextjs/issues/6
-- https://github.com/creativetimofficial/notus-nextjs/issues/7
-- https://github.com/creativetimofficial/notus-nextjs/issues/8
-- https://github.com/creativetimofficial/notus-react/issues/3
-- https://github.com/creativetimofficial/notus-svelte/issues/3
-- https://github.com/creativetimofficial/notus-svelte/issues/6
-- https://github.com/creativetimofficial/vue-notus/pull/4/
 ### Major style changes
 - The upgrade of Tailwind CSS from version 1 to version 2, will cause multiple style changes, check them out on the official Tailwind CSS websites:
   - https://blog.tailwindcss.com/tailwindcss-v2

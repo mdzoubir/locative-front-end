@@ -13,7 +13,6 @@ export class CardSocialTrafficComponent implements OnInit {
 
   constructor(
     private maisonService : MaisonService,
-    private clienService : ClientService
   ) {}
 
   ngOnInit(): void {
