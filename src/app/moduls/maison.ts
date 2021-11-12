@@ -15,4 +15,5 @@ export interface Maison {
   assetName: string,
   latitude: string,
   longitude: string;
+  reserved: boolean;
 }

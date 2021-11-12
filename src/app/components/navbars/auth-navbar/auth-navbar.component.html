@@ -30,18 +30,46 @@
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
         <li class="flex items-center">
           <a class="hover:text-blueGray-500 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
-             href="/">Alquirela</a>
+
+             [routerLink]="['/home']"
+             class="text-xs uppercase py-3 font-bold block"
+             routerLinkActive
+             #home="routerLinkActive"
+             [ngClass]="
+              home.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-white hover:text-blueGray-500'
+            "
+          >Alquirela</a>
         </li>
         <li class="flex items-center">
           <app-pages-dropdown class="block"></app-pages-dropdown>
         </li>
         <li class="flex items-center">
           <a class="hover:text-blueGray-500 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
-             href="/why-us">Pourquoi nous choisir</a>
+             [routerLink]="['/whyUs']"
+             class="text-xs uppercase py-3 font-bold block"
+             routerLinkActive
+             #whyUs="routerLinkActive"
+             [ngClass]="
+              whyUs.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-white hover:text-blueGray-500'
+            "
+          >Pourquoi nous choisir</a>
         </li>
         <li class="flex items-center">
           <a class="hover:text-blueGray-500 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
-             href="about-us">A propos de nous
+             [routerLink]="['/aboutUs']"
+             class="text-xs uppercase py-3 font-bold block"
+             routerLinkActive
+             #aboutUs="routerLinkActive"
+             [ngClass]="
+              aboutUs.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-white hover:text-blueGray-500'
+            "
+          >A propos de nous
           </a>
         </li>
         <li class="flex items-center">
@@ -52,7 +80,7 @@
         </li>
         <li class="flex items-center" *ngIf="currentUser">
           <a class="hover:text-blueGray-500 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
-             href="profile">Profile
+             href="profile">Dashboard
           </a>
         </li>
         <li class="flex items-center">

@@ -34,22 +34,37 @@ import {UpdateUserProfileComponent} from "./views/admin/update-user-profile/upda
 import {AddClientHomeComponent} from "./views/admin/add-client-home/add-client-home.component";
 import {UserProfileComponent} from './views/admin/user-profile/user-profile.component';
 import {HousesComponent} from './views/admin/houses/houses.component';
+import {AddReservationComponent} from './views/admin/add-reservation/add-reservation.component';
+import {ReservationListComponent} from './views/admin/reservation-list/reservation-list.component';
+import {MessagesComponent} from './views/admin/messages/messages.component';
+import {ClientGuard} from './guards/client.guard';
+import {SuperAdminDashboardComponent} from './views/superAdmin/super-admin-dashboard/super-admin-dashboard.component';
+import {AdminsComponent} from './views/superAdmin/admins/admins.component';
+import {SuperAdminGuard} from './guards/super-admin.guard';
+import {ClientsComponent} from './views/superAdmin/clients/clients.component';
+import {HousesSuperAdminComponent} from './views/superAdmin/houses/houses-super-admin.component';
+import {ReservationService} from './services/reservation.service';
+import {ReservationsComponent} from './views/superAdmin/reservations/reservations.component';
+import {MessagesSuperAdminComponent} from './views/superAdmin/messages-super-admin/messages-super-admin.component';
 
 const routes: Routes = [
   // admin views
   {
     path: "admin",
     component: AdminComponent,
+    canActivate: [ClientGuard, AuthGuard],
     children: [
+      { path: "", redirectTo: "dashboard", pathMatch: "full" },
       { path: "dashboard", component: DashboardComponent },
       { path: "profile", component: SettingsComponent },
+      { path: "messages", component: MessagesComponent },
+      { path: "reservations", component: ReservationListComponent },
       { path: "houses", component: HousesComponent },
+      { path: "houses/reservation/:id", component: AddReservationComponent},
       { path: "users", component: TablesComponent},
-      {path: "users/edit/:id", component: UpdateUserProfileComponent},
-      {path: "users/add/:id", component: AddClientHomeComponent},
-      {path: "users/see/:id", component: UserProfileComponent},
-      { path: "maps", component: MapsComponent },
-      { path: "", redirectTo: "dashboard", pathMatch: "full" },
+      { path: "users/edit/:id", component: UpdateUserProfileComponent},
+      { path: "users/add/:id", component: AddClientHomeComponent},
+      { path: "users/see/:id", component: UserProfileComponent},
     ],
   },
   //service views
@@ -63,9 +78,9 @@ const routes: Routes = [
     ]
   },
   //why us views
-  { path: "why-us", component: WhyUsComponent },
+  { path: "whyUs", component: WhyUsComponent },
   //about us
-  { path: "about-us", component: AboutUsComponent},
+  { path: "aboutUs", component: AboutUsComponent},
   // auth views
   {
     path: "auth",
@@ -78,6 +93,21 @@ const routes: Routes = [
     ],
   },
 
+  {
+    path : "superAdmin",
+    canActivate: [SuperAdminGuard],
+    component: SuperAdminDashboardComponent,
+    children: [
+      { path : "", redirectTo: "admins", pathMatch: "full"},
+      { path : "admins", component: AdminsComponent},
+      { path : "clients", component: ClientsComponent},
+      { path : "houses", component: HousesSuperAdminComponent},
+      { path : "reservations", component: ReservationsComponent},
+      { path : "messages", component: MessagesSuperAdminComponent},
+    ]
+  },
+
+  //client views
   {
     path: "profile",
     component: ProfileComponent,
@@ -92,8 +122,11 @@ const routes: Routes = [
   // no layout views
   { path: "landing", component: LandingComponent },
   { path: "contact", component: ContactComponent },
-  { path: "", component: IndexComponent },
+  { path: "",redirectTo: "home", pathMatch: "full"},
+  { path: "home", component: IndexComponent},
   { path: "**", redirectTo: "", pathMatch: "full" },
+
+  //super admin views
 
 ];
 

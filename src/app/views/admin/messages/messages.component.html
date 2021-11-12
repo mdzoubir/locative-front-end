@@ -1,0 +1,35 @@
+<div class="flex flex-wrap mt-4" >
+  <div class="w-full mb-12 px-4">
+    <div class="flex flex-wrap mt-4">
+      <div class="w-full xl:w-6/12 mb-12 xl:mb-0 px-4" *ngFor="let message of messages">
+        <div
+          class="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded mb-12"
+        >
+          <div class="container mx-auto h-full">
+            <div class="flex content-center items-center justify-center bg-blueGray-100 px-6 py-6 rounded h-full">
+              <div class="w-full">
+                <div
+                  class="relative flex flex-col min-w-0 break-words w-full   shadow-lg rounded-lg bg-blueGray-200 border-0"
+                >
+                  <div class="rounded-t mb-0 px-6 pt-6">
+                    <div class="text-center mb-3">
+                      <h6 class="text-blueGray-500 text-sm font-bold">{{message?.fullName}}</h6>
+                    </div>
+                    <hr class="mt-6 border-b-1 border-blueGray-300" />
+                  </div>
+                  <div class="font-bold text-left  px-2 py-2">
+                    Email : <span class="font-normal">{{message?.email}}</span>
+                  </div>
+                  <div class="font-bold text-left  px-2 py-2">
+                    Message : <span class="font-normal">{{message?.message}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

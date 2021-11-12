@@ -36,7 +36,6 @@ import { FooterAdminComponent } from "./components/footers/footer-admin/footer-a
 import { FooterComponent } from "./components/footers/footer/footer.component";
 import { FooterSmallComponent } from "./components/footers/footer-small/footer-small.component";
 import { HeaderStatsComponent } from "./components/headers/header-stats/header-stats.component";
-import { IndexNavbarComponent } from "./components/navbars/index-navbar/index-navbar.component";
 import { MapExampleComponent } from "./components/maps/map-example/map-example.component";
 import { IndexDropdownComponent } from "./components/dropdowns/index-dropdown/index-dropdown.component";
 import { TableDropdownComponent } from "./components/dropdowns/table-dropdown/table-dropdown.component";
@@ -68,8 +67,18 @@ import {ClientService} from './services/client.service';
 import { UserProfileComponent } from './views/admin/user-profile/user-profile.component';
 import { AllHousesComponent } from './components/cards/all-houses/all-houses.component';
 import { HousesComponent } from './views/admin/houses/houses.component';
+import { HousesSuperAdminComponent } from './views/superAdmin/houses/houses-super-admin.component';
 import { HousesListComponent } from './components/cards/houses-list/houses-list.component';
 import { AddReservationComponent } from './views/admin/add-reservation/add-reservation.component';
+import { AddReservationFormComponent } from './components/cards/add-reservation-form/add-reservation-form.component';
+import { ReservationListComponent } from './views/admin/reservation-list/reservation-list.component';
+import { MessagesComponent } from './views/admin/messages/messages.component';
+import {SuperAdminDashboardComponent} from './views/superAdmin/super-admin-dashboard/super-admin-dashboard.component';
+import { SuperAdminSidebarComponent } from './components/sidebars/super-admin-sidebar/super-admin-sidebar.component';
+import { AdminsComponent } from './views/superAdmin/admins/admins.component';
+import { ClientsComponent } from './views/superAdmin/clients/clients.component';
+import { ReservationsComponent } from './views/superAdmin/reservations/reservations.component';
+import { MessagesSuperAdminComponent } from './views/superAdmin/messages-super-admin/messages-super-admin.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +100,6 @@ import { AddReservationComponent } from './views/admin/add-reservation/add-reser
     MapExampleComponent,
     AuthNavbarComponent,
     AdminNavbarComponent,
-    IndexNavbarComponent,
     AdminComponent,
     AuthComponent,
     MapsComponent,
@@ -120,8 +128,18 @@ import { AddReservationComponent } from './views/admin/add-reservation/add-reser
     UserProfileComponent,
     AllHousesComponent,
     HousesComponent,
+    HousesSuperAdminComponent,
     HousesListComponent,
     AddReservationComponent,
+    AddReservationFormComponent,
+    ReservationListComponent,
+    MessagesComponent,
+    SuperAdminDashboardComponent,
+    SuperAdminSidebarComponent,
+    AdminsComponent,
+    ClientsComponent,
+    ReservationsComponent,
+    MessagesSuperAdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -132,7 +150,7 @@ import { AddReservationComponent } from './views/admin/add-reservation/add-reser
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCNo05fM85cJ6bdfkXAhTZG0A_NA7Q-rbA',
     }),
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   providers: [
     Clipboard,

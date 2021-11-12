@@ -39,6 +39,9 @@ export class ClientSidebarComponent implements OnInit {
   getClient(){
     this.clientService.getClient().subscribe((res: Client) => {
       this.client = res;
+      if (this.client == null){
+        this.logout();
+      }
     });
   }
 

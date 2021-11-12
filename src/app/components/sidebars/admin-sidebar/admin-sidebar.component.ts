@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import {AdminService} from "../../../services/admin.service";
 import {Admin} from "../../../moduls/admin";
+import {TokenService} from '../../../services/token.service';
+import {AccountService} from '../../../services/account.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: "app-sidebar",
@@ -10,7 +13,10 @@ export class AdminSidebarComponent implements OnInit {
   admin:Admin;
   collapseShow = "hidden";
   constructor(
-    private adminService : AdminService
+    private adminService : AdminService,
+    private tokenService: TokenService,
+    private accountService: AccountService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -23,6 +29,15 @@ export class AdminSidebarComponent implements OnInit {
   getAdmin(){
     this.adminService.getAdmin().subscribe(res => {
       this.admin = res;
+      if (this.admin == null){
+        this.logout();
+      }
     })
+  }
+
+  logout(){
+    this.tokenService.remove();
+    this.accountService.changeStatus(false);
+    this.router.navigateByUrl("/auth/login");
   }
 }

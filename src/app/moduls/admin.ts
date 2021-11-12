@@ -5,4 +5,6 @@ export interface Admin {
   email: string;
   phoneNumber: string;
   address: string;
+  clientNumber: number;
+  housesNumber: number;
 }

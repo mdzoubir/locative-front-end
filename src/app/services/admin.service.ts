@@ -17,5 +17,7 @@ export class AdminService {
     return this.http.get<Admin>(`${environment.apiUrl}/api/v1/admin/${localStorage.getItem('userId')}`);
   }
 
-
+  getAll(): Observable<Admin[]>{
+    return this.http.get<Admin[]>(`${environment.apiUrl}/api/v1/admin`);
+  }
 }

@@ -20,9 +20,11 @@ export class HousesListComponent implements OnInit {
   }
 
   getAllByAdmin(){
-    this.houseService.getAllMaisonByAdminId().subscribe(res=>{
-      this.house = res;
-    })
+    this.houseService.getAllMaisonByAdminId().subscribe(
+      res => {
+        this.house = res;
+      }
+    );
   }
 
 }

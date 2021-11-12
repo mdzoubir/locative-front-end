@@ -54,6 +54,8 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl("/admin");
     }else if (this.tokenService.getRole() == "CLIENT"){
       this.router.navigateByUrl("/profile");
+    }else if(this.tokenService.getRole() == "SUPERADMIN"){
+      this.router.navigateByUrl("/superAdmin");
     }
   }
 }

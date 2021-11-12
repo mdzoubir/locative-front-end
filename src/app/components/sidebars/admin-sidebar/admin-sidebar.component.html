@@ -127,7 +127,7 @@
             "
           >
             <i
-              class="fas fa-table mr-2 text-sm"
+              class="fas fa-users mr-2 text-sm"
               [ngClass]="
                 adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
@@ -141,20 +141,62 @@
             [routerLink]="['/admin/houses']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
-            #adminMaps="routerLinkActive"
+            #adminHouses="routerLinkActive"
             [ngClass]="
-              adminMaps.isActive
+              adminHouses.isActive
                 ? 'text-red-600 hover:text-red-700'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
             <i
-              class="fas fa-map-marked mr-2 text-sm"
+              class="fas fa-laptop-house mr-2 text-sm"
               [ngClass]="
-                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+                adminHouses.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
             ></i>
             Houses
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/reservations']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #AdminReservation="routerLinkActive"
+            [ngClass]="
+              AdminReservation.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-table mr-2 text-sm"
+              [ngClass]="
+                AdminReservation.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Reservation
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/messages']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMessage="routerLinkActive"
+            [ngClass]="
+              adminMessage.isActive
+                ? 'text-red-600 hover:text-red-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-comment mr-2 text-sm"
+              [ngClass]="
+                adminMessage.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Massage
           </a>
         </li>
       </ul>
@@ -172,21 +214,12 @@
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
         <li class="items-center">
           <a
+            (click)="logout()"
             [routerLink]="['/auth/login']"
             class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-fingerprint text-blueGray-300 mr-2 text-sm"></i>
-            Login
-          </a>
-        </li>
-
-        <li class="items-center">
-          <a
-            [routerLink]="['/auth/register']"
-            class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-          >
-            <i class="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"></i>
-            Register
+            <i class="fas fa-sign-out-alt text-blueGray-300 mr-2 text-sm"></i>
+            Sign out
           </a>
         </li>
       </ul>

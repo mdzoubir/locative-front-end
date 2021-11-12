@@ -16,7 +16,7 @@ export class MaisonService {
   ) { }
 
   getAllMaisonByAdminId():Observable<Maison[]>{
-    return this.http.get<Maison[]>(`${environment.apiUrl}/api/v1/maison/admin/${this.profileService.getUserId()}`);
+    return this.http.get<Maison[]>(`${environment.apiUrl}/api/v1/maison/forAdmin/${this.profileService.getUserId()}`);
   }
 
   getMaisonByClientId():Observable<Maison[]>{
@@ -29,6 +29,14 @@ export class MaisonService {
 
   getByMaisonId(id: string): Observable<Maison>{
     return this.http.get<Maison>(`${environment.apiUrl}/api/v1/maison/${id}`);
+  }
+
+  getLastMaison(id: string){
+    return this.http.get(`${environment.apiUrl}/api/v1/maison/admin/last/${id}`)
+  }
+
+  getAll(): Observable<Maison[]>{
+    return this.http.get<Maison[]>(`${environment.apiUrl}/api/v1/maison`);
   }
 
   addHouse(date:{

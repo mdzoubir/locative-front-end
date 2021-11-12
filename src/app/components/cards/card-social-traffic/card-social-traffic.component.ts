@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import {Maison} from "../../../moduls/maison";
 import {MaisonService} from "../../../services/maison.service";
 import {ClientService} from "../../../services/client.service";
+import {ProfileService} from '../../../services/profile.service';
 
 @Component({
   selector: "app-card-social-traffic",
@@ -13,6 +14,7 @@ export class CardSocialTrafficComponent implements OnInit {
 
   constructor(
     private maisonService : MaisonService,
+    private profileService: ProfileService
   ) {}
 
   ngOnInit(): void {
@@ -21,7 +23,8 @@ export class CardSocialTrafficComponent implements OnInit {
 
 
   getAllMaisonByAdminId(){
-    this.maisonService.getAllMaisonByAdminId().subscribe((res:Maison[])=>{
+    this.maisonService.getLastMaison(this.profileService.getUserId()).subscribe((res:Maison[])=>{
+      console.log(res)
       this.maisons = res;
     })
   }

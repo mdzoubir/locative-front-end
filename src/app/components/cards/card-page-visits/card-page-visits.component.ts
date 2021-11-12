@@ -18,7 +18,7 @@ export class CardPageVisitsComponent implements OnInit {
 
 
   getAllClientByAdminId(){
-    this.clientService.getAllByAdminId().subscribe((res:Client[]) => {
+    this.clientService.getClientPage().subscribe((res:Client[]) => {
         this.clients = res;
       }
     );

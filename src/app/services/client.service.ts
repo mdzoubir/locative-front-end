@@ -39,7 +39,6 @@ export class ClientService {
     return this.http.get<Client>(`${environment.apiUrl}/api/v1/client/${clientId}`);
   }
 
-
   getClientPage(): Observable<Client[]>{
      return this.http.get<Client[]>(`${environment.apiUrl}/api/v1/client/all/${this.profileSerice.getUserId()}`, )
   }
