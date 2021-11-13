@@ -21,9 +21,10 @@ export class RegisterComponent implements OnInit {
     address : new FormControl(null, Validators.required)
   })
 
+  data: string;
   signup() {
     this.signupService.signUp(this.signupForm.value).subscribe(res => console.log(res))
-    alert("you can log in new");
-    window.location.reload();
+    this.data = "you can log in new";
+    this.signupForm.reset();
   }
 }

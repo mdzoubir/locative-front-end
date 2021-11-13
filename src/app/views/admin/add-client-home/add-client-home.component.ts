@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ClientService} from "../../../services/client.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 import {Client} from "../../../moduls/client";
 import {MapsAPILoader} from "@agm/core";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
@@ -52,7 +52,8 @@ export class AddClientHomeComponent implements OnInit {
     private mapsAPILoader: MapsAPILoader,
     private homeService: MaisonService,
     private profileService: ProfileService,
-    private assetService: AssetService
+    private assetService: AssetService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -72,16 +73,15 @@ export class AddClientHomeComponent implements OnInit {
     })
   }
 
+
   addHome(){
     this.addHouseForm.get('latitude').setValue(this.latitude);
     this.addHouseForm.get('longitude').setValue(this.longitude);
-    this.assetService.getByType(this.addHouseForm.get('assetType').value).subscribe(res=>{
+    this.assetService.getByType(this.addHouseForm.get('assetType').value).subscribe(res =>{
       this.assetId = res.id;
-      this.homeService.addHouse(this.addHouseForm.value, this.id, this.profileService.getUserId(), this.assetId).subscribe(res =>{
-        window.location.reload();
-      })
+      this.homeService.addHouse(this.addHouseForm.value, this.id, this.profileService.getUserId(), this.assetId).subscribe();
+      window.location.href = 'admin/houses';
     });
-
   }
 
 

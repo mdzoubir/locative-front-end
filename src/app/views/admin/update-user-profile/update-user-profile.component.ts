@@ -28,10 +28,6 @@ export class UpdateUserProfileComponent implements OnInit {
     this.getClient();
   }
 
-  showModal = false;
-  toggleModal(){
-    this.showModal = !this.showModal;
-  }
 
   getClient(){
     const id = this.route.snapshot.paramMap.get('id');

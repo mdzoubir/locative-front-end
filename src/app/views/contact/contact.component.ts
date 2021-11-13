@@ -20,12 +20,15 @@ export class ContactComponent implements OnInit {
   }
 
   sendMsg(){
-    this.contactService.contact(this.contactForm.value).subscribe(
-      res => {
-        console.log(res);
-      }
-    );
-
+    this.contactService.contact(this.contactForm.value).subscribe();
+    this.done = "your message sent";
+    this.contactForm.get('fullName').setValue("");
+    this.contactForm.get('email').setValue("");
+    this.contactForm.get('message').setValue("");
+    this.contactForm.reset();
   }
+
+  done: string;
+
 
 }

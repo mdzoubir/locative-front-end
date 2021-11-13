@@ -120,11 +120,11 @@ const routes: Routes = [
   } ,
 
   // no layout views
-  { path: "landing", component: LandingComponent },
+  // { path: "landing", component: LandingComponent },
   { path: "contact", component: ContactComponent },
   { path: "",redirectTo: "home", pathMatch: "full"},
   { path: "home", component: IndexComponent},
-  { path: "**", redirectTo: "", pathMatch: "full" },
+  { path: "**", redirectTo: "home", pathMatch: "full" },
 
   //super admin views
 

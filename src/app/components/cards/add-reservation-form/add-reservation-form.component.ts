@@ -127,6 +127,6 @@ export class AddReservationFormComponent implements OnInit {
 
   addReservation() {
     this.reservationService.addReservation(this.addReservationForm.value, this.id).subscribe();
-    this.router.navigateByUrl("/admin/reservations");
+    window.location.href= 'admin/reservations';
   }
 }
