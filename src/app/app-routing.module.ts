@@ -93,6 +93,7 @@ const routes: Routes = [
     ],
   },
 
+  //super admin views
   {
     path : "superAdmin",
     canActivate: [SuperAdminGuard],
@@ -126,7 +127,6 @@ const routes: Routes = [
   { path: "home", component: IndexComponent},
   { path: "**", redirectTo: "home", pathMatch: "full" },
 
-  //super admin views
 
 ];
 

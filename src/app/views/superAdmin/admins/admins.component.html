@@ -3,7 +3,7 @@
     <div
       class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-white"
     >
-      <div class="rounded-t mb-0 px-4 py-3 border-0">
+      <div class="rounded-t mb-0 pb-4 py-3 border-0">
         <div class="flex flex-wrap items-center">
           <div class="relative w-full px-4 max-w-full flex-grow flex-1">
             <h3
@@ -13,6 +13,8 @@
             </h3>
           </div>
         </div>
+        <input class="placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-6/12 mx-4 my-4" style="margin-left: 45%" placeholder="Search..." type="text" [(ngModel)]="searchValue" id="search"/>
+
       </div>
       <div class="block w-full overflow-x-auto">
         <!-- Projects table -->
@@ -57,7 +59,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let admin of admins | paginate: {itemsPerPage: 5, currentPage: p}">
+          <tr *ngFor="let admin of admins | paginate: {itemsPerPage: 5, currentPage: p} | adminsFilter: searchValue">
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
             >

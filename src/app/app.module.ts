@@ -47,7 +47,7 @@ import {Clipboard} from "@angular/cdk/clipboard";
 import { DesignDinterieurComponent } from './views/services/design-dinterieur/design-dinterieur.component';
 import { WhyUsComponent } from './views/why-us/why-us.component';
 import { AboutUsComponent } from './views/about-us/about-us.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {Ng2TelInputModule} from "ng2-tel-input";
 import {JwtInterceptor} from "./interceptor/jwt.interceptor";
@@ -79,6 +79,7 @@ import { AdminsComponent } from './views/superAdmin/admins/admins.component';
 import { ClientsComponent } from './views/superAdmin/clients/clients.component';
 import { ReservationsComponent } from './views/superAdmin/reservations/reservations.component';
 import { MessagesSuperAdminComponent } from './views/superAdmin/messages-super-admin/messages-super-admin.component';
+import {SearchFilterPipe} from './pipe/superAdmin-admin-filter/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -140,6 +141,7 @@ import { MessagesSuperAdminComponent } from './views/superAdmin/messages-super-a
     ClientsComponent,
     ReservationsComponent,
     MessagesSuperAdminComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -151,6 +153,7 @@ import { MessagesSuperAdminComponent } from './views/superAdmin/messages-super-a
       apiKey: 'AIzaSyCNo05fM85cJ6bdfkXAhTZG0A_NA7Q-rbA',
     }),
     NgxPaginationModule,
+    FormsModule,
   ],
   providers: [
     Clipboard,

@@ -9,7 +9,7 @@ import {Admin} from '../../../moduls/admin';
 })
 export class AdminsComponent implements OnInit {
   admins: Admin[];
-
+  searchValue: string;
   constructor(
     private adminService : AdminService
   ) { }

@@ -8,6 +8,7 @@ import {Client} from '../../../moduls/client';
 })
 export class ClientsComponent implements OnInit {
   clients: Client[];
+  searchValue: string;
 
   constructor(
     private clientService: ClientService
