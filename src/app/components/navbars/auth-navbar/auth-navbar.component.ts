@@ -3,6 +3,7 @@ import { Clipboard } from '@angular/cdk/clipboard';
 import {AccountService} from "../../../services/account.service";
 import {TokenService} from "../../../services/token.service";
 import {Router} from "@angular/router";
+import {ProfileService} from '../../../services/profile.service';
 
 
 @Component({
@@ -13,19 +14,24 @@ export class AuthNavbarComponent implements OnInit {
   navbarOpen = false;
   content = 'Hello, i am tiny text and copied from somewhere else :)';
   currentUser: null;
+  role: string;
 
 
   constructor(
     private clipboard: Clipboard,
     private accountService: AccountService,
     private tokenService : TokenService,
-    private router: Router
+    private router: Router,
+    private profileService : ProfileService
   ) {}
 
   ngOnInit(): void {
-    this.accountService.authStatus.subscribe(res => {
-      this.currentUser = this.tokenService.getInfo();
-    })
+    if (localStorage.length != 0){
+      this.role  = this.tokenService.getRole();
+      this.accountService.authStatus.subscribe(res => {
+        this.currentUser = this.tokenService.getInfo();
+      })
+    }
   }
 
   setNavbarOpen() {

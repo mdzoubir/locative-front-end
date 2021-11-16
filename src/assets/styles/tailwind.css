@@ -1,5 +1,8 @@
 /*! tailwindcss v2.0.4 | MIT License | https://tailwindcss.com */
 
+
+
+
 /*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
@@ -4075,4 +4078,42 @@ select {
 }
 
 @media (min-width: 1536px) {
+}
+
+.text-blue{
+  color: #26b3fb;
+}
+
+.text-orange{
+  color : #ffb236;
+}
+
+.text-ashen{
+  color: #4f4f4f;
+}
+
+.bg-orange{
+  background-color: #ffb236;
+}
+
+
+.header-color{
+  color: #d5d5d5;
+}
+
+.bg-header-color{
+  background-color: #d5d5d5;
+}
+
+
+.bg-black-new{
+  background-color: #1C1C1C;
+}
+
+.black-color{
+  color: #1C1C1C;
+}
+
+.hover\:orange:hover {
+  color: #ffb236;
 }

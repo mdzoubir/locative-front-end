@@ -1,5 +1,5 @@
 <nav
-  class="top-0  fixed z-50 w-full bg-blueGray-700 lex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg"
+  class="top-0  fixed z-50 w-full bg-black-new lex flex-wrap items-center justify-between px-2  navbar-expand-lg"
 >
   <div
     class="container px-4 mx-auto flex flex-wrap items-center justify-between"
@@ -9,9 +9,9 @@
     >
       <a
         [routerLink]="['/']"
-        class="text-white text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+        class="text-white text-sm font-bold leading-relaxed inline-block whitespace-nowrap uppercase"
       >
-        alquilera
+        <img src="assets/img/Alquelira_Logo_White.png" style="width: 150px" class="my-4"/>
       </a>
       <button
         class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -22,14 +22,14 @@
       </button>
     </div>
     <div
-      class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none"
+      class="lg:flex flex-grow items-center bg-black-new lg:bg-opacity-0 lg:shadow-none"
       [ngClass]="{ hidden: !navbarOpen, 'block rounded shadow-lg': navbarOpen }"
       id="example-navbar-warning"
     >
 
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
         <li class="flex items-center">
-          <a class="hover:text-blueGray-500 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
+          <a class="hover:text-blueGray-500 text-orange px-3 py-2 flex items-center text-xs uppercase font-bold"
 
              [routerLink]="['/home']"
              class="text-xs uppercase py-3 font-bold block"
@@ -37,10 +37,10 @@
              #home="routerLinkActive"
              [ngClass]="
               home.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-white hover:text-blueGray-500'
+                ? 'text-orange'
+                : 'text-white hover:orange'
             "
-          >Alquirela</a>
+          >Alquelira</a>
         </li>
         <li class="flex items-center">
           <app-pages-dropdown class="block"></app-pages-dropdown>
@@ -53,8 +53,8 @@
              #whyUs="routerLinkActive"
              [ngClass]="
               whyUs.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-white hover:text-blueGray-500'
+                ? 'text-orange '
+                : 'text-white hover:orange'
             "
           >Pourquoi nous choisir</a>
         </li>
@@ -66,26 +66,37 @@
              #aboutUs="routerLinkActive"
              [ngClass]="
               aboutUs.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-white hover:text-blueGray-500'
+                ? 'text-orange'
+                : 'text-white hover:orange'
             "
           >A propos de nous
           </a>
         </li>
         <li class="flex items-center">
-          <a class="hover:text-blueGray-500 text-white   px-3 py-2 flex items-center text-xs uppercase font-bold"
+          <a class="hover:text-blueGray-500 text-white pl-3 flex items-center text-xs uppercase font-bold"
           >
-            <i class="fas fa-phone-alt text-white w-5"></i><abbr title="click to copier"><span class="cursor-pointer" (click)="copyText()">+212.6.62.03.04.38</span></abbr>
+            <i class="fas fa-phone-alt text-white w-5 cursor-pointer hover:orange" title="click to copier phone number" (click)="copyText()"></i>
           </a>
         </li>
-        <li class="flex items-center" *ngIf="currentUser">
-          <a class="hover:text-blueGray-500 text-white px-3 py-2 flex items-center text-xs uppercase font-bold"
+        <li class="flex items-center" *ngIf="currentUser && role == 'CLIENT'">
+          <a class="hover:text-blueGray-500 text-white  py-2 flex items-center text-xs uppercase font-bold hover:orange"
              href="profile">Dashboard
           </a>
         </li>
+        <li class="flex items-center" *ngIf="currentUser && role == 'ADMIN'">
+          <a class="hover:text-blueGray-500 text-white px-3 py-2 flex items-center text-xs uppercase font-bold hover:orange"
+             href="admin">Dashboard
+          </a>
+        </li>
+        <li class="flex items-center" *ngIf="currentUser && role == 'SUPERADMIN'">
+          <a class="hover:text-blueGray-500 text-white px-3 py-2 flex items-center text-xs uppercase font-bold hover:orange"
+             href="superAdmin">Dashboard
+          </a>
+        </li>
+
         <li class="flex items-center">
           <button
-            class="bg-red-600 text-white active:bg-red-700 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+            class="bg-orange text-white active:bg-red-700 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
             type="button"
           >
             <a href="contact">Contact</a>

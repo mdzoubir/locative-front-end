@@ -36,9 +36,6 @@ import { FooterAdminComponent } from "./components/footers/footer-admin/footer-a
 import { FooterComponent } from "./components/footers/footer/footer.component";
 import { FooterSmallComponent } from "./components/footers/footer-small/footer-small.component";
 import { HeaderStatsComponent } from "./components/headers/header-stats/header-stats.component";
-import { MapExampleComponent } from "./components/maps/map-example/map-example.component";
-import { IndexDropdownComponent } from "./components/dropdowns/index-dropdown/index-dropdown.component";
-import { TableDropdownComponent } from "./components/dropdowns/table-dropdown/table-dropdown.component";
 import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pages-dropdown.component";
 import { ContactComponent } from './views/contact/contact.component';
 import { YourResidenceComponent } from './views/services/your-residence/your-residence.component';
@@ -60,7 +57,6 @@ import {AgmCoreModule} from "@agm/core";
 import { ClientHomesComponent } from './views/client/client-houmes/client-homes.component';
 import { CardProfileAdminComponent } from './components/cards/card-profile-admin/card-profile-admin.component';
 import { UpdateUserProfileComponent } from './views/admin/update-user-profile/update-user-profile.component';
-import { UpdateClientFormComponent } from './components/cards/update-client-form/update-client-form.component';
 import { AddClientHomeComponent } from './views/admin/add-client-home/add-client-home.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {ClientService} from './services/client.service';
@@ -85,9 +81,7 @@ import {SearchFilterPipe} from './pipe/superAdmin-admin-filter/search-filter.pip
   declarations: [
     AppComponent,
     DashboardComponent,
-    IndexDropdownComponent,
     PagesDropdownComponent,
-    TableDropdownComponent,
     FooterComponent,
     FooterSmallComponent,
     FooterAdminComponent,
@@ -98,7 +92,6 @@ import {SearchFilterPipe} from './pipe/superAdmin-admin-filter/search-filter.pip
     CardTableComponent,
     HeaderStatsComponent,
     AdminSidebarComponent,
-    MapExampleComponent,
     AuthNavbarComponent,
     AdminNavbarComponent,
     AdminComponent,
@@ -124,7 +117,6 @@ import {SearchFilterPipe} from './pipe/superAdmin-admin-filter/search-filter.pip
     ClientHomesComponent,
     CardProfileAdminComponent,
     UpdateUserProfileComponent,
-    UpdateClientFormComponent,
     AddClientHomeComponent,
     UserProfileComponent,
     AllHousesComponent,
