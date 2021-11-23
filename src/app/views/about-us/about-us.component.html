@@ -1,7 +1,7 @@
 <app-auth-navbar></app-auth-navbar>
 <main>
   <div class=" w-full mt-48 mb-24 ">
-    <h1 class="text-5xl font-bold w-6/12 mx-auto uppercase text-center mb-12">
+    <h1 class="text-5xl font-bold w-6/12 mx-auto uppercase text-center mb-12 black-color">
       Nous sommes une équipe de passionnés au Maroc par le service de conciergerie.
     </h1>
     <p class="text-center w-6/12 mx-auto text-2xl">
@@ -10,7 +10,8 @@
     </p>
     <div class="w-6/12 mx-auto">
       <button
-        class="bg-red-600 text-white active:bg-red-700 text-xs mt-5  font-bold uppercase px-12 py-4 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 mx-auto ease-linear transition-all duration-150"
+        [routerLink]="'/contact'"
+        class="bg-orange text-white active:bg-red-700 text-xs mt-5  font-bold uppercase px-12 py-4 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 mx-auto ease-linear transition-all duration-150"
         type="button"
         style="margin-left: 35%"
       >
@@ -20,30 +21,30 @@
   </div>
   <section class="mx-auto w-10/12 mb-24">
     <div class="w-full">
-      <img class="w-full" src="assets/img/marrakech.jpg">
+      <img class="w-full" src="assets/img/airbnbs/About%20us%201.jpg">
     </div>
   </section>
   <div class="container px-4 mx-auto mt-48 mb-24">
     <div class="flex flex-wrap">
       <div class="w-full px-4 flex-1">
-        <img src="assets/img/who-we-are.jpg" class="text-sm block w-10/12 lg:w-9/12 text-blueGray-700 rounded"/>
+        <img src="assets/img/airbnbs/About%20us%202.jpg" class="text-sm block w-10/12 lg:w-9/12 text-blueGray-700 rounded"/>
       </div>
       <div class="w-full px-4 flex-1">
         <div class="flex flex-wrap">
           <div class="w-full">
             <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
               <li class="-mb-px mr-2 last:mr-0 flex-auto text-center mb-2">
-                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(1)" [ngClass]="{'text-red-600 bg-white': openTab !== 1, 'text-white bg-red-600': openTab === 1}">
+                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(1)" [ngClass]="{'text-orange bg-white': openTab !== 1, 'text-white bg-orange': openTab === 1}">
                   Transparence
                 </a>
               </li>
               <li class="-mb-px mr-2 last:mr-0 flex-auto text-center mb-2">
-                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(2)" [ngClass]="{'text-red-600 bg-white': openTab !== 2, 'text-white bg-red-600': openTab === 2}">
+                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(2)" [ngClass]="{'text-orange bg-white': openTab !== 2, 'text-white bg-orange': openTab === 2}">
                   Confiance
                 </a>
               </li>
               <li class="-mb-px mr-2 last:mr-0 flex-auto text-center mb-2">
-                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(3)" [ngClass]="{'text-red-600 bg-white': openTab !== 3, 'text-white bg-red-600': openTab === 3}">
+                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(3)" [ngClass]="{'text-orange bg-white': openTab !== 3, 'text-white bg-orange': openTab === 3}">
                   Vos revenus, notre commission
                 </a>
               </li>

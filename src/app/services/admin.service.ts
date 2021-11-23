@@ -20,4 +20,8 @@ export class AdminService {
   getAll(): Observable<Admin[]>{
     return this.http.get<Admin[]>(`${environment.apiUrl}/api/v1/admin`);
   }
+
+  addNewAdmin(data: {firstName: string, lastName: string, email: string, password: string, address: string, phoneNumber: string}): Observable<Admin>{
+    return this.http.post<Admin>(`${environment.apiUrl}/api/v1/admin`, data)
+  }
 }

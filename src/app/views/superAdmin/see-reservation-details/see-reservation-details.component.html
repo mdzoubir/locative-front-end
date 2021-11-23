@@ -1,0 +1,18 @@
+<div class="flex flex-wrap mt-4">
+  <div class="w-full mb-12 px-4" style="margin-bottom: 150px">
+    <div
+      class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-white"
+    >
+      <div class="flex flex-wrap">
+        <div class="w-full px-4 flex-1">
+          <div
+            id="map-canvas"
+            class="relative w-full rounded h-600-px"
+          ></div>
+        </div>
+        <div class="w-full px-4 flex-1">
+          <ejs-schedule height="600px" class="mb-2" [readonly]="readonly" [eventSettings]="eventObject" [selectedDate]="setDate" [currentView]="setView" ></ejs-schedule>        </div>
+      </div>
+    </div>
+  </div>
+</div>

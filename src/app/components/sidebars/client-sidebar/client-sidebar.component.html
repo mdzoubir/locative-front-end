@@ -15,7 +15,7 @@
     <!-- Brand -->
     <a
       [routerLink]="['/']"
-      class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+      class="md:block text-left md:pb-2 black-color mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
     >
       <span class="hidden sm:block text-center"> {{client?.firstName+" "+client?.lastName}} </span>
     </a>
@@ -32,7 +32,7 @@
           <div class="w-6/12">
             <a
               [routerLink]="['/']"
-              class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+              class="md:block text-left md:pb-2 black-color mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             >
               Dashboard
             </a>
@@ -78,14 +78,14 @@
             #adminDashboard="routerLinkActive"
             [ngClass]="
               adminDashboard.isActive
-                ? 'text-red-600 hover:text-red-700'
+                ? 'text-orange hover:orange'
                 : 'text-blueGray-700 hover:text-blueGray-500'
             "
           >
             <i
               class="fas fa-tv mr-2 text-sm"
               [ngClass]="
-                adminDashboard.isActive ? 'opacity-75' : 'text-blueGray-300'
+                adminDashboard.isActive ? 'opacity-75' : 'black-color'
               "
             ></i>
             Dashboard
@@ -95,20 +95,20 @@
         <li class="items-center" (click)="toggleTabs()" style="cursor: pointer">
 
           <a
-            [ngClass]="{'text-red-600 bg-white': openTab != true}"
+            [ngClass]="{'text-orange bg-white': openTab != true}"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminSettings="routerLinkActive"
             [ngClass]="
               adminSettings.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
+                ? 'text-orange hover:orange'
+                : 'black-color hover:text-blueGray-500'
             "
           >
-            <i [ngClass]="{'text-red-600 bg-white': openTab != true}"
+            <i [ngClass]="{'text-orange bg-white': openTab != true}"
               class="fas fa-table mr-2 text-sm"
               [ngClass]="
-                adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
+                adminSettings.isActive ? 'opacity-75' : 'black-color'
               "
             ></i>
             Houses
@@ -130,10 +130,10 @@
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4" [ngClass]="{'hidden': openTab == true, 'block': openTab != true}">
         <li *ngFor="let maison of maisons; index as indexOfelement;" class="items-center">
           <a
-            href="profile/dashboard/{{maison.maisonId}}"
-            class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            href="profile/houses/{{maison.maisonId}}"
+            class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-home text-blueGray-300 mr-2 text-sm"></i>
+            <i class="fas fa-home black-color mr-2 text-sm"></i>
             {{indexOfelement+1 + " " }}{{maison.assetName}}
           </a>
         </li>
@@ -154,9 +154,9 @@
           <a
             (click)="logout()"
             [routerLink]="['/auth/login']"
-            class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-fingerprint text-blueGray-300 mr-2 text-sm"></i>
+            <i class="fas fa-sign-out-alt black-color mr-2 text-sm"></i>
             Log out
           </a>
         </li>
@@ -176,9 +176,9 @@
         <li class="items-center">
           <a
             [routerLink]="['/']"
-            class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
+            <i class="fas fa-newspaper black-color mr-2 text-sm"></i>
             Home Page
           </a>
         </li>
@@ -186,9 +186,9 @@
         <li class="items-center">
           <a
             [routerLink]="['/services']"
-            class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-user-circle text-blueGray-300 mr-2 text-sm"></i>
+            <i class="fas fa-user-circle black-color mr-2 text-sm"></i>
             Services Page
           </a>
         </li>

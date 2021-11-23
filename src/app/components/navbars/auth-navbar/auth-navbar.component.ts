@@ -21,8 +21,7 @@ export class AuthNavbarComponent implements OnInit {
     private clipboard: Clipboard,
     private accountService: AccountService,
     private tokenService : TokenService,
-    private router: Router,
-    private profileService : ProfileService
+    private router: Router
   ) {}
 
   ngOnInit(): void {

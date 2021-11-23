@@ -16,7 +16,7 @@ export class MaisonService {
   ) { }
 
   getAllMaisonByAdminId():Observable<Maison[]>{
-    return this.http.get<Maison[]>(`${environment.apiUrl}/api/v1/maison/forAdmin/${this.profileService.getUserId()}`);
+    return this.http.get<Maison[]>(`${environment.apiUrl}/api/v1/maison/admin/${this.profileService.getUserId()}`);
   }
 
   getMaisonByClientId():Observable<Maison[]>{

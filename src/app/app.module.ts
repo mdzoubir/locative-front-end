@@ -20,7 +20,6 @@ import { RegisterComponent } from "./views/auth/register/register.component";
 
 // no layouts views
 import { IndexComponent } from "./views/index/index.component";
-import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 
 // components for views and layouts
@@ -76,6 +75,16 @@ import { ClientsComponent } from './views/superAdmin/clients/clients.component';
 import { ReservationsComponent } from './views/superAdmin/reservations/reservations.component';
 import { MessagesSuperAdminComponent } from './views/superAdmin/messages-super-admin/messages-super-admin.component';
 import {SearchFilterPipe} from './pipe/superAdmin-admin-filter/search-filter.pipe';
+import {
+  DayService,
+  MonthAgendaService,
+  MonthService,
+  RecurrenceEditorModule,
+  ScheduleModule,
+  WeekService,
+  WorkWeekService
+} from '@syncfusion/ej2-angular-schedule';
+import { SeeReservationDetailsComponent } from './views/superAdmin/see-reservation-details/see-reservation-details.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +111,6 @@ import {SearchFilterPipe} from './pipe/superAdmin-admin-filter/search-filter.pip
     LoginComponent,
     RegisterComponent,
     IndexComponent,
-    LandingComponent,
     ProfileComponent,
     ContactComponent,
     YourResidenceComponent,
@@ -134,6 +142,7 @@ import {SearchFilterPipe} from './pipe/superAdmin-admin-filter/search-filter.pip
     ReservationsComponent,
     MessagesSuperAdminComponent,
     SearchFilterPipe,
+    SeeReservationDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -146,6 +155,8 @@ import {SearchFilterPipe} from './pipe/superAdmin-admin-filter/search-filter.pip
     }),
     NgxPaginationModule,
     FormsModule,
+    ScheduleModule,
+    RecurrenceEditorModule
   ],
   providers: [
     Clipboard,
@@ -154,7 +165,12 @@ import {SearchFilterPipe} from './pipe/superAdmin-admin-filter/search-filter.pip
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
       multi: true
-    }
+    },
+    DayService,
+    WeekService,
+    WorkWeekService,
+    MonthService,
+    MonthAgendaService
   ],
   bootstrap: [AppComponent],
 })

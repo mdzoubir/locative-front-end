@@ -521,8 +521,6 @@ video {
   max-width: 100%;
   height: auto;
 }
-
-
       [type='text'],
       [type='email'],
       [type='url'],
@@ -2504,6 +2502,10 @@ select {
   opacity: 0.5;
 }
 
+.opacity-none{
+  opacity: 0;
+}
+
 .opacity-75 {
   opacity: 0.75;
 }
@@ -4055,6 +4057,23 @@ select {
   }
 }
 
+@media (max-width: 500px) {
+  .mx\:font-size {
+    font-size: 2.5rem;
+  }
+  .mx\:px-0{
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .mn\:px-0{
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 @media (min-width: 1280px) {
   .xl\:mb-0 {
     margin-bottom: 0px;
@@ -4116,4 +4135,48 @@ select {
 
 .hover\:orange:hover {
   color: #ffb236;
+}
+
+.hover\:bg-orange:hover {
+  background-color: #ffb236;
+  color: white;
+}
+
+.text-blue{
+  color: #26b3fb;
+}
+
+.bg-blue{
+  background-color: #26b3fb;
+}
+
+.hover\:bg-blue:hover{
+  color: #26b3fb;
+  background-color: #26b3fb;
+}
+
+.new-color{
+  color: #3B3B3B;
+}
+
+.hover\:btn-animation:hover{
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+
+.hover\:transform-rotation:hover{
+  transform: rotate(360deg);
+}
+
+.text-yellow{
+  color: #B08B25;
+}
+.bg-yellow{
+  background-color: #B08B25;
+}
+
+.btnn{
+  transition: 1s;
 }

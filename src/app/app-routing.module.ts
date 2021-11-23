@@ -17,7 +17,6 @@ import { RegisterComponent } from "./views/auth/register/register.component";
 
 // no layouts views
 import { IndexComponent } from "./views/index/index.component";
-import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 import {ContactComponent} from "./views/contact/contact.component";
 import {YourResidenceComponent} from "./views/services/your-residence/your-residence.component";
@@ -43,9 +42,9 @@ import {AdminsComponent} from './views/superAdmin/admins/admins.component';
 import {SuperAdminGuard} from './guards/super-admin.guard';
 import {ClientsComponent} from './views/superAdmin/clients/clients.component';
 import {HousesSuperAdminComponent} from './views/superAdmin/houses/houses-super-admin.component';
-import {ReservationService} from './services/reservation.service';
 import {ReservationsComponent} from './views/superAdmin/reservations/reservations.component';
 import {MessagesSuperAdminComponent} from './views/superAdmin/messages-super-admin/messages-super-admin.component';
+import {SeeReservationDetailsComponent} from './views/superAdmin/see-reservation-details/see-reservation-details.component';
 
 const routes: Routes = [
   // admin views
@@ -103,6 +102,7 @@ const routes: Routes = [
       { path : "admins", component: AdminsComponent},
       { path : "clients", component: ClientsComponent},
       { path : "houses", component: HousesSuperAdminComponent},
+      { path : "houses/:id", component: SeeReservationDetailsComponent},
       { path : "reservations", component: ReservationsComponent},
       { path : "messages", component: MessagesSuperAdminComponent},
     ]
@@ -116,18 +116,15 @@ const routes: Routes = [
     children: [
       { path: "", redirectTo: "dashboard", pathMatch: "full"},
       { path: "dashboard", component: ClientDashboardComponent},
-      { path: "dashboard/:id", component: ClientHomesComponent}
+      { path: "houses/:id", component: ClientHomesComponent}
     ]
   } ,
 
-  // no layout views
-  // { path: "landing", component: LandingComponent },
+  //no layout views
   { path: "contact", component: ContactComponent },
-  { path: "",redirectTo: "home", pathMatch: "full"},
+  { path: "", redirectTo: "home", pathMatch: "full"},
   { path: "home", component: IndexComponent},
-  { path: "**", redirectTo: "home", pathMatch: "full" },
-
-
+  { path: "**", redirectTo: "home" , pathMatch: "full" },
 ];
 
 @NgModule({

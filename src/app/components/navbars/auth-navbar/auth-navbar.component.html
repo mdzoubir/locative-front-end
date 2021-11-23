@@ -40,7 +40,7 @@
                 ? 'text-orange'
                 : 'text-white hover:orange'
             "
-          >Alquelira</a>
+          >Home</a>
         </li>
         <li class="flex items-center">
           <app-pages-dropdown class="block"></app-pages-dropdown>
@@ -96,8 +96,9 @@
 
         <li class="flex items-center">
           <button
-            class="bg-orange text-white active:bg-red-700 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+            class="bg-orange text-white text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
             type="button"
+            [routerLink]="['/contact']"
           >
             <a href="contact">Contact</a>
           </button>
@@ -106,13 +107,12 @@
         <li class="flex items-center">
           <button *ngIf="!currentUser"
             [routerLink]="['/auth/login']"
-            class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+            class="bg-white text-blueGray-700 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
           >
             Login
           </button>
           <button *ngIf="currentUser"
                   (click)="logout()"
-            [routerLink]="['/auth/login']"
             class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
           >
             Log out

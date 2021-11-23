@@ -10,11 +10,17 @@
     <div
       class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16"
     >
-      <div
-        id="map-canvas"
-        class="relative w-full rounded h-600-px"
-      ></div>
-
+      <div class="flex flex-wrap">
+        <div class="w-full flex-1">
+          <div
+            id="map-canvas"
+            class="relative w-full rounded h-600-px"
+          ></div>
+        </div>
+        <div class="w-full pl-4 flex-1">
+          <ejs-schedule height="600px" [readonly]="readonly" [eventSettings]="eventObject" [selectedDate]="setDate" [currentView]="setView"></ejs-schedule>
+        </div>
+      </div>
     </div>
     <div
       [ngStyle]="{'visibility': reservations.length === 0 ? 'hidden' : 'visible' }"
@@ -63,12 +69,12 @@
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
             >
-              {{reservation.startAtt | date:'fullDate'}}
+              {{reservation.StartTime | date:'fullDate'}}
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
             >
-              {{reservation.endAtt | date:'fullDate'}}
+              {{reservation.EndTime | date:'fullDate'}}
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"

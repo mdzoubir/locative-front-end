@@ -13,95 +13,224 @@
             </h3>
           </div>
         </div>
-        <input class="placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-6/12 mx-4 my-4" style="margin-left: 45%" placeholder="Search..." type="text" [(ngModel)]="searchValue" id="search"/>
-
+        <div class="flex flex-wrap">
+          <div class="w-full px-4 flex-1">
+            <button class="mx-4 my-4 text-sm bg-blue rounded text-white px-2 py-2" (click)="changeStatus()">Add new Admin</button>
+          </div>
+          <div class="w-full px-4 flex-1">
+            <input class="placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-6/12 mx-4 my-4" style="margin-left: 45%" placeholder="Search..." type="text" [(ngModel)]="searchValue" id="search"/>
+          </div>
+        </div>
       </div>
-      <div class="block w-full overflow-x-auto">
-        <!-- Projects table -->
-        <table class="items-center w-full bg-transparent border-collapse">
-          <thead>
-          <tr>
-            <th
-              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+      <div class="w-full px-4 flex-1" [ngStyle]="{'display': addAdminForm == false ? 'none': 'block'}">
+        <form [formGroup]="addAmin" (ngSubmit)="addNewAdmin()">
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+              htmlFor="grid-password"
             >
-              first Name
-            </th>
-            <th
-              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+              First Name
+            </label>
+            <input
+              formControlName="firstName"
+              type="text"
+              class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              placeholder="First Name"
+            />
+            <div *ngIf="addAmin.get('firstName').invalid && (addAmin.get('firstName').touched || addAmin.get('firstName').dirty)">
+              <div class="text-red-500" *ngIf="addAmin.get('firstName').getError('required')">This field is required</div>
+              <div class="text-red-500" *ngIf="addAmin.get('firstName').getError('minlength')">This field required more then 3 character</div>
+            </div>
+          </div>
+
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+              htmlFor="grid-password"
             >
               Last Name
-            </th>
-            <th
-              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+            </label>
+            <input
+              formControlName="lastName"
+              type="text"
+              class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              placeholder="Last Name"
+            />
+            <div *ngIf="addAmin.get('lastName').invalid && (addAmin.get('lastName').touched || addAmin.get('lastName').dirty)">
+              <div class="text-red-500" *ngIf="addAmin.get('lastName').getError('required')">This field is required</div>
+              <div class="text-red-500" *ngIf="addAmin.get('lastName').getError('minlength')">This field required more then 3 character</div>
+            </div>
+          </div>
+
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+              htmlFor="grid-password"
             >
-              email
-            </th>
-            <th
-              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+              Email
+            </label>
+            <input
+              formControlName="email"
+              type="email"
+              class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              placeholder="Email"
+            />
+            <div *ngIf="addAmin.get('email').invalid && (addAmin.get('email').touched || addAmin.get('email').dirty)">
+              <div class="text-red-500" *ngIf="addAmin.get('email').getError('required')">This field is required</div>
+              <div class="text-red-500" *ngIf="addAmin.get('email').getError('email')">This field should be email address</div>
+            </div>
+          </div>
+
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+              htmlFor="grid-password"
             >
-              address
-            </th>
-            <th
-              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+              Password
+            </label>
+            <input
+              formControlName="password"
+              type="password"
+              autocomplete="on"
+              class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              placeholder="Password"
+            />
+            <div *ngIf="addAmin.get('password').invalid && (addAmin.get('password').touched || addAmin.get('password').dirty)">
+              <div class="text-red-500" *ngIf="addAmin.get('password').getError('required')">This field is required</div>
+              <div class="text-red-500" *ngIf="addAmin.get('password').getError('minlength')">This field required more then 8 character</div>
+            </div>
+          </div>
+
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+              htmlFor="grid-password"
             >
-              phone
-            </th>
-            <th
-              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+              Address
+            </label>
+            <input
+              formControlName="address"
+              type="text"
+              placeholder="Address"
+              class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+            />
+            <div *ngIf="addAmin.get('address').invalid && (addAmin.get('address').touched || addAmin.get('address').dirty)">
+              <div class="text-red-500" *ngIf="addAmin.get('address').getError('required')">This field is required</div>
+            </div>
+          </div>
+
+          <div class="relative w-full mb-3">
+            <label
+              class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+              htmlFor="grid-password"
             >
-              clients number
-            </th>
-            <th
-              class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+              Phone Number
+            </label>
+            <input
+              formControlName="phoneNumber"
+              type="number"
+              class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+              ng2TelInput
+            />
+            <div *ngIf="addAmin.get('phoneNumber').invalid && (addAmin.get('phoneNumber').touched || addAmin.get('phoneNumber').dirty)">
+              <div class="text-red-500" *ngIf="addAmin.get('phoneNumber').getError('required')">This field is required</div>
+            </div>
+          </div>
+          <div class="mt-6" [hidden]="addAmin.invalid">
+            <button
+              class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
             >
-              houses number
-            </th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let admin of admins | paginate: {itemsPerPage: 5, currentPage: p} | adminsFilter: searchValue">
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
-              {{admin.firstName}}
-            </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
-              {{admin?.lastName}}
-            </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
-              {{admin?.email}}
-            </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
-              {{admin?.address}}
-            </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
-              {{admin?.phoneNumber}}
-            </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
-              {{admin?.clientNumber}}
-            </td>
-            <td
-              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-            >
-              {{admin?.housesNumber}}
-            </td>
-          </tr>
-          </tbody>
-        </table>
-        <pagination-controls
-          (pageChange)="p = $event">
-        </pagination-controls>
+              Create Admin Account
+            </button>
+          </div>
+        </form>
       </div>
+        <div class="block w-full overflow-x-auto">
+            <!-- Projects table -->
+            <table class="items-center w-full bg-transparent border-collapse">
+              <thead>
+              <tr>
+                <th
+                  class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                >
+                  first Name
+                </th>
+                <th
+                  class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                >
+                  Last Name
+                </th>
+                <th
+                  class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                >
+                  email
+                </th>
+                <th
+                  class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                >
+                  address
+                </th>
+                <th
+                  class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                >
+                  phone
+                </th>
+                <th
+                  class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                >
+                  clients number
+                </th>
+                <th
+                  class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
+                >
+                  houses number
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let admin of admins | paginate: {itemsPerPage: 5, currentPage: p} | adminsFilter: searchValue">
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  {{admin.firstName}}
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  {{admin?.lastName}}
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  {{admin?.email}}
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  {{admin?.address}}
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  {{admin?.phoneNumber}}
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  {{admin?.clientNumber}}
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  {{admin?.housesNumber}}
+                </td>
+              </tr>
+              </tbody>
+            </table>
+            <pagination-controls
+              (pageChange)="p = $event">
+            </pagination-controls>
+          </div>
     </div>
 
   </div>

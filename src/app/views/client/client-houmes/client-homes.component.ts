@@ -4,6 +4,8 @@ import {MaisonService} from "../../../services/maison.service";
 import {Maison} from "../../../moduls/maison";
 import {ReservationService} from "../../../services/reservation.service";
 import {Reservation} from "../../../moduls/reservation";
+import {EventSettingsModel, View} from '@syncfusion/ej2-angular-schedule';
+import {DataManager, WebApiAdaptor} from '@syncfusion/ej2-data';
 
 declare const google: any;
 
@@ -17,6 +19,10 @@ export class ClientHomesComponent implements OnInit {
   lng : string;
   lat : string;
   reservations: Reservation[]=[];
+
+  public setView: View = 'Month';
+  public readonly: boolean = true;
+  public setDate: Date = new Date();
 
   constructor(
     private maisonService: MaisonService,
@@ -73,4 +79,13 @@ export class ClientHomesComponent implements OnInit {
     );
   }
 
+  private eventData: DataManager = new DataManager({
+    url: 'http://localhost:8080/api/v1/reservation/'+this.route.snapshot.paramMap.get('id'),
+    adaptor: new WebApiAdaptor,
+    crossDomain: true,
+  })
+
+  public eventObject: EventSettingsModel = {
+    dataSource: this.eventData
+  }
 }

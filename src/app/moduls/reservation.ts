@@ -1,6 +1,6 @@
 export interface Reservation {
-  startAtt: Date,
-  endAtt: Date,
+  StartTime: Date,
+  EndTime: Date,
   totalRent: number,
   netProfit: number,
   adminEmail: string,

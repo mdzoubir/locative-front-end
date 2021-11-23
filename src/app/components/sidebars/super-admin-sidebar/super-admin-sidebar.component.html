@@ -15,7 +15,7 @@
     <!-- Brand -->
     <a
       [routerLink]="['/superAdmin']"
-      class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+      class="md:block text-left md:pb-2 black-color mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
     >
       <span class="hidden sm:block text-center"> {{superAdmin?.firstName + " " + superAdmin?.lastName}} </span>
     </a>
@@ -78,14 +78,14 @@
             #admins="routerLinkActive"
             [ngClass]="
               admins.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
+                ? 'text-orange hover:orange'
+                : 'black-color hover:text-blueGray-500'
             "
           >
             <i
               class="fas fa-user mr-2 text-sm"
               [ngClass]="
-                admins.isActive ? 'opacity-75' : 'text-blueGray-300'
+                admins.isActive ? 'opacity-75' : 'black-color'
               "
             ></i>
             Admins
@@ -100,14 +100,14 @@
             #clients="routerLinkActive"
             [ngClass]="
               clients.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
+               ? 'text-orange hover:orange'
+                : 'black-color hover:text-blueGray-500'
             "
           >
             <i
               class="fas fa-users mr-2 text-sm"
               [ngClass]="
-                clients.isActive ? 'opacity-75' : 'text-blueGray-300'
+                clients.isActive ? 'opacity-75' : 'black-color'
               "
             ></i>
             Clients
@@ -122,14 +122,14 @@
             #houses="routerLinkActive"
             [ngClass]="
               houses.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
+                ? 'text-orange hover:orange'
+                : 'black-color hover:text-blueGray-500'
             "
           >
             <i
               class="fas fa-warehouse mr-2 text-sm"
               [ngClass]="
-                houses.isActive ? 'opacity-75' : 'text-blueGray-300'
+                houses.isActive ? 'opacity-75' : 'black-color'
               "
             >
             </i>
@@ -145,14 +145,14 @@
             #reservations="routerLinkActive"
             [ngClass]="
               reservations.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
+                ? 'text-orange hover:orange'
+                : 'black-color hover:text-blueGray-500'
             "
           >
             <i
               class="fas fa-table mr-2 text-sm"
               [ngClass]="
-                reservations.isActive ? 'opacity-75' : 'text-blueGray-300'
+                reservations.isActive ? 'opacity-75' : 'black-color'
               "
             ></i>
             Reservations
@@ -166,14 +166,14 @@
             #messages="routerLinkActive"
             [ngClass]="
               messages.isActive
-                ? 'text-red-600 hover:text-red-700'
-                : 'text-blueGray-700 hover:text-blueGray-500'
+                ? 'text-orange hover:orange'
+                : 'black-color hover:text-blueGray-500'
             "
           >
             <i
               class="fas fa-comments mr-2 text-sm"
               [ngClass]="
-                messages.isActive ? 'opacity-75' : 'text-blueGray-300'
+                messages.isActive ? 'opacity-75' : 'black-color'
               "
             ></i>
             Messages
@@ -196,9 +196,9 @@
           <a
             (click)="logout()"
             [routerLink]="['/auth/login']"
-            class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-sign-out-alt text-blueGray-300 mr-2 text-sm"></i>
+            <i class="fas fa-sign-out-alt black-color mr-2 text-sm"></i>
             Sign out
           </a>
         </li>
@@ -218,9 +218,9 @@
         <li class="items-center">
           <a
             [routerLink]="['/']"
-            class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-newspaper text-blueGray-300 mr-2 text-sm"></i>
+            <i class="fas fa-newspaper black-color mr-2 text-sm"></i>
             Home Page
           </a>
         </li>
@@ -228,9 +228,9 @@
         <li class="items-center">
           <a
             [routerLink]="['/services']"
-            class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
-            <i class="fas fa-user-circle text-blueGray-300 mr-2 text-sm"></i>
+            <i class="fas fa-user-circle black-color mr-2 text-sm"></i>
             Services Page
           </a>
         </li>

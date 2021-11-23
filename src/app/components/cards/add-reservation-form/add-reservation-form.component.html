@@ -6,6 +6,7 @@
       <div class="container mx-auto px-4 h-full">
         <div class="flex content-center items-center justify-center h-full">
           <div class="w-full px-4 py-4">
+            <ejs-schedule height="500px" class="mb-2" [readonly]="readonly" [eventSettings]="eventObject" [selectedDate]="setDate" [currentView]="setView" ></ejs-schedule>
             <div
               class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0"
             >
@@ -25,13 +26,13 @@
                       Start att
                     </label>
                     <input
-                      formControlName="startAtt"
+                      formControlName="startTime"
                       type="date"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="start att"
                     />
-                    <div *ngIf="addReservationForm.get('startAtt').invalid && (addReservationForm.get('startAtt').touched || addReservationForm.get('startAtt').dirty)">
-                      <div class="text-red-500" *ngIf="addReservationForm.get('startAtt').getError('required')">This field is required</div>
+                    <div *ngIf="addReservationForm.get('startTime').invalid && (addReservationForm.get('startTime').touched || addReservationForm.get('startTime').dirty)">
+                      <div class="text-red-500" *ngIf="addReservationForm.get('startTime').getError('required')">This field is required</div>
                     </div>
                   </div>
 
@@ -43,14 +44,14 @@
                       End att
                     </label>
                     <input
-                      formControlName="endAtt"
+                      formControlName="endTime"
                       type="date"
-                      min="{{addReservationForm.get('startAtt').value}}"
+                      min="{{addReservationForm.get('startTime').value}}"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="end att"
                     />
-                    <div *ngIf="addReservationForm.get('endAtt').invalid && (addReservationForm.get('endAtt').touched || addReservationForm.get('endAtt').dirty)">
-                      <div class="text-red-500" *ngIf="addReservationForm.get('endAtt').getError('required')">This field is required</div>
+                    <div *ngIf="addReservationForm.get('endTime').invalid && (addReservationForm.get('endTime').touched || addReservationForm.get('endTime').dirty)">
+                      <div class="text-red-500" *ngIf="addReservationForm.get('endTime').getError('required')">This field is required</div>
                     </div>
                   </div>
 
@@ -71,7 +72,7 @@
                       <div class="text-red-500" *ngIf="addReservationForm.get('totalRent').getError('required')">This field is required</div>
                     </div>
                   </div>
-                  <div class="text-center mt-6" [ngStyle]="{'display': this.addReservationForm.get('startAtt').value < this.addReservationForm.get('endAtt').value ? 'block' : 'none'}">
+                  <div class="text-center mt-6" [ngStyle]="{'display': this.addReservationForm.get('startTime').value < this.addReservationForm.get('endTime').value ? 'block' : 'none'}">
                     <button
                       class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                       [ngStyle]="{'display': addReservationForm.valid ? 'block' : 'none'}"

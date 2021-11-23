@@ -80,7 +80,10 @@ export class AddClientHomeComponent implements OnInit {
     this.assetService.getByType(this.addHouseForm.get('assetType').value).subscribe(res =>{
       this.assetId = res.id;
       this.homeService.addHouse(this.addHouseForm.value, this.id, this.profileService.getUserId(), this.assetId).subscribe();
-      window.location.href = 'admin/houses';
+      this.router.navigate(['admin/houses'])
+        .then(() => {
+          window.location.reload();
+        });
     });
   }
 

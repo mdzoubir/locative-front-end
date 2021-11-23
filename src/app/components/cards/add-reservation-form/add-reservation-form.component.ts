@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {ReservationService} from '../../../services/reservation.service';
-import {Reservation} from '../../../moduls/reservation';
 import {MaisonService} from '../../../services/maison.service';
 import {Maison} from '../../../moduls/maison';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {EventSettingsModel, View} from '@syncfusion/ej2-angular-schedule';
+import { DataManager, WebApiAdaptor} from '@syncfusion/ej2-data';
+
 
 declare const google: any;
 
@@ -20,16 +22,19 @@ export class AddReservationFormComponent implements OnInit {
   latitude: string;
   longitude: string;
 
+  public setView: View = 'Month';
+  public readonly: boolean = true;
+  public setDate: Date = new Date();
+
   constructor(
     private route: ActivatedRoute,
     private maisonService: MaisonService,
-    private reservationService: ReservationService,
-    private router: Router
+    private reservationService: ReservationService
   ) { }
 
   addReservationForm = new FormGroup({
-    startAtt : new FormControl(null, Validators.required),
-    endAtt : new FormControl(null, Validators.required),
+    startTime : new FormControl(null, Validators.required),
+    endTime : new FormControl(null, Validators.required),
     totalRent : new FormControl(null, [Validators.required]),
   })
 
@@ -38,9 +43,19 @@ export class AddReservationFormComponent implements OnInit {
     this.getReservation();
   }
 
+  private eventData: DataManager = new DataManager({
+    url: 'http://localhost:8080/api/v1/reservation/'+this.route.snapshot.paramMap.get('id'),
+    adaptor: new WebApiAdaptor,
+    crossDomain: true,
+  })
+
+  public eventObject: EventSettingsModel = {
+    dataSource: this.eventData
+  }
+
   maps(){
     let map = document.getElementById("map-canvas");
-    let lat = this.latitude
+    let lat = this.latitude;
     let lng = this.longitude;
 
     const myLatlng = new google.maps.LatLng(lat, lng);
@@ -49,48 +64,6 @@ export class AddReservationFormComponent implements OnInit {
       scrollwheel: false,
       center: myLatlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      // styles: [
-      //   {
-      //     featureType: "administrative",
-      //     elementType: "labels.text.fill",
-      //     stylers: [{ color: "#444444" }],
-      //   },
-      //   {
-      //     featureType: "landscape",
-      //     elementType: "all",
-      //     stylers: [{ color: "#f2f2f2" }],
-      //   },
-      //   {
-      //     featureType: "poi",
-      //     elementType: "all",
-      //     stylers: [{ visibility: "off" }],
-      //   },
-      //   {
-      //     featureType: "road",
-      //     elementType: "all",
-      //     stylers: [{ saturation: -100 }, { lightness: 45 }],
-      //   },
-      //   {
-      //     featureType: "road.highway",
-      //     elementType: "all",
-      //     stylers: [{ visibility: "simplified" }],
-      //   },
-      //   {
-      //     featureType: "road.arterial",
-      //     elementType: "labels.icon",
-      //     stylers: [{ visibility: "off" }],
-      //   },
-      //   {
-      //     featureType: "transit",
-      //     elementType: "all",
-      //     stylers: [{ visibility: "off" }],
-      //   },
-      //   {
-      //     featureType: "water",
-      //     elementType: "all",
-      //     stylers: [{ color: "#feb2b2" }, { visibility: "on" }],
-      //   },
-      // ],
     };
 
     map = new google.maps.Map(map, mapOptions);
@@ -122,11 +95,12 @@ export class AddReservationFormComponent implements OnInit {
     this.latitude = this.maison.latitude;
     this.longitude = this.maison.longitude;
     this.maps();
-  })
+    })
   }
 
   addReservation() {
+    console.log(this.addReservationForm.value)
     this.reservationService.addReservation(this.addReservationForm.value, this.id).subscribe();
-    window.location.href= 'admin/reservations';
+    window.location.href= 'admin/houses/reservation/'+ this.id;
   }
 }

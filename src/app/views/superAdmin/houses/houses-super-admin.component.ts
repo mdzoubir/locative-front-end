@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MaisonService} from '../../../services/maison.service';
 import {Maison} from '../../../moduls/maison';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-houses',
@@ -12,7 +13,7 @@ export class HousesSuperAdminComponent implements OnInit {
   houses: Maison[];
 
   constructor(
-    private housesService: MaisonService
+    private housesService: MaisonService,
   ) { }
 
   ngOnInit(): void {
@@ -24,5 +25,4 @@ export class HousesSuperAdminComponent implements OnInit {
       this.houses = res;
     })
   }
-
 }

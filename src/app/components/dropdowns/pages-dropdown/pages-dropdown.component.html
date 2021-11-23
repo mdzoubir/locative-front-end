@@ -1,17 +1,13 @@
 <a
   class="lg:text-white hover:orange text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-  href=""
-  (click)="toggleDropdown($event)"
-  #btnDropdownRef
+  (click)="drop()"
+  style="cursor: pointer"
 >
-
-
   Services
 </a>
 <div
-  class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
-  [ngClass]="dropdownPopoverShow ? 'block' : 'hidden'"
-  #popoverDropdownRef
+  class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 absolute"
+  [ngStyle]="{'display': show == false ? 'none' : 'block'}"
 >
 
 
