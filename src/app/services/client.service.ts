@@ -23,7 +23,6 @@ export class ClientService {
   }
 
   updateMoreInfo(data:{cin: string, compteNumber: string, paymentMethode: string}, id:string): Observable<Client>{
-    console.log(data.paymentMethode)
     return this.http.post<Client>(`${environment.apiUrl}/api/v1/client/more/${id}`, data);
   }
 

@@ -39,7 +39,6 @@ export class AuthNavbarComponent implements OnInit {
 
   copyText(){
     this.clipboard.copy("+212662030438");
-    console.log("copie text")
   }
 
   logout(){

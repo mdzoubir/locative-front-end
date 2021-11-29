@@ -24,18 +24,11 @@ export class CardTableComponent implements OnInit {
     })
   }
 
-  // getAllClient(){
-  //   this.clientService.getClientPage().subscribe(res=>{
-  //     console.log(res)
-  //     this.clients = res;
-  //   })
-  // }
 
 
   drop: boolean = false;
   dropDown(){
     this.drop =! this.drop;
-    console.log(this.drop)
   }
 
 }

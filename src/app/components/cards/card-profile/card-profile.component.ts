@@ -28,7 +28,6 @@ export class CardProfileComponent implements OnInit {
 
   getClient(){
     this.clientService.getById(this.id).subscribe(res=>{
-      console.log(res)
       this.client = res;
     })
   }

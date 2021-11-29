@@ -22,6 +22,7 @@ export class AdminSidebarComponent implements OnInit {
   ngOnInit() {
     this.getAdmin();
   }
+
   toggleCollapseShow(classes) {
     this.collapseShow = classes;
   }
@@ -29,7 +30,7 @@ export class AdminSidebarComponent implements OnInit {
   getAdmin(){
     this.adminService.getAdmin().subscribe(res => {
       this.admin = res;
-      if (this.admin == null){
+      if (this.admin.firstName == null){
         this.logout();
       }
     })

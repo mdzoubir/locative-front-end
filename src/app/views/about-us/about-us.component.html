@@ -1,23 +1,28 @@
 <app-auth-navbar></app-auth-navbar>
 <main>
   <div class=" w-full mt-48 mb-24 ">
-    <h1 class="text-5xl font-bold w-6/12 mx-auto uppercase text-center mb-12 black-color">
-      Nous sommes une équipe de passionnés au Maroc par le service de conciergerie.
-    </h1>
-    <p class="text-center w-6/12 mx-auto text-2xl">
-      Nous sommes présent au Maroc depuis maintenant plus de deux ans et nous
-      avons à notre charge plus d’une dizaine de logements.
+    <h1 class="text-5xl font-bold w-6/12 mmm:with-2 mml:witdh-1 mx-auto uppercase text-center mb-12 black-color">
+      Nous sommes une équipe spécialisée dans le service de conciergerie au Maroc    </h1>
+    <p class="text-center w-6/12 mmm:with-2 mml:witdh-1 mx-auto text-2xl">
+      Nous sommes au Maroc depuis plus de deux ans et
+      nous sommes chargés de plus d'une dizaine de logements.
     </p>
-    <div class="w-6/12 mx-auto">
-      <button
-        [routerLink]="'/contact'"
-        class="bg-orange text-white active:bg-red-700 text-xs mt-5  font-bold uppercase px-12 py-4 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 mx-auto ease-linear transition-all duration-150"
-        type="button"
-        style="margin-left: 35%"
-      >
-        <a href="contact">Contact</a>
-      </button>
+    <div class="flex flex-wrap">
+      <div class="w-full px-4 flex-1">
+      </div>
+      <div class="w-full px-4 flex-1">
+        <button
+          [routerLink]="'/contact'"
+          class="text-sm block my-4 p-3 bg-orange hover:shadow-lg duration-150 transition-all text-xl mt-8 text-white rounded mx-auto px-12 py-4"
+          type="button"
+        >
+          <a href="contact">Contact</a>
+        </button>
+      </div>
+      <div class="w-full px-4 flex-1">
+      </div>
     </div>
+
   </div>
   <section class="mx-auto w-10/12 mb-24">
     <div class="w-full">
@@ -25,7 +30,7 @@
     </div>
   </section>
   <div class="container px-4 mx-auto mt-48 mb-24">
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap mmm:flex-direction">
       <div class="w-full px-4 flex-1">
         <img src="assets/img/airbnbs/About%20us%202.jpg" class="text-sm block w-10/12 lg:w-9/12 text-blueGray-700 rounded"/>
       </div>
@@ -33,19 +38,19 @@
         <div class="flex flex-wrap">
           <div class="w-full">
             <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-              <li class="-mb-px mr-2 last:mr-0 flex-auto text-center mb-2">
+              <li class="-mb-px my-2 mx-2 last:mr-0 flex-auto text-center mb-2">
                 <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(1)" [ngClass]="{'text-orange bg-white': openTab !== 1, 'text-white bg-orange': openTab === 1}">
-                  Transparence
+                  Fidélité
                 </a>
               </li>
-              <li class="-mb-px mr-2 last:mr-0 flex-auto text-center mb-2">
+              <li class="-mb-px my-2 mx-2 last:mr-0 flex-auto text-center mb-2">
                 <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(2)" [ngClass]="{'text-orange bg-white': openTab !== 2, 'text-white bg-orange': openTab === 2}">
                   Confiance
                 </a>
               </li>
-              <li class="-mb-px mr-2 last:mr-0 flex-auto text-center mb-2">
+              <li class="-mb-px my-2 mx-2 last:mr-0 flex-auto text-center mb-2">
                 <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(3)" [ngClass]="{'text-orange bg-white': openTab !== 3, 'text-white bg-orange': openTab === 3}">
-                  Vos revenus, notre commission
+                  Vos profits, notre commission
                 </a>
               </li>
             </ul>
@@ -54,25 +59,30 @@
                 <div class="tab-content tab-space">
                   <div [ngClass]="{'hidden': openTab !== 1, 'block': openTab === 1}">
                     <p>
-                      Tous ce que nous réalisons pour vous ou les invités séjournant dans
-                      votre logement vous sera communiqué. Nous n’avons aucun secret pour
-                      nos clients, c’est pour cela que nous avons un capital confiance imbattable.
+                      Vous serez informé de tout ce que nous faisons pour
+                      vous ou les invités qui séjournent chez vous. Nous
+                      ne cachons rien à nos clients, c'est pourquoi nous
+                      avons un si haut niveau de fidélité.
                     </p>
                   </div>
                   <div [ngClass]="{'hidden': openTab !== 2, 'block': openTab === 2}">
                     <p>
-                      Pour pouvoir gérer votre bien de la meilleure façon qu’il soit, nous exigeons
-                      de recevoir la même confiance que nous vous apportons. La discrétion est un mot
-                      d’ordre avec nous ainsi que l’accompagnement des clients.
+                      Nous avons besoin de la même confiance que vous afin
+                      de gérer votre propriété au meilleur de nos capacités.
+                      Nos principales considérations sont la confidentialité
+                      et le service à la clientèle.
                     </p>
                   </div>
                   <div [ngClass]="{'hidden': openTab !== 3, 'block': openTab === 3}">
                     <p>
-                      Vous recevrez directement l’argent des réservations sur le compte bancaire de votre choix.
+                      Les bénéfices des réservations sont envoyés directement sur
+                      le compte bancaire de votre choix.
                     </p>
                     <p>
-                      A chaque fin de mois, nous réalisons une facture pour nos services qui correspondent à 20%
-                      des locations de votre logement (+ les frais de ménages que nous facturons directement sur Airbnb).
+                      A la fin de chaque mois, nous vous transmettrons une
+                      facture pour nos services, qui correspond à 25% du
+                      prix de location de votre logement (+ les frais de
+                      nettoyage que nous facturons directement sur Airbnb).
                     </p>
                   </div>
                 </div>

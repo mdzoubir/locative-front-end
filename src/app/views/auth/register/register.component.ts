@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   data: string;
   signup() {
-    this.signupService.signUp(this.signupForm.value).subscribe(res => console.log(res))
+    this.signupService.signUp(this.signupForm.value).subscribe()
     this.data = "you can log in new";
     this.signupForm.reset();
   }

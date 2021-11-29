@@ -9,7 +9,6 @@ export class PagesDropdownComponent implements OnInit {
   ngOnInit() {}
   show: boolean= false;
   drop() {
-    console.log(this.show)
     this.show =! this.show;
   }
 }

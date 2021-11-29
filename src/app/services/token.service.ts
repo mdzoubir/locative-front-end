@@ -46,7 +46,6 @@ export class TokenService {
   isValid(){
     const token = this.getToken();
     const email = this.getEmail();
-
     if (token){
       const payload = this.payload(token);
       if (payload){

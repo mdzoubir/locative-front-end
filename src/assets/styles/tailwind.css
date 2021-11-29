@@ -4057,22 +4057,7 @@ select {
   }
 }
 
-@media (max-width: 500px) {
-  .mx\:font-size {
-    font-size: 2.5rem;
-  }
-  .mx\:px-0{
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
 
-@media (max-width: 380px) {
-  .mn\:px-0{
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
 
 @media (min-width: 1280px) {
   .xl\:mb-0 {
@@ -4179,4 +4164,77 @@ select {
 
 .btnn{
   transition: 1s;
+}
+
+@media (max-width: 1280px){
+  .max\:padding{
+    padding: 0;
+  }
+  .max\:width-full{
+    width: 50%;
+  }
+  .max\:margin-top{
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .mx\:font-size {
+    font-size: 2.5rem;
+  }
+  .mx\:px-0{
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .mn\:px-0{
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .max\:padding-0{
+    padding-right: 0;
+  }
+  .mxx\:container{
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 768px){
+  .mdd\:margin-left{
+    margin-left: 60px;
+  }
+  .mdd\:margin-top{
+    margin-top: 27px;
+  }
+}
+
+@media (max-width: 500px) {
+  .mmm\:flex-direction{
+    flex-direction: column;
+  }
+  .mmm\:margin{
+    margin: 0 auto;
+  }
+  .mmm\:with-2{
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .mml\:flex-direction{
+    flex-direction: column;
+  }
+  .mml\:witdh-1{
+    width: 80%  ;
+  }
+
+  .mml\:padding-left-right{
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
 }

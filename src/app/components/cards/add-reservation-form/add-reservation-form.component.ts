@@ -99,7 +99,6 @@ export class AddReservationFormComponent implements OnInit {
   }
 
   addReservation() {
-    console.log(this.addReservationForm.value)
     this.reservationService.addReservation(this.addReservationForm.value, this.id).subscribe();
     window.location.href= 'admin/houses/reservation/'+ this.id;
   }

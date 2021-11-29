@@ -24,7 +24,6 @@ export class CardSocialTrafficComponent implements OnInit {
 
   getAllMaisonByAdminId(){
     this.maisonService.getLastMaison(this.profileService.getUserId()).subscribe((res:Maison[])=>{
-      console.log(res)
       this.maisons = res;
     })
   }
