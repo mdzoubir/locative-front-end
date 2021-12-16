@@ -5,6 +5,8 @@ import {TokenService} from "../../../services/token.service";
 import {Router} from "@angular/router";
 import {AccountService} from "../../../services/account.service";
 import {ProfileService} from "../../../services/profile.service";
+import {error} from 'protractor';
+import {log} from 'util';
 
 @Component({
   selector: "app-login",
@@ -25,14 +27,17 @@ export class LoginComponent implements OnInit {
     private profileService : ProfileService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.invalidPassword = false;
+  }
+
+  invalidPassword : boolean;
 
   login(){
     this.loginService.login(this.loginFrom.value).subscribe(
-      res => {
-        this.handelResponse(res);
-      }
-    );
+      res => this.handelResponse(res),
+          err => this.invalidPassword = true
+    )
   }
 
 

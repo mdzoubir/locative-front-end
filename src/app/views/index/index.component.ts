@@ -5,7 +5,10 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./index.component.html",
 })
 export class IndexComponent implements OnInit {
-  constructor() {}
+
+  constructor() {
+  }
 
   ngOnInit(): void {}
+
 }

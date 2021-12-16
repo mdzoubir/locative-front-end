@@ -6,9 +6,15 @@ import { createPopper } from "@popperjs/core";
   templateUrl: "./pages-dropdown.component.html",
 })
 export class PagesDropdownComponent implements OnInit {
-  ngOnInit() {}
-  show: boolean= false;
-  drop() {
-    this.show =! this.show;
+
+  isShown: boolean;
+
+
+  ngOnInit() {
+    this.isShown = false;
+  }
+
+  toggleShow() {
+    this.isShown = ! this.isShown;
   }
 }

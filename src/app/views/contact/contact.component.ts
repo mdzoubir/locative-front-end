@@ -12,7 +12,7 @@ export class ContactComponent implements OnInit {
 
   contactForm = new FormGroup({
     fullName : new FormControl(null, Validators.required),
-    email : new FormControl(null, [Validators.required, Validators.email]),
+    email : new FormControl(null, [Validators.required, Validators.email,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     message: new FormControl(null, Validators.required)
   })
 

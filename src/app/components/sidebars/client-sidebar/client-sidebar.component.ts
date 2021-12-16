@@ -6,6 +6,7 @@ import {TokenService} from "../../../services/token.service";
 import {Router} from "@angular/router";
 import {MaisonService} from "../../../services/maison.service";
 import {Maison} from "../../../moduls/maison";
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-client-sidebar',
@@ -17,13 +18,19 @@ export class ClientSidebarComponent implements OnInit {
   collapseShow = "hidden";
   maisons: Maison[]=[];
 
+  currentLang: string;
+
   constructor(
     private accountService: AccountService,
     private tokenService : TokenService,
     private router: Router,
     private clientService : ClientService,
     private maisonService : MaisonService,
-  ) { }
+    private translate : TranslateService
+  ) {
+    this.currentLang = localStorage.getItem('currentLang') || 'fr';
+    this.translate.use(this.currentLang);
+  }
 
   ngOnInit() {
     this.getClient();
@@ -64,6 +71,13 @@ export class ClientSidebarComponent implements OnInit {
   toggleTabs(){
     this.getAllMaisonByClientId();
     this.openTab = !this.openTab;
+  }
+
+
+  changeCurrentLang(lang: string){
+    this.translate.use(lang);
+    localStorage.setItem('currentLang', lang);
+    window.scroll(0,0);
   }
 
 

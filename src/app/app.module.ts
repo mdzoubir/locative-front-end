@@ -44,7 +44,7 @@ import { DesignDinterieurComponent } from './views/services/design-dinterieur/de
 import { WhyUsComponent } from './views/why-us/why-us.component';
 import { AboutUsComponent } from './views/about-us/about-us.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {Ng2TelInputModule} from "ng2-tel-input";
 import {JwtInterceptor} from "./interceptor/jwt.interceptor";
 import { ClientSidebarComponent } from './components/sidebars/client-sidebar/client-sidebar.component';
@@ -81,10 +81,14 @@ import {
   MonthService,
   RecurrenceEditorModule,
   ScheduleModule,
-  WeekService,
-  WorkWeekService
+  WeekService, WorkWeekService,
+
 } from '@syncfusion/ej2-angular-schedule';
 import { SeeReservationDetailsComponent } from './views/superAdmin/see-reservation-details/see-reservation-details.component';
+
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core'
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -156,7 +160,15 @@ import { SeeReservationDetailsComponent } from './views/superAdmin/see-reservati
     NgxPaginationModule,
     FormsModule,
     ScheduleModule,
-    RecurrenceEditorModule
+    RecurrenceEditorModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'fr',
+      loader:{
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     Clipboard,
@@ -175,3 +187,7 @@ import { SeeReservationDetailsComponent } from './views/superAdmin/see-reservati
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+export function createTranslateLoader(http: HttpClient){
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}

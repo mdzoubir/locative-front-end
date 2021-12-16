@@ -6,7 +6,9 @@
       >
         <div class="rounded-t mb-0 px-6 py-6">
           <div class="text-center mb-3">
-            <h6 class="text-blueGray-500 text-sm font-bold">Sign up with</h6>
+            <h6 class="text-blueGray-500 text-sm font-bold">
+              {{"Register.Title" | translate}}
+            </h6>
           </div>
           <hr class="mt-6 border-b-1 border-blueGray-300" />
         </div>
@@ -17,7 +19,7 @@
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
-                First Name
+                {{"Register.FirstName" | translate}}
               </label>
               <input
                 formControlName="firstName"
@@ -26,8 +28,9 @@
                 placeholder="First Name"
               />
               <div *ngIf="signupForm.get('firstName').invalid && (signupForm.get('firstName').touched || signupForm.get('firstName').dirty)">
-                <div class="text-red-500" *ngIf="signupForm.get('firstName').getError('required')">This field is required</div>
-                <div class="text-red-500" *ngIf="signupForm.get('firstName').getError('minlength')">This field required more then 3 character</div>
+                <div class="text-red-500" *ngIf="signupForm.get('firstName').getError('required')">{{"Contact.Required" | translate}}</div>
+                <div class="text-red-500" *ngIf="signupForm.get('firstName').getError('minlength')">{{"Contact.ThreeCara" | translate}}</div>
+                <div class="text-red-500" *ngIf="signupForm.get('firstName').getError('pattern')">{{"Contact.Invalid" | translate}}</div>
               </div>
             </div>
 
@@ -36,7 +39,7 @@
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
-                Last Name
+                {{"Register.LastName" | translate}}
               </label>
               <input
                 formControlName="lastName"
@@ -45,8 +48,9 @@
                 placeholder="Last Name"
               />
               <div *ngIf="signupForm.get('lastName').invalid && (signupForm.get('lastName').touched || signupForm.get('lastName').dirty)">
-                <div class="text-red-500" *ngIf="signupForm.get('lastName').getError('required')">This field is required</div>
-                <div class="text-red-500" *ngIf="signupForm.get('lastName').getError('minlength')">This field required more then 3 character</div>
+                <div class="text-red-500" *ngIf="signupForm.get('lastName').getError('required')">{{"Contact.Required" | translate}}</div>
+                <div class="text-red-500" *ngIf="signupForm.get('lastName').getError('minlength')">{{"Contact.ThreeCara" | translate}}</div>
+                <div class="text-red-500" *ngIf="signupForm.get('lastName').getError('pattern')">{{"Contact.Invalid" | translate}}</div>
               </div>
             </div>
 
@@ -64,8 +68,9 @@
                 placeholder="Email"
               />
               <div *ngIf="signupForm.get('email').invalid && (signupForm.get('email').touched || signupForm.get('email').dirty)">
-                <div class="text-red-500" *ngIf="signupForm.get('email').getError('required')">This field is required</div>
-                <div class="text-red-500" *ngIf="signupForm.get('email').getError('email')">This field should be email address</div>
+                <div class="text-red-500" *ngIf="signupForm.get('email').getError('required')">{{"Contact.Required" | translate}}</div>
+                <div class="text-red-500" *ngIf="signupForm.get('email').getError('email')">{{"Contact.Email" | translate}}</div>
+                <div class="text-red-500" *ngIf="signupForm.get('email').getError('pattern')">{{"Contact.Invalid" | translate}}</div>
               </div>
             </div>
 
@@ -74,7 +79,7 @@
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
-                Password
+                {{"Register.Password" | translate}}
               </label>
               <input
                 formControlName="password"
@@ -84,8 +89,8 @@
                 placeholder="Password"
               />
               <div *ngIf="signupForm.get('password').invalid && (signupForm.get('password').touched || signupForm.get('password').dirty)">
-                <div class="text-red-500" *ngIf="signupForm.get('password').getError('required')">This field is required</div>
-                <div class="text-red-500" *ngIf="signupForm.get('password').getError('minlength')">This field required more then 8 character</div>
+                <div class="text-red-500" *ngIf="signupForm.get('password').getError('required')">{{"Contact.Required" | translate}}</div>
+                <div class="text-red-500" *ngIf="signupForm.get('password').getError('minlength')">{{"Contact.EightCara" | translate}}</div>
               </div>
             </div>
 
@@ -94,7 +99,7 @@
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
-                Address
+                {{"Register.Address" | translate}}
               </label>
               <input
                 formControlName="address"
@@ -103,7 +108,7 @@
                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
               />
               <div *ngIf="signupForm.get('address').invalid && (signupForm.get('address').touched || signupForm.get('address').dirty)">
-                <div class="text-red-500" *ngIf="signupForm.get('address').getError('required')">This field is required</div>
+                <div class="text-red-500" *ngIf="signupForm.get('address').getError('required')">{{"Contact.Required" | translate}}</div>
               </div>
             </div>
 
@@ -112,7 +117,7 @@
                 class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="grid-password"
               >
-                Phone Number
+                {{"Register.Tele" | translate}}
               </label>
               <input
                 formControlName="phoneNumber"
@@ -121,16 +126,17 @@
                 ng2TelInput
               />
               <div *ngIf="signupForm.get('phoneNumber').invalid && (signupForm.get('phoneNumber').touched || signupForm.get('phoneNumber').dirty)">
-                <div class="text-red-500" *ngIf="signupForm.get('phoneNumber').getError('required')">This field is required</div>
+                <div class="text-red-500" *ngIf="signupForm.get('phoneNumber').getError('required')">{{"Contact.Required" | translate}}</div>
+                <div class="text-red-500" *ngIf="signupForm.get('phoneNumber').getError('pattern')">{{"Contact.Invalid" | translate}}</div>
               </div>
             </div>
 
             <div>
               <label class="inline-flex items-center cursor-pointer">
                 <span class="ml-2 text-sm font-semibold text-blueGray-600">
-                  Already have an account?
+                      {{"Register.ToLogin" | translate}}
                   <a href="auth/login" class="text-red-600">
-                     Sign in →
+                     {{"Register.Login" | translate}} →
                   </a>
                 </span>
               </label>
@@ -139,11 +145,11 @@
             <div class="text-center mt-6">
               <button
                 class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+                [hidden]="signupForm.invalid"
               >
-                Create Account
+                {{"Register.Button" | translate}}
               </button>
             </div>
-            <p class="leading-relaxed mt-1 mb-4 text-blueGray-500 text-center text-emerald-300" *ngIf="data != null">{{data}}</p>
           </form>
         </div>
       </div>

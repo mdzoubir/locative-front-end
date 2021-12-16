@@ -52,7 +52,7 @@
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        Admin Layout Pages
+        {{"Admin.Sidebar.First.Title" | translate}}
       </h6>
       <!-- Navigation -->
 
@@ -97,7 +97,7 @@
                 adminSettings.isActive ? 'opacity-75' : 'black-color'
               "
             ></i>
-            Profile
+            {{"Admin.Sidebar.First.Profile" | translate}}
           </a>
         </li>
 
@@ -119,7 +119,7 @@
                 adminTables.isActive ? 'opacity-75' : 'black-color'
               "
             ></i>
-            Users
+            {{"Admin.Sidebar.First.Users" | translate}}
           </a>
         </li>
 
@@ -141,7 +141,7 @@
                 adminHouses.isActive ? 'opacity-75' : 'black-color'
               "
             ></i>
-            Houses
+            {{"Admin.Sidebar.First.Houses" | translate}}
           </a>
         </li>
         <li class="items-center">
@@ -162,7 +162,7 @@
                 AdminReservation.isActive ? 'opacity-75' : 'black-color'
               "
             ></i>
-            Reservation
+            {{"Admin.Sidebar.First.Reservation" | translate}}
           </a>
         </li>
         <li class="items-center">
@@ -194,7 +194,7 @@
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        Auth Layout Pages
+        {{"Admin.Sidebar.Second.Title" | translate}}
       </h6>
       <!-- Navigation -->
 
@@ -206,7 +206,7 @@
             class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
             <i class="fas fa-sign-out-alt black-color mr-2 text-sm"></i>
-            Sign out
+            {{"Admin.Sidebar.Second.SignOut" | translate}}
           </a>
         </li>
       </ul>
@@ -217,7 +217,7 @@
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        No Layout Pages
+        {{"Admin.Sidebar.Third.Title" | translate}}
       </h6>
       <!-- Navigation -->
 
@@ -228,7 +228,7 @@
             class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
             <i class="fas fa-newspaper black-color mr-2 text-sm"></i>
-            Home Page
+            {{"Profile.Sidebar.Home.Home" | translate}}
           </a>
         </li>
 
@@ -238,7 +238,39 @@
             class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
             <i class="fas fa-user-circle black-color mr-2 text-sm"></i>
-            Services Page
+            {{"Profile.Sidebar.Home.Service" | translate}}
+          </a>
+        </li>
+      </ul>
+
+      <!-- Langue -->
+      <hr class="my-4 md:min-w-full" />
+      <!-- Heading -->
+      <h6
+        class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+      >
+        {{"Profile.Sidebar.Lang.Title" | translate}}
+      </h6>
+      <!-- Navigation -->
+
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+        <li class="items-center">
+          <a
+            class="cursor-pointer black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            (click)="changeCurrentLang('en')"
+          >
+            <i class="fas fa-globe black-color mr-2 text-sm"></i>
+            {{"Profile.Sidebar.Lang.Ang" | translate}}
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            class="cursor-pointer black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            (click)="changeCurrentLang('fr')"
+          >
+            <i class="fas fa-globe black-color mr-2 text-sm"></i>
+            {{"Profile.Sidebar.Lang.Fr" | translate}}
           </a>
         </li>
       </ul>

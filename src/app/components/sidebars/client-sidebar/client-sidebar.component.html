@@ -65,7 +65,7 @@
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        Client Layout Pages
+        {{"Profile.Sidebar.Layout.Title" | translate}}
       </h6>
       <!-- Navigation -->
 
@@ -111,7 +111,7 @@
                 adminSettings.isActive ? 'opacity-75' : 'black-color'
               "
             ></i>
-            Houses
+            {{"Profile.Sidebar.Layout.Houses" | translate}}
           </a>
         </li>
 
@@ -123,7 +123,7 @@
       <h6 [ngClass]="{'hidden': openTab == true, 'block': openTab != true}"
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        All Houses you have
+        {{"Profile.Sidebar.Houses.Title" | translate}}
       </h6>
       <!-- Navigation -->
 
@@ -145,7 +145,7 @@
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        Auth Layout Pages
+        {{"Profile.Sidebar.Auth.Title" | translate}}
       </h6>
       <!-- Navigation -->
 
@@ -157,7 +157,7 @@
             class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
             <i class="fas fa-sign-out-alt black-color mr-2 text-sm"></i>
-            Log out
+            {{"Profile.Sidebar.Auth.LogOut" | translate}}
           </a>
         </li>
       </ul>
@@ -168,7 +168,7 @@
       <h6
         class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
       >
-        No Layout Pages
+        {{"Profile.Sidebar.Home.Title" | translate}}
       </h6>
       <!-- Navigation -->
 
@@ -179,7 +179,7 @@
             class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
             <i class="fas fa-newspaper black-color mr-2 text-sm"></i>
-            Home Page
+            {{"Profile.Sidebar.Home.Home" | translate}}
           </a>
         </li>
 
@@ -189,10 +189,43 @@
             class="black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
           >
             <i class="fas fa-user-circle black-color mr-2 text-sm"></i>
-            Services Page
+            {{"Profile.Sidebar.Home.Service" | translate}}
           </a>
         </li>
       </ul>
+
+      <!-- Langue -->
+      <hr class="my-4 md:min-w-full" />
+      <!-- Heading -->
+      <h6
+        class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+      >
+        {{"Profile.Sidebar.Lang.Title" | translate}}
+      </h6>
+      <!-- Navigation -->
+
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
+        <li class="items-center">
+          <a
+            class="cursor-pointer black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            (click)="changeCurrentLang('en')"
+          >
+            <i class="fas fa-globe black-color mr-2 text-sm"></i>
+            {{"Profile.Sidebar.Lang.Ang" | translate}}
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            class="cursor-pointer black-color hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+            (click)="changeCurrentLang('fr')"
+          >
+            <i class="fas fa-globe black-color mr-2 text-sm"></i>
+            {{"Profile.Sidebar.Lang.Fr" | translate}}
+          </a>
+        </li>
+      </ul>
+
     </div>
   </div>
 </nav>

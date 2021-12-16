@@ -4,6 +4,7 @@ import {Admin} from "../../../moduls/admin";
 import {TokenService} from '../../../services/token.service';
 import {AccountService} from '../../../services/account.service';
 import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: "app-sidebar",
@@ -12,12 +13,17 @@ import {Router} from '@angular/router';
 export class AdminSidebarComponent implements OnInit {
   admin:Admin;
   collapseShow = "hidden";
+  currentLang: string;
   constructor(
     private adminService : AdminService,
     private tokenService: TokenService,
     private accountService: AccountService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private translate : TranslateService
+  ) {
+    this.currentLang = localStorage.getItem('currentLang') || 'fr';
+    this.translate.use(this.currentLang);
+  }
 
   ngOnInit() {
     this.getAdmin();
@@ -40,5 +46,12 @@ export class AdminSidebarComponent implements OnInit {
     this.tokenService.remove();
     this.accountService.changeStatus(false);
     this.router.navigateByUrl("/auth/login");
+  }
+
+
+  changeCurrentLang(lang: string){
+    this.translate.use(lang);
+    localStorage.setItem('currentLang', lang);
+    window.scroll(0,0);
   }
 }

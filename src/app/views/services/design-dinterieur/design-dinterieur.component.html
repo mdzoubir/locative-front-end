@@ -6,29 +6,20 @@
     <div class="w-full md:w-12/12 lg:w-12/12 xl:w-12/12 px-12 mn:px-0">
       <div class="pt-32 sm:pt-0 text-center px-12 mt-16 mx:px-0">
         <p class="font-bold text-white text-center pt-6" style="font-size: 20px">
-          Nous sommes les maîtres de la
+          {{"Services.Design.Home.FirstTitle" | translate}}
         </p>
         <h2 class="font-semibold text-5xl text-white">
-          décoration intérieure
+          {{"Services.Design.Home.SecondTitle" | translate}}
         </h2>
         <p class="mt-4 text-lg text-2xl leading-relaxed text-white">
-          <a
-            href="/contact"
-            class="text-white"
-          >
-            Alquirela
-          </a>
-          vous propose des services personnalisés de décoration intérieure
-          pour vous aider à exprimer votre goût de la sophistication et de
-          l'élégance.Vous ne vous ennuierez jamais de vivre dans votre maison
-          si vous nous permettez de la sublimer.
+          {{"Services.Design.Home.Text" | translate}}
         </p>
         <div class="mt-12">
           <a
             href="contact"
             class="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-orange uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
           >
-            CONTACTEZ-NOUS
+            {{"Services.Design.Home.Button" | translate}}
           </a>
         </div>
       </div>
@@ -47,17 +38,17 @@
           <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
             <li class="-mb-px my-2 mx-2 last:mr-0 flex-auto text-center">
               <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(1)" [ngClass]="{'text-orange bg-white': openTab !== 1, 'text-white bg-orange': openTab === 1}">
-                <i class="fas fa-comment-dollar text-base mr-1"></i> Estimation Gratuite
+                <i class="fas fa-comment-dollar text-base mr-1"></i> {{"Services.Design.Services.First.Title" | translate}}
               </a>
             </li>
             <li class="-mb-px my-2 mx-2 last:mr-0 flex-auto text-center">
               <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(2)" [ngClass]="{'text-orange bg-white': openTab !== 2, 'text-white bg-orange': openTab === 2}">
-                <i class="fas fa-hands-helping text-base mr-1"></i> Conseil en design
+                <i class="fas fa-hands-helping text-base mr-1"></i> {{"Services.Design.Services.Second.Title" | translate}}
               </a>
             </li>
             <li class="-mb-px my-2 mx-2 last:mr-0 flex-auto text-center">
               <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal cursor-pointer" (click)="toggleTabs(3)" [ngClass]="{'text-orange bg-white': openTab !== 3, 'text-white bg-orange': openTab === 3}">
-                <i class="fas fa-briefcase text-base mr-1"></i> Gestion des travaux
+                <i class="fas fa-briefcase text-base mr-1"></i> {{"Services.Design.Services.Third.Title" | translate}}
               </a>
             </li>
           </ul>
@@ -66,27 +57,17 @@
               <div class="tab-content tab-space">
                 <div [ngClass]="{'hidden': openTab !== 1, 'block': openTab === 1}">
                   <p>
-                    Nous vous offrons une estimation gratuite de nos services de
-                    décoration spécialisés et créatifs afin de sublimer vos
-                    appartements et leur donner un charme unique, car nous
-                    savons à quel point vos appartements sont importants pour vous.
+                    {{"Services.Design.Services.First.Text" | translate}}
                   </p>
                 </div>
                 <div [ngClass]="{'hidden': openTab !== 2, 'block': openTab === 2}">
                   <p>
-                    Nous avons l'option de décoration intérieure parfaite pour vous !
-                    Nous vous conseillerons dans le choix des matériaux et des couleurs
-                    en fonction du type de décoration que vous souhaitez offrir à votre
-                    appartement.
+                    {{"Services.Design.Services.Second.Text" | translate}}
                   </p>
                 </div>
                 <div [ngClass]="{'hidden': openTab !== 3, 'block': openTab === 3}">
                   <p>
-                    Nous pouvons également nous occuper de toutes les réparations et
-                    aménagements de votre appartement. Permettez-nous de vous aider à
-                    atteindre vos objectifs. Nous vous garantissons un aménagement
-                    personnalisé et sur mesure qui répond à vos exigences et s'adapte
-                    à votre budget.
+                    {{"Services.Design.Services.Third.Text" | translate}}
                   </p>
                 </div>
               </div>
@@ -104,24 +85,34 @@
       <span class="text-sm text-center block my-4 p-3 mx:px-0 text-blueGray-700 rounded ">
         <i class="fas fa-signal text-center mb-8 text-orange" style="font-size: 30px"></i>
         <h1 style="font-weight: bold; font-size: 80px" >65%</h1>
-        <h2 class="font-bold uppercase  mt-8 mb-2 black-color" style="font-size: 20px">de réservation en plus</h2>
-        <h3 class="font-normal" style="font-size: 17px">Une fois le travail de notre spécialiste du design réalisé.</h3>
+        <h2 class="font-bold uppercase  mt-8 mb-2 black-color" style="font-size: 20px">
+          {{"Services.Design.Statistics.First.Title" | translate}}</h2>
+        <h3 class="font-normal" style="font-size: 17px">
+          {{"Services.Design.Statistics.First.Text" | translate}}
+        </h3>
       </span>
     </div>
     <div class="w-1/2 px-4 md:w-4/12 mx-auto mx:px-0">
       <span class="text-sm text-center block my-4 p-3 mx:px-0 text-blueGray-700 rounded ">
         <i class="fas fa-signal text-center mb-8 text-orange" style="font-size: 30px"></i>
         <h1 style="font-weight: bold; font-size: 80px">12+</h1>
-        <h2 class="font-bold uppercase  mt-8 mb-2 black-color" style="font-size: 20px">réalisations pour nos Airbnb’s.</h2>
-        <h3 class="font-normal" style="font-size: 17px">Plus d'une dizaine de clients ont déjà fait confiance à nos services professionnels.</h3>
+        <h2 class="font-bold uppercase  mt-8 mb-2 black-color" style="font-size: 20px">
+          {{"Services.Design.Statistics.Second.Title" | translate}}</h2>
+        <h3 class="font-normal" style="font-size: 17px">
+          {{"Services.Design.Statistics.Second.Text" | translate}}
+        </h3>
       </span>
     </div>
     <div class="w-1/2 px-4 md:w-4/12 mx-auto mx:px-0">
       <span class="mx:px-0 text-sm text-center block my-4 p-3 text-blueGray-700 rounded ">
         <i class="fas fa-signal text-center mb-8 text-orange" style="font-size: 30px"></i>
         <h1 style="font-weight: bold; font-size: 80px">#1</h1>
-        <h2 class="font-bold uppercase  mt-8 mb-2 black-color" style="font-size: 20px">Sur Marrakech en consultation</h2>
-        <h3 class="font-normal" style="font-size: 17px">Rejoignez nous tout au long la semaine.</h3>
+        <h2 class="font-bold uppercase  mt-8 mb-2 black-color" style="font-size: 20px">
+          {{"Services.Design.Statistics.Third.Title" | translate}}
+        </h2>
+        <h3 class="font-normal" style="font-size: 17px">
+          {{"Services.Design.Statistics.Third.Text" | translate}}
+        </h3>
       </span>
     </div>
   </div>

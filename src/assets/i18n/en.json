@@ -1,0 +1,369 @@
+{
+  "Home": {
+    "First": {
+      "Title": "Your comfort, Our Concierge Service",
+      "Text": "Alquelira offers you a complete solution to help you rent and earn more profit. Your trust is our top priority.",
+      "Button": "Contact us"
+    },
+    "Our_Service": {
+      "Title": "Our Services",
+      "Description": "Alquelira offers you a concierge service to meet your expectations! For all of your seasonal rentals.",
+      "Services": {
+        "First": {
+          "Title": "Management of Ads on Airbnb",
+          "Text": "We will help you maximize your profits by providing a dynamic listing, an attractive and reasonable price, and a rental that will interest customers."
+        },
+        "Second": {
+          "Title": "Management and maintenance of your property",
+          "Text": "Professional cleaning on departure and arrival of travelers, quick response to any kind of maintenance, laundry kits and other services are available."
+        },
+        "third": {
+          "Title": "Guests Assistance",
+          "Text": "Assistance is offered to travelers 24/7. Our team takes care of the arrival and departure of travelers."
+        },
+        "Fourthly": {
+          "Title": "Advertisement on Airbnb",
+          "Text": "We arrange a meeting with you to take professional photos to publish on Airbnb.com."
+        }
+      }
+    },
+    "Why_Us": {
+      "Title": "Qui Sommme Nous",
+      "Text": "We have a group of specialized concierge service providers.\nTransparence, you will be informed of everything we do for you or the visitors who stay at your property",
+      "Link": "View All"
+    },
+    "Management": {
+      "Title": "Management and Maintenance",
+      "Text": "Alquelira provides you, your home and your future guests with a 24/7 maintenance and assistance service. You will be informed of every rental and every incident, and you will not be asked for any advance or obligation.",
+      "Avantages": {
+        "First": "Optimization of the Ads",
+        "Second": "Reactivity Guaranteed",
+        "third": "We are SuperHost"
+      }
+    },
+    "Additions": {
+      "Title": "You are in good hands!",
+      "Text": "Do you need a rental manager? Alquelira is here for you.",
+      "Avantages": {
+        "First": {
+          "Text": "Cleaning"
+        },
+        "Second": {
+          "Text": "Security"
+        },
+        "third": {
+          "Text": "Maintenance"
+        }
+      }
+    },
+    "Contact": {
+      "Title": "A quality service comes first",
+      "Text": "We know how to provide the right service to the right clients at the right time, whether you own a house or an apartment that you wish to rent on a seasonal or monthly basis, our team will do the job!",
+      "Button": "Contact us!"
+    },
+    "Footer": {
+      "Title": "Your Comfort, Our Concierge!",
+      "Text": "Find us quickly on social media platforms, and we will respond within a day or two.",
+      "Useful": {
+        "First": "Home",
+        "Second": "Service",
+        "Third": "Why us",
+        "Fourth": "About us"
+      },
+      "Other": {
+        "First": "Login",
+        "Second": "Sign in"
+      }
+    }
+  },
+  "Services" : {
+    "Nos_Services" : {
+      "First" : {
+        "Title" : "Advertising on Airbnb",
+        "Text": "All of Alquelira's advertising services are completely free! We will schedule a professional photo shoot with you and equip your home the same day to make it presentable (table layout, cutlery, flowers and other decorations).\nWe guarantee that your ad will be published the same day!"
+      },
+      "Second" : {
+        "Title" : "Management and Maintenance of your property",
+        "Text" : "Thanks to our transparent and efficient team, we provide expert cleaning upon departure and arrival of guests, as well as an inspection of the property, quick handling of any kind of repairs, laundry kits and other services. In addition, for Airbnb bookings, all damages are covered by our team."
+      },
+      "Third" : {
+        "Title" : "Customer assistance",
+        "Text" : "Alquelira offers you 24/7 customer assistance. Our team personally handles the arrival and departure of travelers. We provide instructions for different types of accommodation and practical advice for their needs. Whatever their vacation desire or need to travel quickly, conveniently and peacefully, our concierges and partners are here to help them find the perfect fit."
+      },
+      "Fourth" : {
+        "Title" : "Management of the advertisement on Airbnb",
+        "Text" : "Thanks to our skills in this field, on the famous Airbnb platform. We aim to maximize your profits by offering a dynamic listing, reasonable and attractive pricing, and a rental that will appeal to visitors. We can reference your ad on Airbnb to improve your occupancy rate and offer you an ad that conforms to the regulations on short-term rentals."
+      },
+      "Show" : "Show more"
+    },
+    "Nos_Alquirela" : {
+      "Title" : "Discover Our Apartments for Rent",
+      "text": "All our rentals are selected in a very detailed way in order to offer you the best apartments in attractive places and close to all the attractions.",
+      "Images" : {
+        "First" : "Luxury apartments in the heart of Marrakech.",
+        "Second" : "In our catalog, you will find the ideal apartment for you.",
+        "Third" : "From historic buildings to the most modern, there is something for everyone.",
+        "Fourth" : "From your balcony, you can marvel at the Atlas Mountains.",
+        "Fifth" : "From your apartment, you can walk to the Jemaa el Fna square.",
+        "Sixth" : "At Alquelira, you can rent the apartment of your dreams.",
+        "seventh" : "Apartments located in a secure and well-maintained building.",
+        "eight" : "The selection of high quality properties is a point of honor for us."
+      },
+      "Party" : {
+        "Title" : "Would you also like to be part of our Alquilera?",
+        "Text" : "Whatever your requirements in terms of size, location or number of rooms, you will find the ideal apartment in our collection, your requirements in terms of efficiency, security and tranquility, our concierges and partners are there to help you find what you want. Our vacation rental management is accompanied by a high level of service for your stay. Your peace of mind is our top priority.",
+        "Button" : "Contact us"
+      }
+    },
+    "Design" : {
+      "Home" : {
+        "FirstTitle" : "We are the masters of",
+        "SecondTitle" : "interior design",
+        "Text" : "Alquelira offers personalized interior design services to help you express your taste for sophistication and elegance. You will never be bored of living in your apartment if you allow us to make it beautiful.",
+        "Button" : "contact us"
+      },
+      "Services" : {
+        "First" : {
+          "Title" : "Free Estimate",
+          "Text" : "We offer you a free estimate of our specialized and creative decorating services in order to sublimate your apartments and give them a unique charm, because we know how important your apartments are to you."
+        },
+        "Second" : {
+          "Title" : "Design advice",
+          "Text" : "We have the perfect interior design option for you!\nWe will advise you on the choice of materials and colors according to the type of decoration you wish to offer your apartment."
+        },
+        "Third" : {
+          "Title" : "Management of the work",
+          "Text" : "We can also take care of all the repairs and improvements in your apartment. Let us help you achieve your goals. We guarantee you a personalized and customized design that meets your requirements and fits your budget."
+        }
+      },
+      "Statistics": {
+        "First" : {
+          "Title" : "more bookings",
+          "Text" : "Once our design specialist's work is done."
+        },
+        "Second" : {
+          "Title" : "Achievements for our Airbnbs",
+          "Text" : "More than a dozen of clients have already trusted our professional services."
+        },
+        "Third" : {
+          "Title" : "on Marrakech in consultation",
+          "Text" : "Join us throughout the week."
+        }
+      }
+    }
+  },
+  "WhyUs" : {
+    "First" : {
+      "Title" : "A high quality service above all",
+      "Text" : "Alquelira offers you a complete concierge service to manage your properties, their announcement and the arrival of the clients, professionalism, security and your confidence are our main objectives.",
+      "Taps" : {
+        "First" : "Assistance to travelers 24/7",
+        "Second" : "Accommodation management",
+        "Third" : "Management and referencing of ads"
+      },
+      "Alquelira" : {
+        "First" : {
+          "Title" : "Alquelira",
+          "Text" : "Avec SweetBNB, je suis au courant de toutes les arrivées et départs de mon logement et je peux les contacter pour la moindre question à n’importe quel moment !"
+        },
+        "Second" : {
+          "Text" : "Client of Alquelira in Marrakech."
+        }
+      }
+    },
+    "Housing" : {
+      "Title" : "Rent your property with peace of mind, Alquelira takes care of everything!",
+      "FirstCard" : {
+        "Title" : "Guest assistance is available 24/7",
+        "Text" : "Alquelira is at the disposal of your clients and takes care of them during their stay, from arrival to departure."
+      },
+      "SecondCard" : {
+        "Title" : "Property Management and Maintenance",
+        "Text" : "We understand how valuable your property is, which is why we are focused on protecting it."
+      },
+      "ThirdCard" : {
+        "Title" : "Optimize and Maximize your rental income",
+        "Text" : "Alquelira places and manages your ad on short-term rental sites."
+      }
+    },
+    "Comment" : {
+      "Text" : "“We bought an apartment in Marrakech for a seasonal rental. Thanks to Alquelira , they took care of everything. The combination of interior design and decorating skills allowed us to rely on a unique and modern decoration plan.”",
+      "Who" : "Cliente Alquelira à Marrakech."
+    },
+    "Bien" : {
+      "Title" : "Your property is in good hands! Rent with peace of mind!",
+      "Text" : "With Alquelira, you will benefit from a clear, efficient and competitive pricing.",
+      "Section" : {
+        "First" : {
+          "Title" : "Stays completed",
+          "Text" : "On average, we make 8 to 10 stays per month, and we make sure to adjust the pricing to guarantee the best possible profit for your property."
+        },
+        "Second" : {
+          "Title" : "Commission based on revenue",
+          "Text" : "We trust you as much as you trust us: no advances, no hidden fees, and no commitment to Alquelira. We only take a 25% commission on the revenue generated (plus the cleaning fee charged directly to guests on Airbnb)!"
+        },
+        "Third" : {
+          "Title" : "What you get",
+          "Text" : "Rent your property with peace of mind! Alquelira offers you a complete concierge service, from the creation to the management of the advertisements, from the arrival to the departure of the guests, as well as a 24/7 maintenance and support."
+        }
+      }
+    }
+  },
+  "AboutUs" : {
+    "Title" : "We are a team specialized in concierge services in Morocco",
+    "Text" : "We have been in Morocco for more than two years and we are in charge of more than a dozen homes.",
+    "Section" : {
+      "First" : {
+        "Title" : "Loyalty",
+        "Text" : "You will be informed of everything we do for you or the guests staying at your place. We don't hide anything from our customers, that's why we have such a high level of loyalty."
+      },
+      "Second" : {
+        "Title" : "Trust",
+        "Text" : "We need the same trust you have in order to manage your property to the best of our ability. Our primary considerations are confidentiality and customer service."
+      },
+      "Third" : {
+        "Title" : "Your profits, our commission",
+        "Text" : "Profits from bookings are sent directly to the bank account of your choice.\nAt the end of each month, we will send you an invoice for our services, which corresponds to 25% of the rental price of your property (+ the cleaning fee that we charge directly on Airbnb)."
+      }
+    }
+  },
+  "Contact" : {
+    "Title" : "Do not hesitate to contact our team of experts",
+    "Text" : "Transparency and peace of mind always come first at Alquelira. Our success depends on your peace of mind.\"",
+    "Card" : {
+      "Email" : "Agency E-mail",
+      "Address" : "Address",
+      "Tele" : "Phone number"
+    },
+    "Work" : {
+      "Title" : "Working with us is a success",
+      "Text" : "Discover all our services on our constantly updated website.\nAlquelira's experts are at your disposal for any information about the properties in our catalog, to search for properties based on your specifications or to publish your own home. Do not hesitate to contact us!",
+      "Card" : {
+        "Title" : "Nos experts",
+        "Text" : "Our experts have a large experience in real estate management as well as a thorough knowledge of Marrakech and its surroundings. Try to get our help to reach your goals and make your dreams come true!"
+      },
+      "Form" : {
+        "Title" : "Contact us for more information",
+        "Text" : "For more information on our services or to get a quote on your rental project; we will be happy to answer all your questions! ,",
+        "FullName" : "Full Name",
+        "Button" : "Send Message"
+      }
+    },
+    "Required" : "This field is required",
+    "ThreeCara" : "This field required more then 3 character",
+    "Email" : "This field should be email address",
+    "EightCara" : "This field required more then 8 character",
+    "Invalid" : "This field is invalid",
+    "Failed" : "Incorrect password",
+    "Done" : "Your message sent"
+  },
+  "Navbar" : {
+    "Home" : "Home",
+    "Service" : "Services",
+    "Our" : "Our services",
+    "Nos_Service" : "Our services for your accommodation",
+    "Nos_Alquelira" : "Our Alquelira's",
+    "Design" : "Interior design",
+    "WhyUs" : "Why Us",
+    "About" : "About Us",
+    "LogOut" : "Log out",
+    "Login" : "Login"
+  },
+  "Login" : {
+    "New" : "New in alquelira",
+    "Add" : "Create an account",
+    "Password" : "Password",
+    "Login" : "Sign in"
+  },
+  "Register" : {
+    "Title" : "Sign up with us",
+    "FirstName" : "First Name",
+    "LastName" : "Last Name",
+    "Password" : "Password",
+    "Address":  "Address",
+    "Tele" : "Phone Number",
+    "ToLogin" : "Already have an account?",
+    "Login" : "Sign in",
+    "Button" : "CREATE ACCOUNT"
+  },
+
+  "Profile" : {
+    "Dashboard" : {
+      "Title" : "My account",
+      "Houses" : "Houses",
+      "Reserved" : "Reserved",
+      "NotReserved" : "Not Reserved"
+    },
+    "Houses" : {
+      "Title" : "Home Account",
+      "Table" : {
+        "Title" : "Reservation type",
+        "Start" : "Reservation Date",
+        "To" : "To",
+        "Rent" : "Rent price",
+        "Net" : "Net"
+      }
+    },
+    "Sidebar" : {
+      "Layout" : {
+        "Title" : "Client Layout Pages",
+        "Houses" : "Houses"
+      },
+      "Houses" : {
+        "Title" : "All Houses you have"
+      },
+      "Auth" : {
+        "Title" : "AUTH LAYOUT PAGES",
+        "LogOut" : "Log out"
+      },
+      "Home" : {
+        "Title" : "No Layout Pages",
+        "Home" : "Home Page",
+        "Service" : "Services Page"
+      },
+      "Lang" : {
+        "Title" : "the language",
+        "Ang" : "English",
+        "Fr" : "French"
+      }
+    }
+  },
+  "Admin" : {
+    "Sidebar" : {
+      "First" : {
+        "Title" : "ADMIN LAYOUT PAGES",
+        "Profile" : "Profile",
+        "Users" : "Users",
+        "Houses" : "houses",
+        "Reservation" : "Reservation"
+      },
+      "Second" : {
+        "Title" : "AUTH LAYOUT PAGES",
+        "SignOut" : "Sign Out"
+      },
+      "Third" : {
+        "Title" : "NO LAYOUT PAGES"
+      }
+    },
+    "Dashboard" : {
+      "Houses" : {
+        "Title" : "Houses List",
+        "Button" : "See all",
+        "Email" : "Client Email",
+        "Phone" : "Client Phone",
+        "Bathroom" : "BATHROOM NUMBER",
+        "Chamber" : "chambers",
+        "Floor" : "Floors",
+        "Toilette" : "toilette",
+        "Rent" : "Rent Price"
+      },
+      "Client" : {
+        "Title" : "Client List",
+        "Name" : "Full Name",
+        "Email" : "Email",
+        "Phone" : "Phone number",
+        "Address" : "Address"
+      }
+    }
+  }
+}
