@@ -11,7 +11,7 @@ export class ContactComponent implements OnInit {
   constructor(private contactService: ContactService) { }
 
   contactForm = new FormGroup({
-    fullName : new FormControl(null, Validators.required),
+    fullName : new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-ZàâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ\\s]+$")]),
     email : new FormControl(null, [Validators.required, Validators.email,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     message: new FormControl(null, Validators.required)
   })

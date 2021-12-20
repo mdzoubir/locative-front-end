@@ -19,11 +19,11 @@ export class AdminsComponent implements OnInit {
 
 
   addAmin = new FormGroup({
-    firstName : new FormControl(null, [Validators.required, Validators.minLength(3)]),
-    lastName : new FormControl(null, [Validators.required, Validators.minLength(3)]),
-    email : new FormControl(null, [Validators.required, Validators.email]),
+    firstName : new FormControl(null, [Validators.required, Validators.minLength(3), Validators.pattern("[a-zA-Z]*")]),
+    lastName : new FormControl(null, [Validators.required, Validators.minLength(3), Validators.pattern("[a-zA-Z]*")]),
+    email : new FormControl(null, [Validators.required, Validators.email, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     password : new FormControl(null, [Validators.required, Validators.minLength(8)]),
-    phoneNumber : new FormControl(null, Validators.required),
+    phoneNumber : new FormControl(null,[ Validators.required, Validators.pattern("[0-9]*")]),
     address : new FormControl(null, Validators.required)
   })
 
@@ -44,7 +44,8 @@ export class AdminsComponent implements OnInit {
   }
 
   addNewAdmin() {
-    this.adminService.addNewAdmin(this.addAmin.value).subscribe();
-    window.location.reload();
+    this.adminService.addNewAdmin(this.addAmin.value).subscribe(
+      res => window.location.reload()
+    );
   }
 }

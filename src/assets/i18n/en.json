@@ -233,14 +233,16 @@
     "Card" : {
       "Email" : "Agency E-mail",
       "Address" : "Address",
+      "Address" : "Address",
       "Tele" : "Phone number"
     },
     "Work" : {
       "Title" : "Working with us is a success",
-      "Text" : "Discover all our services on our constantly updated website.\nAlquelira's experts are at your disposal for any information about the properties in our catalog, to search for properties based on your specifications or to publish your own home. Do not hesitate to contact us!",
+      "Text" : "Discover all our services on our constantly updated website.",
+      "Updd" : "Alquelira's experts are at your disposal for any information about the properties in our catalog, to search for properties based on your specifications, or to advertise your own home. Do not hesitate to contact us!",
       "Card" : {
-        "Title" : "Nos experts",
-        "Text" : "Our experts have a large experience in real estate management as well as a thorough knowledge of Marrakech and its surroundings. Try to get our help to reach your goals and make your dreams come true!"
+        "Title" : "Quality Services",
+        "Text" : "Our experts have a large experience in real estate management as well as a thorough knowledge of Marrakech and its surroundings. Try to get in touch with us to help you reach your goals and make your dreams come true!"
       },
       "Form" : {
         "Title" : "Contact us for more information",
@@ -255,7 +257,9 @@
     "EightCara" : "This field required more then 8 character",
     "Invalid" : "This field is invalid",
     "Failed" : "Incorrect password",
-    "Done" : "Your message sent"
+    "Done" : "Your message sent",
+    "Cin" : "This is not valid cin",
+    "Min" : "Min rent is 100"
   },
   "Navbar" : {
     "Home" : "Home",
@@ -292,7 +296,8 @@
       "Title" : "My account",
       "Houses" : "Houses",
       "Reserved" : "Reserved",
-      "NotReserved" : "Not Reserved"
+      "NotReserved" : "Not Reserved",
+      "Client" : "Client Profile"
     },
     "Houses" : {
       "Title" : "Home Account",
@@ -300,8 +305,7 @@
         "Title" : "Reservation type",
         "Start" : "Reservation Date",
         "To" : "To",
-        "Rent" : "Rent price",
-        "Net" : "Net"
+        "Rent" : "Rent price"
       }
     },
     "Sidebar" : {
@@ -363,6 +367,87 @@
         "Email" : "Email",
         "Phone" : "Phone number",
         "Address" : "Address"
+      }
+    },
+    "Users" : {
+      "Title" : "Clients Table",
+      "Table" : {
+        "First" : "First Name",
+        "Last" : "Last Name",
+        "Email" : "Email",
+        "Address" : "Address",
+        "Houses" : "Houses Number",
+        "See" : "See Profile",
+        "Edit" : "Edit profile",
+        "Add" : "add home"
+      },
+      "See" : {
+        "Location" : "Location",
+        "City" : "City",
+        "Zip" : "Zip Code",
+        "Area" : "Area",
+        "Room" : "Room",
+        "Toilet" : "Toilet",
+        "Bath" : "Bathroom",
+        "Floor" : "Floor",
+        "Rent" : "Rent price",
+        "Elevator" : "Elevator"
+      },
+      "Add" : {
+        "Title" : "Add home to",
+        "Address" : "House Address",
+        "City" : "city",
+        "zip" : "zip code",
+        "Area" : "Area",
+        "Room" : "number of rooms",
+        "Toilette" : "Toilets number",
+        "Bath" : "bathrooms number",
+        "Floor" : "floors number",
+        "Rent" : "Rent price",
+        "Type" : "Home type",
+        "Elevator" : "Elevator",
+        "Button" : "add home"
+      },
+      "Edit" : {
+        "Form"  : {
+          "Title" : "Add more option",
+          "Account": "Account Number",
+          "Update" : "Update"
+        }
+      }
+    },
+    "Houses" : {
+      "Add" : "Add Reservation"
+    },
+    "AddReser" : {
+      "Title" : "Add New Reservation",
+      "Button" : "Add"
+    },
+    "Resers" : {
+      "Title" : "Reservation Table"
+    }
+  },
+  "SuperAdmin" : {
+    "Admins" : {
+      "Button" : "Add new Admin",
+      "Table" : {
+        "Client" : "clients number",
+        "Houses" : "houses number"
+      },
+      "Form" : {
+        "Button" : "Create Admin Account"
+      }
+    },
+    "Houses" : {
+      "Title" : "Houses Table",
+      "Table" : {
+        "SeeAll" : "see all reservations"
+      }
+    },
+    "Rese" : {
+      "Table" : {
+        "Client" : "client profit",
+        "alquelira" : "alqurela profit"
       }
     }
   }

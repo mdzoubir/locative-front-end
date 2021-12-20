@@ -17,7 +17,7 @@ export class AddClientHomeComponent implements OnInit {
 
   id: string;
   client: Client;
-  assets: Asset;
+  assets: Asset[];
   assetId: number;
 
 
@@ -32,14 +32,14 @@ export class AddClientHomeComponent implements OnInit {
 
   addHouseForm = new FormGroup({
     location : new FormControl(null, Validators.required),
-    city : new FormControl(null, Validators.required),
-    zipCode : new FormControl(null, Validators.required),
-    area : new FormControl(null, Validators.required),
-    chamberNumber : new FormControl(null, Validators.required),
-    toiletNumber : new FormControl(null, Validators.required),
-    bathroomNumber : new FormControl(null, Validators.required),
-    floorsNumber : new FormControl(null, Validators.required),
-    rentPrice : new FormControl(null, Validators.required),
+    city : new FormControl(null, [Validators.required]),
+    zipCode : new FormControl(null, [Validators.required, Validators.pattern("^[0-9]{5}")]),
+    area : new FormControl(null, [Validators.required, Validators.min(20)]),
+    chamberNumber : new FormControl(null, [Validators.required, Validators.min(0)]),
+    toiletNumber : new FormControl(null, [Validators.required, Validators.min(0)]),
+    bathroomNumber : new FormControl(null, [Validators.required, Validators.min(0)]),
+    floorsNumber : new FormControl(null, [Validators.required, Validators.min(0)]),
+    rentPrice : new FormControl(null, [Validators.required, Validators.min(0)]),
     elevator : new FormControl(false  , Validators.required),
     assetType : new FormControl(null  , Validators.required),
     latitude : new FormControl(null),
@@ -94,7 +94,7 @@ export class AddClientHomeComponent implements OnInit {
   }
 
   getAllAssets(){
-    this.assetService.getAllAssets().subscribe(res=>{
+    this.assetService.getAllAssets().subscribe(res =>{
       this.assets = res;
     })
   }

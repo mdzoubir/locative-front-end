@@ -241,8 +241,12 @@
     },
     "Work" : {
       "Title" : "Collaborer avec nous est un succès",
-      "Text" : "Découvrez l'ensemble de nos services dans notre site constamment mis à jour.\nLes experts d’Alquelira sont à votre disposition pour toute information sur les biens de notre catalogue ,pour effectuer une recherche de biens sur la base de vos spécifications ou pour la publication de votre propre logement. N’hésitez pas à nous contacter !",
-      "Second" : "Nos experts ont une grande expérience de la gestion immobilière ainsi qu'une connaissance approfondie de Marrakech et de ses environs. Tentez d'obtenir notre aide pour atteindre vos objectifs et faire de vos rêves une réalité !",
+      "Text" : "Découvrez l'ensemble de nos services dans notre site constamment mis à jour.",
+      "Updd" : "Les experts d’Alquelira sont à votre disposition pour toute information sur les biens de notre catalogue ,pour effectuer une recherche de biens sur la base de vos spécifications ou pour la publication de votre propre logement. N’hésitez pas à nous contacter !",
+      "Card" : {
+        "Title" : "Services De Qualité",
+        "Text" : "Nos experts ont une grande expérience de la gestion immobilière ainsi qu'une connaissance approfondie de Marrakech et de ses environs. Tentez d'obtenir notre aide pour atteindre vos objectifs et faire de vos rêves une réalité !"
+      },
       "Form" : {
         "Title" : "Contactez nous pour plus d’information",
         "Text" : "Pour plus d'informations sur nos services ou pour obtenir un devis sur votre projet de location ; nous serons heureux de répondre à toutes vos questions !",
@@ -256,7 +260,9 @@
     "EightCara" : "Ce champ nécessitait plus de 8 caractères",
     "Invalid" : "Ce champ est invalide",
     "Failed" : "Mot de passe incorrect",
-    "Done" : "Votre message envoyé"
+    "Done" : "Votre message envoyé",
+    "Cin" : "Ce n'est pas valide cin",
+    "Min" : "Le location minimum est de 100"
   },
   "Navbar" : {
     "Home" : "Accueil",
@@ -293,7 +299,8 @@
       "Title" : "Mon compte",
       "Houses" : "Maisons",
       "Reserved" : "Réservée",
-      "NotReserved" : "Non réservé"
+      "NotReserved" : "Non réservé",
+      "Client" : "Profil de client"
     },
     "Houses" : {
       "Title" : "Compte d'accueil",
@@ -364,6 +371,87 @@
         "Email" : "Email",
         "Phone" : "numéro de téléphone",
         "Address" : "Adresse"
+      }
+    },
+    "Users" : {
+      "Title" : "Tableau des clients",
+      "Table" : {
+        "First" : "Prénom",
+        "Last" : "Nom",
+        "Email" : "Email",
+        "Address" : "Adresse",
+        "Houses" : "Nombre de maisons",
+        "See" : "Voir le profil",
+        "Edit" : "Editer le profil",
+        "Add" : "ajouter un maison"
+      },
+      "See" : {
+        "Location" : "Localisation",
+        "City" : "Ville",
+        "Zip" : "Code postal",
+        "Area" : "Zone",
+        "Room" : "pièce",
+        "Toilet" : "Toilettes",
+        "Bath" : "Salle de bain",
+        "Floor" : "Étage",
+        "Rent" : "Prix de location",
+        "Elevator" : "Ascenseur"
+      },
+      "Add" : {
+        "Title" : "Ajouter la maison à",
+        "Address" : "Adresse de la maison",
+        "City" : "ville",
+        "zip" : "code postal",
+        "Area" : "Zone",
+        "Room" : "nombre de chambres",
+        "Toilette" : "Numéro des toilettes",
+        "Bath" : "numéro de salle de bain",
+        "Floor" : "nombre d'étages",
+        "Rent" : "Prix de location",
+        "Type" : "Type de maison",
+        "Elevator" : "Ascenseur",
+        "Button" : "ajouter la maison"
+      },
+      "Edit" : {
+        "Form"  : {
+          "Title" : "Ajouter plus d'options",
+          "Account": "Numéro de compte",
+          "Update" : "Modifier"
+        }
+      }
+    },
+    "Houses" : {
+      "Add" : "Ajouter une réservation"
+    },
+    "AddReser" : {
+      "Title" : "Add New Reservation",
+      "Button" : "Ajouter"
+    },
+    "Resers" : {
+      "Title" : "Tableau de réservation"
+    }
+  },
+  "SuperAdmin" : {
+    "Admins" : {
+      "Button" : "Ajouter un nouvel admin",
+      "Table" : {
+        "Client" : "nombre de clients",
+        "Houses" : "nombre de maisons"
+      }
+    },
+    "Form" : {
+      "Button" : "Créer un compte admin"
+    },
+    "Houses" : {
+      "Title" : "Tableau des maisons",
+      "Table" : {
+        "SeeAll" : "voir toutes les réservations"
+      }
+    },
+    "Rese" : {
+      "Table" : {
+        "Client" : "bénéfice client",
+        "alquelira" : "alquelira bénéfice"
       }
     }
   }

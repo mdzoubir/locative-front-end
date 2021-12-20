@@ -5,6 +5,7 @@ import {SuperAdmin} from '../../../moduls/super-admin';
 import {TokenService} from '../../../services/token.service';
 import {AccountService} from '../../../services/account.service';
 import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-super-admin-sidebar',
@@ -15,14 +16,19 @@ export class SuperAdminSidebarComponent implements OnInit {
 
   superAdmin: SuperAdmin;
   collapseShow = "hidden";
+  currentLang: string;
 
   constructor(
     private superAdminService : SuperAdminService,
     private profileService: ProfileService,
     private tokenService: TokenService,
     private accountService: AccountService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private translate : TranslateService
+  ) {
+    this.currentLang = localStorage.getItem('currentLang') || 'fr';
+    this.translate.use(this.currentLang);
+  }
 
   ngOnInit(): void {
     this.getSuperAdmin();
@@ -45,6 +51,13 @@ export class SuperAdminSidebarComponent implements OnInit {
     this.tokenService.remove();
     this.accountService.changeStatus(false);
     this.router.navigateByUrl("/auth/login");
+  }
+
+
+  changeCurrentLang(lang: string){
+    this.translate.use(lang);
+    localStorage.setItem('currentLang', lang);
+    window.scroll(0,0);
   }
 
 }

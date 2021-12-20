@@ -35,7 +35,7 @@ export class AddReservationFormComponent implements OnInit {
   addReservationForm = new FormGroup({
     startTime : new FormControl(null, Validators.required),
     endTime : new FormControl(null, Validators.required),
-    totalRent : new FormControl(null, [Validators.required]),
+    totalRent : new FormControl(null, [Validators.required, Validators.min(100)]),
   })
 
   ngOnInit(): void {
@@ -90,16 +90,18 @@ export class AddReservationFormComponent implements OnInit {
   }
 
   getReservation(){
-  this.maisonService.getByMaisonId(this.id).subscribe(res => {
-    this.maison = res;
-    this.latitude = this.maison.latitude;
-    this.longitude = this.maison.longitude;
-    this.maps();
+    this.maisonService.getByMaisonId(this.id).subscribe(res => {
+      this.maison = res;
+      this.latitude = this.maison.latitude;
+      this.longitude = this.maison.longitude;
+      this.maps();
     })
   }
 
   addReservation() {
-    this.reservationService.addReservation(this.addReservationForm.value, this.id).subscribe();
-    window.location.href= 'admin/houses/reservation/'+ this.id;
+    this.reservationService.addReservation(this.addReservationForm.value, this.id).subscribe(
+      res => window.location.href= 'admin/houses/reservation/'+ this.id
+    );
+
   }
 }

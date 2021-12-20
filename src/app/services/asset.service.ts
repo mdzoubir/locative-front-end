@@ -13,8 +13,8 @@ export class AssetService {
     private http : HttpClient
   ) { }
 
-  getAllAssets(): Observable<Asset>{
-    return this.http.get<Asset>(`${environment.apiUrl}/api/v1/asset`);
+  getAllAssets(): Observable<Asset[]>{
+    return this.http.get<Asset[]>(`${environment.apiUrl}/api/v1/asset`);
   }
 
   getByType(type: string): Observable<Asset>{

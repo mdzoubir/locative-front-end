@@ -15,11 +15,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   signupForm = new FormGroup({
-    firstName : new FormControl(null, [Validators.required, Validators.minLength(3), Validators.pattern("[a-zA-Z]*")]),
-    lastName : new FormControl(null, [Validators.required, Validators.minLength(3), Validators.pattern("[a-zA-Z]*")]),
+    firstName : new FormControl(null, [Validators.required, Validators.minLength(3), Validators.pattern("^[a-zA-Z àâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ'\\)\\(.-]+$")]),
+    lastName : new FormControl(null, [Validators.required, Validators.minLength(3), Validators.pattern("^[a-zA-Z àâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ'\\)\\(.-]+$")]),
     email : new FormControl(null, [Validators.required, Validators.email,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     password : new FormControl(null, [Validators.required, Validators.minLength(8)]),
-    phoneNumber : new FormControl(null, [Validators.required, Validators.pattern("[0-9]*")]),
+    phoneNumber : new FormControl(null, [Validators.required, Validators.pattern("^[0-9]{10}")]),
     address : new FormControl(null, Validators.required)
   })
 

@@ -1,5 +1,5 @@
 <div  *ngFor="let maison of maisons; let i=index"
-  class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
+      class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
 >
   <div class="rounded-t bg-white mb-0 px-6 py-6">
     <div class="text-center flex justify-between">
@@ -14,18 +14,9 @@
         <div
           class="relative flex flex-col min-w-0 break-words bg-white w-full mb-2 shadow-xl rounded-lg mt-2"
         >
-            <div class="flex flex-wrap justify-center">
-              <div class="w-full px-4 py-4">
-                  <span class="text-left">Location : {{maison?.location}}</span>
-              </div>
-            </div>
-        </div>
-        <div
-          class="relative flex flex-col min-w-0 break-words bg-white w-full mb-2 shadow-xl rounded-lg mt-2"
-        >
           <div class="flex flex-wrap justify-center">
             <div class="w-full px-4 py-4">
-              <span class="text-left">city : {{maison?.city}}</span>
+              <span class="text-left">{{"Admin.Users.See.Location" | translate}} : {{maison?.location}}</span>
             </div>
           </div>
         </div>
@@ -34,7 +25,7 @@
         >
           <div class="flex flex-wrap justify-center">
             <div class="w-full px-4 py-4">
-              <span class="text-left">zip code : {{maison?.zipCode}}</span>
+              <span class="text-left">{{"Admin.Users.See.City" | translate}} : {{maison?.city}}</span>
             </div>
           </div>
         </div>
@@ -43,7 +34,7 @@
         >
           <div class="flex flex-wrap justify-center">
             <div class="w-full px-4 py-4">
-              <span class="text-left">area : {{maison?.area}}</span>
+              <span class="text-left">{{"Admin.Users.See.Zip" | translate}} : {{maison?.zipCode}}</span>
             </div>
           </div>
         </div>
@@ -52,7 +43,16 @@
         >
           <div class="flex flex-wrap justify-center">
             <div class="w-full px-4 py-4">
-              <span class="text-left">room : {{maison?.chamberNumber}} / toilet : {{maison?.toiletNumber }} / bathroom : {{maison?.bathroomNumber}} / floor : {{maison?.floorsNumber}}</span>
+              <span class="text-left">{{"Admin.Users.See.Area" | translate}} : {{maison?.area}}</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative flex flex-col min-w-0 break-words bg-white w-full mb-2 shadow-xl rounded-lg mt-2"
+        >
+          <div class="flex flex-wrap justify-center">
+            <div class="w-full px-4 py-4">
+              <span class="text-left">{{"Admin.Users.See.Room" | translate}} : {{maison?.chamberNumber}} / {{"Admin.Users.See.Toilet" | translate}} : {{maison?.toiletNumber }} / {{"Admin.Users.See.Bath" | translate}} : {{maison?.bathroomNumber}} / {{"Admin.Users.See.Floor" | translate}} : {{maison?.floorsNumber}}</span>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@
         >
           <div class="flex flex-wrap justify-center">
             <div class="w-full px-4 py-4">
-              <span class="text-left">rent price : {{maison?.rentPrice}} / elevator : {{maison?.elevator}}</span>
+              <span class="text-left">{{"Admin.Users.See.Rent" | translate}} : {{maison?.rentPrice}} / {{"Admin.Users.See.Elevator" | translate}} : {{maison?.elevator}}</span>
             </div>
           </div>
         </div>

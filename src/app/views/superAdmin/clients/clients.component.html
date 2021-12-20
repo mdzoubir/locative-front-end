@@ -9,7 +9,7 @@
             <h3
               class="font-semibold text-lg text-blueGray-700"
             >
-              Reservation Table
+              {{"Admin.Resers.Title" | translate}}
             </h3>
           </div>
         </div>
@@ -22,32 +22,32 @@
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              first Name
+              {{"Admin.Users.Table.First" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              Last Name
+              {{"Admin.Users.Table.Last" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              email
+              {{"Admin.Users.Table.Email" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              address
+              {{"Admin.Users.Table.Address" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              phone
+              {{"Contact.Card.Tele" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              houses number
+              {{"Admin.Users.Table.Houses" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
@@ -57,12 +57,12 @@
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              methode
+              {{"Admin.Users.Add.Type" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              account number
+              {{"Admin.Users.Edit.Form.Account" | translate}}
             </th>
           </tr>
           </thead>
@@ -105,12 +105,12 @@
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 uppercase"
-            ><p *ngIf="client?.paymentMethode == null">no methode</p>
+            ><p *ngIf="client?.paymentMethode == null">no type</p>
               {{client?.paymentMethode}}
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 uppercase"
-            ><p *ngIf="client?.compteNumber == null">no account number</p>
+            ><p *ngIf="client?.compteNumber == null">no {{"Admin.Users.Edit.Form.Account" | translate}}</p>
               {{client?.compteNumber}}
             </td>
           </tr>

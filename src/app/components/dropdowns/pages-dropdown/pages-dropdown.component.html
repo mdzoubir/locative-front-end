@@ -2,6 +2,11 @@
   class="lg:text-white hover:orange text-white pr-4 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
   style="cursor: pointer"
   (click)="toggleShow()"
+  [ngClass]="
+            change == true
+                ? 'text-orange'
+                : 'text-white hover:orange'
+            "
 >
   Services
 </a>
@@ -9,27 +14,46 @@
   class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 absolute"
   *ngIf="isShown"
 >
-
-
   <span
     class="text-sm pt-2 pb-0 px-4 font-bold block w-full whitespace-nowrap bg-transparent text-blueGray-400"
   >
     {{"Navbar.Our" | translate}}
   </span>
   <a
-    href="services"
     class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+    [routerLink]="['/services/votrelogement']"
+    routerLinkActive
+    #service="routerLinkActive"
+    [ngClass]="
+              service.isActive
+                ? 'text-orange'
+                : 'text-white hover:orange'
+            "
   >
     {{"Navbar.Nos_Service" | translate}}
   </a>
   <a
-    href="services/nosalquirela"
     class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+    [routerLink]="['/services/nosalquirela']"
+    routerLinkActive
+    #nosAlqui="routerLinkActive"
+    [ngClass]="
+              nosAlqui.isActive
+                ? 'text-orange'
+                : 'text-white hover:orange'
+            "
   >
     {{"Navbar.Nos_Alquelira" | translate}}
   </a>
   <a
-    href="services/designdinterieur"
+    [routerLink]="['/services/designdinterieur']"
+    routerLinkActive
+    #design="routerLinkActive"
+    [ngClass]="
+              design.isActive
+                ? 'text-orange'
+                : 'text-white hover:orange'
+            "
     class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
   >
     {{"Navbar.Design" | translate}}

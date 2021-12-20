@@ -9,7 +9,7 @@
             <h3
               class="font-semibold text-lg text-blueGray-700"
             >
-              Reservations Table
+              {{"Admin.Resers.Title" | translate}}
             </h3>
           </div>
         </div>
@@ -22,27 +22,27 @@
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              start att
+              {{"Profile.Houses.Table.Start" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              end att
+              {{"Profile.Houses.Table.To" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              Rent price
+              {{"Profile.Houses.Table.Rent" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              client profit
+              {{"SuperAdmin.Rese.Table.Client" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              alqurela profit
+              {{"SuperAdmin.Rese.Table.alquelira" | translate}}
             </th>
           </tr>
           </thead>
@@ -51,12 +51,12 @@
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
             >
-              {{reservation.StartTime | date : 'fullDate'}}
+              {{reservation.StartTime | date : 'dd/MM/YYYY'}}
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
             >
-              {{reservation?.EndTime | date : 'fullDate'}}
+              {{reservation?.EndTime | date : 'dd/MM/YYYY'}}
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"

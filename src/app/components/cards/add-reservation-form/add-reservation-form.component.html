@@ -12,7 +12,9 @@
             >
               <div class="rounded-t mb-0 px-6 py-6">
                 <div class="text-center mb-3">
-                  <h6 class="text-blueGray-500 text-sm font-bold">Add New Reservation</h6>
+                  <h6 class="text-blueGray-500 text-sm font-bold">
+                    {{"Admin.AddReser.Title" | translate}}
+                  </h6>
                 </div>
                 <hr class="mt-6 border-b-1 border-blueGray-300" />
               </div>
@@ -23,7 +25,7 @@
                       class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       htmlFor="grid-password"
                     >
-                      Start att
+                      {{"Profile.Houses.Table.Start" | translate}}
                     </label>
                     <input
                       formControlName="startTime"
@@ -32,7 +34,7 @@
                       placeholder="start att"
                     />
                     <div *ngIf="addReservationForm.get('startTime').invalid && (addReservationForm.get('startTime').touched || addReservationForm.get('startTime').dirty)">
-                      <div class="text-red-500" *ngIf="addReservationForm.get('startTime').getError('required')">This field is required</div>
+                      <div class="text-red-500" *ngIf="addReservationForm.get('startTime').getError('required')">{{"Contact.Required" | translate}}</div>
                     </div>
                   </div>
 
@@ -41,7 +43,7 @@
                       class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       htmlFor="grid-password"
                     >
-                      End att
+                      {{"Profile.Houses.Table.To" | translate}}
                     </label>
                     <input
                       formControlName="endTime"
@@ -51,7 +53,7 @@
                       placeholder="end att"
                     />
                     <div *ngIf="addReservationForm.get('endTime').invalid && (addReservationForm.get('endTime').touched || addReservationForm.get('endTime').dirty)">
-                      <div class="text-red-500" *ngIf="addReservationForm.get('endTime').getError('required')">This field is required</div>
+                      <div class="text-red-500" *ngIf="addReservationForm.get('endTime').getError('required')">{{"Contact.Required" | translate}}</div>
                     </div>
                   </div>
 
@@ -60,23 +62,26 @@
                       class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       htmlFor="grid-password"
                     >
-                      Rent price
+                      {{"Profile.Houses.Table.Rent" | translate}}
                     </label>
                     <input
                       formControlName="totalRent"
                       type="number"
+                      [min]="100"
                       class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="rent price (DH)"
                     />
                     <div *ngIf="addReservationForm.get('totalRent').invalid && (addReservationForm.get('totalRent').touched || addReservationForm.get('totalRent').dirty)">
-                      <div class="text-red-500" *ngIf="addReservationForm.get('totalRent').getError('required')">This field is required</div>
+                      <div class="text-red-500" *ngIf="addReservationForm.get('totalRent').getError('required')">{{"Contact.Required" | translate}}</div>
+                      <div class="text-red-500" *ngIf="addReservationForm.get('totalRent').getError('min')">{{"Contact.Min" | translate}}</div>
                     </div>
                   </div>
                   <div class="text-center mt-6" [ngStyle]="{'display': this.addReservationForm.get('startTime').value < this.addReservationForm.get('endTime').value ? 'block' : 'none'}">
                     <button
                       class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                       [ngStyle]="{'display': addReservationForm.valid ? 'block' : 'none'}"
-                    >Done
+                    >
+                      {{"Admin.AddReser.Button" | translate}}
                     </button>
                   </div>
                 </form>

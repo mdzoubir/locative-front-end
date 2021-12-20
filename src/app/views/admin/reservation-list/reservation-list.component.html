@@ -9,7 +9,7 @@
             <h3
               class="font-semibold text-lg text-blueGray-700"
             >
-              Reservation Table
+              {{"Admin.Resers.Title" | translate}}
             </h3>
           </div>
         </div>
@@ -22,22 +22,22 @@
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              started att
+              {{"Profile.Houses.Table.Start" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              end ett
+              {{"Profile.Houses.Table.To" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              Rent price
+              {{"Profile.Houses.Table.Rent" | translate}}
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
             >
-              client profit
+              net
             </th>
           </tr>
           </thead>
@@ -46,12 +46,12 @@
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
             >
-              {{rs.StartTime | date:'fullDate'}}
+              {{rs.StartTime | date:'MM/dd/yyyy'}}
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
             >
-              {{rs?.EndTime | date:'fullDate'}}
+              {{rs?.EndTime | date:'MM/dd/yyyy'}}
             </td>
             <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"

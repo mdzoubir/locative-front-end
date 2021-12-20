@@ -14,14 +14,14 @@ export class UpdateUserProfileComponent implements OnInit {
   client : Client;
 
   AddMoreInfo = new FormGroup({
-    cin: new FormControl(null, [Validators.minLength(5), Validators.max(8), Validators.required]),
+    cin: new FormControl(null, [Validators.pattern("[a-zA-Z0-9]{5,10}"), Validators.required]),
     compteNumber: new FormControl(null, Validators.required),
     paymentMethode: new FormControl(null, Validators.required),
   })
 
   constructor(
-    private route: ActivatedRoute,
-    private clientService : ClientService
+      private route: ActivatedRoute,
+      private clientService : ClientService
   ) { }
 
   ngOnInit(): void {
