@@ -7,11 +7,11 @@ import {environment} from "../../environments/environment";
 })
 export class ContactService {
 
-  private url: string = `${environment.apiUrl}`;
+  apiUrl: string = "http://localhost:8080";
 
   constructor(private http :HttpClient) { }
 
   contact(data:{fullName: string, email: string, message: string}){
-    return this.http.post(`${this.url}/api/v1/contact`, data);
+    return this.http.post(`${this.apiUrl}/api/v1/contact`, data);
   }
 }

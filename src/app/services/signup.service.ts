@@ -6,12 +6,12 @@ import {environment} from "../../environments/environment";
   providedIn: 'root'
 })
 export class SignupService {
-
-  private url: string = `${environment.apiUrl}`;
+  apiUrl: string = "http://localhost:8080";
+  // private url: string = `${environment.apiUrl}`;
 
   constructor(private http : HttpClient) { }
 
   signUp(data:{firstName: string, lastName: string, email: string, password: string, phoneNumber}){
-    return this.http.post(`${this.url}/api/v1/client`, data)
+    return this.http.post(`${this.apiUrl}/api/v1/client`, data)
   }
 }

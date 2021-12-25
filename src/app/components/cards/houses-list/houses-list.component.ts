@@ -8,7 +8,7 @@ import {Maison} from '../../../moduls/maison';
   styleUrls: ['./houses-list.component.css']
 })
 export class HousesListComponent implements OnInit {
-
+  p: number = 1;
   house: Maison[];
 
   constructor(

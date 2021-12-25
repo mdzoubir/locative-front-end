@@ -7,11 +7,11 @@ import {environment} from "../../environments/environment";
 })
 export class LoginService {
 
-  private url: string =  environment.apiUrl;
+  apiUrl: string = "http://localhost:8080";
 
   constructor(private http: HttpClient) { }
 
   login(data : {email : string, password : string}){
-    return this.http.post(`${this.url}/login`, data);
+    return this.http.post(`${this.apiUrl}/login`, data);
   }
 }

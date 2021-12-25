@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./houses.component.css']
 })
 export class HousesSuperAdminComponent implements OnInit {
-
+  p: number = 1;
   houses: Maison[];
 
   constructor(

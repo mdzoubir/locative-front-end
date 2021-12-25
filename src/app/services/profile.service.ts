@@ -7,11 +7,12 @@ import {environment} from "../../environments/environment";
 })
 export class ProfileService {
 
+  apiUrl: string = "http://localhost:8080";
 
   constructor(private http: HttpClient) { }
 
   getProfile(){
-    return this.http.get(`${environment.apiUrl}/profile`);
+    return this.http.get(`${this.apiUrl}/profile`);
   }
 
 

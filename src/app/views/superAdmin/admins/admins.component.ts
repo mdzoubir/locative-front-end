@@ -10,6 +10,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class AdminsComponent implements OnInit {
   admins: Admin[];
+  p: number = 1;
   searchValue: string;
 
 

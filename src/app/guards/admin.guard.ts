@@ -17,12 +17,9 @@ export class AdminGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
     if (this.tokenService.getRole() == "ADMIN" || this.tokenService.getRole() == "SUPERADMIN" || this.tokenService.getRole() == null){
-      console.log(this.tokenService.loggedIn());
       this.router.navigateByUrl("/");
       return false;
     }
-    console.log(this.tokenService.loggedIn());
-
     return true;
   }
 

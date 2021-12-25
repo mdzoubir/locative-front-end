@@ -8,7 +8,7 @@ import {Reservation} from '../../../moduls/reservation';
   styleUrls: ['./reservations.component.css']
 })
 export class ReservationsComponent implements OnInit {
-
+  p: number = 1;
   reservations: Reservation[];
 
   constructor(

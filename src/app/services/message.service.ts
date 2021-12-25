@@ -9,11 +9,13 @@ import {Message} from '../moduls/message';
 })
 export class MessageService {
 
+  apiUrl: string = "http://localhost:8080";
+
   constructor(
     private http: HttpClient
   ) { }
 
   getAllMassage(): Observable<Message[]>{
-    return this.http.get<Message[]>(`${environment.apiUrl}/api/v1/contact`);
+    return this.http.get<Message[]>(`${this.apiUrl}/api/v1/contact`);
   }
 }

@@ -9,7 +9,7 @@ import {ProfileService} from '../../../services/profile.service';
   styleUrls: ['./reservation-list.component.css']
 })
 export class ReservationListComponent implements OnInit {
-
+  p: number = 1;
   reservations : Reservation[];
 
   constructor(

@@ -9,15 +9,17 @@ import {Asset} from "../moduls/asset";
 })
 export class AssetService {
 
+  apiUrl: string = "http://localhost:8080";
+
   constructor(
     private http : HttpClient
   ) { }
 
   getAllAssets(): Observable<Asset[]>{
-    return this.http.get<Asset[]>(`${environment.apiUrl}/api/v1/asset`);
+    return this.http.get<Asset[]>(`${this.apiUrl}/api/v1/asset`);
   }
 
   getByType(type: string): Observable<Asset>{
-    return this.http.get<Asset>(`${environment.apiUrl}/api/v1/asset/${type}`);
+    return this.http.get<Asset>(`${this.apiUrl}/api/v1/asset/${type}`);
   }
 }

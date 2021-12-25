@@ -10,6 +10,7 @@ import {Message} from '../../../moduls/message';
 export class MessagesSuperAdminComponent implements OnInit {
 
   messages: Message[];
+  p: number = 1;
 
   constructor(
     private messageService: MessageService

@@ -6,12 +6,17 @@ import {TranslateService} from '@ngx-translate/core';
   templateUrl: "./footer.component.html",
 })
 export class FooterComponent implements OnInit {
+
   date = new Date().getFullYear();
 
   currentLang: string;
   constructor(private translate : TranslateService) {
-    this.currentLang = localStorage.getItem('currentLang') || 'fr';
-    this.translate.use(this.currentLang);
+    if(localStorage.getItem('currentLang') != null){
+      this.translate.use(this.currentLang);
+    }else{
+      this.translate.use("fr");
+
+    }
   }
 
   ngOnInit(): void {}

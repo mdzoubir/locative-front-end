@@ -28,8 +28,12 @@ export class ClientSidebarComponent implements OnInit {
     private maisonService : MaisonService,
     private translate : TranslateService
   ) {
-    this.currentLang = localStorage.getItem('currentLang') || 'fr';
-    this.translate.use(this.currentLang);
+    if(localStorage.getItem('currentLang') != null){
+      this.translate.use(this.currentLang);
+    }else{
+      this.translate.use("fr");
+
+    }
   }
 
   ngOnInit() {

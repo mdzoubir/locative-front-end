@@ -8,6 +8,7 @@ import {Client} from "../../../moduls/client";
 })
 export class CardTableComponent implements OnInit {
   clients: Client[];
+  p: number = 1;
 
   constructor(
     private clientService: ClientService

@@ -9,26 +9,28 @@ import {environment} from '../../environments/environment';
 })
 export class ReservationService {
 
+  apiUrl: string = "http://localhost:8080";
+
   constructor(
     private http : HttpClient
   ) { }
 
   getAllByMaisonId(maisonId: string): Observable<Reservation[]>{
-    return this.http.get<Reservation[]>(`${environment.apiUrl}/api/v1/reservation/${maisonId}`);
+    return this.http.get<Reservation[]>(`${this.apiUrl}/api/v1/reservation/${maisonId}`);
   }
 
   getReservationById(id: string): Observable<Reservation>{
-    return this.http.get<Reservation>(`${environment.apiUrl}/api/v1/reservation/${id}`);
+    return this.http.get<Reservation>(`${this.apiUrl}/api/v1/reservation/${id}`);
   }
 
   addReservation(data:{startAtt: Date, endAtt: Date, totalRent: number}, id:string){
-    return this.http.post(`${environment.apiUrl}/api/v1/reservation/${id}`, data);
+    return this.http.post(`${this.apiUrl}/api/v1/reservation/${id}`, data);
   }
   getAllByAdminId(adminId: string): Observable<Reservation[]>{
-    return this.http.get<Reservation[]>(`${environment.apiUrl}/api/v1/reservation/all/${adminId}`);
+    return this.http.get<Reservation[]>(`${this.apiUrl}/api/v1/reservation/all/${adminId}`);
   }
 
   getAllReservation(){
-    return this.http.get<Reservation[]>(`${environment.apiUrl}/api/v1/reservation`);
+    return this.http.get<Reservation[]>(`${this.apiUrl}/api/v1/reservation`);
   }
 }
